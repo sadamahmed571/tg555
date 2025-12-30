@@ -1,0 +1,922 @@
+@charset "utf-8";
+
+/* ===== CSS Document - TrustGroupArchives - Optimized Version ===== */
+ 
+/* ===== 2. CSS Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Naskh Arabic", serif;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--archive-background-color);
+  direction: rtl;
+  color: var(--archive-text2-color);
+   padding-bottom:  100px;
+}
+
+/* ===== Accessibility: Skip Link & Focus ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--archive-third-color);
+  color: var(--archive-light-color);
+  padding: 8px 12px;
+  border-radius: 0 0 8px 0;
+  z-index: 1002;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--archive-primary-color);
+  outline-offset: 2px;
+}
+
+/* ===== 3. CSS Variables - Themes ===== */
+.theme1 {
+  /* Theme 1 - Default Dark Theme */
+  --archive-primary-color: #4f93a4;
+  --archive-secondary-color: #92c87b;
+  --archive-third-color: #345048;
+  --archive-header-color: rgba(0, 0, 0, 0.8);
+  --archive-footer-color: #252729;
+  --archive-meta-overlay-color: rgba(0, 0, 0, 0.8);
+  --archive-placeholder-color: #617c72;
+  --archive-background-color: #101112;
+  --archive-title-color: linear-gradient(135deg, #4f93a4 0%, #92c87b 100%);
+  --archive-text-color: #88b0ba;
+  --archive-text2-color: #bccbb6;
+  --archive-text3-color: #d1cda3;
+  --archive-light-color: #ffffff;
+  --archive-button-color: linear-gradient(135deg, #37606a 0%, #577749 100%);
+  --archive-button-hover-color: #3a7482;
+  --archive-border-color: #3b4244;
+  --archive-border-hover-color: #515a5d;
+  --archive-container-bg-color: #191c1d;
+  --archive-container-focus-color: #1e2224;
+  --archive-extra-color: #416d78;
+  --archive-extra2-color: #437663;
+  --archive-extra3-color: #155053;
+  --archive-extra4-color: #de4069;
+  --archive-extra5-color: #d09b40;
+  --archive-extra6-color: #a93e4b;
+}
+
+.theme2 {
+  --archive-primary-color: #197886;
+  --archive-secondary-color: #35b385;
+  --archive-third-color: #26656d;
+  --archive-header-color: linear-gradient(180deg, #e1f1f2, #e5f4f5, #f3fdff);
+  --archive-footer-color: #252729;
+  --archive-meta-overlay-color: rgba(103, 111, 114, 0.68);
+  --archive-placeholder-color: #b8ced1;
+  --archive-background-color: #f5fbfc;
+  --archive-title-color: linear-gradient(135deg, #117685 0%, #35b385 100%);
+  --archive-text-color: #304b4e;
+  --archive-text2-color: #3e5e62;
+  --archive-text3-color: #3e7279;
+  --archive-light-color: #ffffff;
+  --archive-button-color: linear-gradient(135deg, #218695 0%, #66baa5 100%);
+  --archive-button-hover-color: #36838f;
+  --archive-border-color: #c2d8d0;
+  --archive-border-hover-color: #a0cbbb;
+  --archive-container-bg-color: #eef7f6;
+  --archive-archive-container-focus-color: #f9fffd;
+  --archive-extra-color: #416d78;
+  --archive-extra2-color: #437663;
+  --archive-extra3-color: #155053;
+  --archive-extra4-color: #de4069;
+  --archive-extra5-color: #d09b40;
+  --archive-extra6-color: #a93e4b;
+}
+
+.theme3 {
+  --archive-primary-color: #1877f2;
+  --archive-secondary-color: #4267b2;
+  --archive-third-color: #898f9c;
+  --archive-header-color: linear-gradient(180deg, #ffffff, #f0f2f5, #e4e6eb);
+  --archive-footer-color: #252729;
+  --archive-meta-overlay-color: rgba(101, 119, 134, 0.68);
+  --archive-placeholder-color: #aab8c2;
+  --archive-background-color: #f0f2f5;
+  --archive-title-color: linear-gradient(135deg, #1877f2 0%, #4267b2 100%);
+  --archive-text-color: #050505;
+  --archive-text2-color: #1c1e21;
+  --archive-text3-color: #606770;
+  --archive-light-color: #ffffff;
+  --archive-button-color: linear-gradient(135deg, #1877f2 0%, #4267b2 100%);
+  --archive-button-hover-color: #166fe5;
+  --archive-border-color: #ddd;
+  --archive-border-hover-color: #ccc;
+  --archive-container-bg-color: #ffffff;
+  --archive-container-focus-color: #f9fbff;
+  --archive-archive-extra-color: #416d78;
+  --archive-extra2-color: #437663;
+  --archive-extra3-color: #155053;
+  --archive-extra4-color: #de4069;
+  --archive-extra5-color: #d09b40;
+  --archive-extra6-color: #a93e4b;
+}
+
+.theme4 {
+  --archive-primary-color: #e1306c;
+  --archive-secondary-color: #e83a4e;
+  --archive-third-color: #405de6;
+  --archive-header-color: linear-gradient(180deg, #f1e8d0, #f6ebdd, #fcf6f3);
+  --archive-footer-color: #252729;
+  --archive-meta-overlay-color: rgba(193, 53, 132, 0.68);
+  --archive-placeholder-color: #c13584;
+  --archive-archive-archive-background-color: #ffffff;
+  --archive-title-color: linear-gradient(135deg, #e1306c 0%, #fd1d1d 100%);
+  --archive-text-color: #963b3b;
+  --archive-text2-color: #262626;
+  --archive-text3-color: #8e8e8e;
+  --archive-light-color: #ffffff;
+  --archive-button-color: linear-gradient(135deg, #833ab4 0%, #fd1d1d 100%);
+  --archive-button-hover-color: #c13584;
+  --archive-border-color: #dbdbdb;
+  --archive-border-hover-color: #b2b2b2;
+  --archive-container-bg-color: #fafafa;
+  --archive-container-focus-color: #fdfbfb;
+  --archive-extra-color: #416d78;
+  --archive-extra2-color: #437663;
+  --archive-extra3-color: #155053;
+  --archive-extra4-color: #de4069;
+  --archive-extra5-color: #d09b40;
+  --archive-extra6-color: #a93e4b;
+}
+
+.theme5 {
+  --archive-primary-color: #000000;
+  --archive-secondary-color: #000000;
+  --archive-third-color: #000000;
+  --archive-header-color: rgba(255, 255, 255, 0.95);
+  --archive-footer-color: #444444;
+  --archive-meta-overlay-color: rgba(0, 0, 0, 0.8);
+  --archive-placeholder-color: #b6b6b6;
+  --archive-background-color: #f7f7f7;
+  --archive-title-color: linear-gradient(135deg, #000000 0%, #000000 100%);
+  --archive-text-color: #1c1c1c;
+  --archive-text2-color: #3a3a3a;
+  --archive-text3-color: #505050;
+  --archive-light-color: #fff;
+  --archive-button-color: linear-gradient(135deg, #000 0%, #000 100%);
+  --archive-button-hover-color: #444444;
+  --archive-border-color: #2c2c2c;
+  --archive-border-hover-color: #1a1a1a;
+  --archive-container-bg-color: #ffffff;
+  --archive-container-focus-color: #f3f3f3;
+  --archive-extra-color: #000000;
+  --archive-extra2-color: #000000;
+  --archive-extra3-color: #000000;
+  --archive-extra4-color: #000000;
+  --archive-extra5-color: #000000;
+  --archive-extra6-color: #000000;
+}
+/* ===== 4. Layout Components ===== */
+.section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+   font-family: "Noto Naskh Arabic", serif !important;
+}
+
+.container {
+  max-width: 1200px ;
+  margin: 0 auto ;
+  width: 100% ;
+  padding: 0 20px ;
+}
+
+/* ===== 5. Header Styles ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--archive-header-color);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 40px;
+  transition: all 0.3s ease;
+  box-shadow: rgba(1, 1, 1, 0.08) 0px 1px 12px;
+  opacity: 95%;
+   font-family: "Noto Naskh Arabic", serif;
+}
+
+.header.scrolled {
+  background: var(--archive-header-color);
+  height: 70px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 40px;
+}
+
+.logo-container:hover {
+  transform: translateY(-2px);
+}
+
+.logo {
+  width: 50x;
+  height: 50px;
+  background-image: url("../archive-logo.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--archive-light-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-text {
+  background: var(--archive-title-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+/* ===== 6. Navigation Menu ===== */
+.main-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-right: 90px;
+}
+
+.menu-item {
+  color: var(--archive-text-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.menu-item i {
+  padding-left: 2px;
+  font-size: 16px;
+}
+
+.menu-item:hover {
+  color: var(--archive-secondary-color);
+  transform: translateY(-1px);
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--archive-title-color);
+  transition: width 0.3s ease;
+}
+
+.menu-item:hover::after,
+.menu-item.active::after {
+  width: 100%;
+}
+
+.menu-item.active {
+  color: var(--archive-secondary-color);
+}
+/* أنماط القائمة المنسدلة "إضافة" */
+.dropdown {
+  position: relative;
+  /* لتكون القائمة المنسدلة داخل الـ main-menu */
+}
+
+.dropdown-toggle {
+  color: var(--archive-text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* مسافة بين "إضافة" والسهم */
+}
+
+.dropdown-menu {
+  display: none; /* إخفاء القائمة افتراضياً */
+  position: absolute;
+  top: 100%; /* تظهر أسفل الزر */
+  left: 80px; /* محاذاة لليمين - لأن الواجهة عربية */
+  min-width: 250px;
+  background-color: var(--archive-header-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 8px;
+  z-index: 1010; /* أعلى من الـ header */
+  padding: 5px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  color: var(--archive-text-color);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: "Noto Naskh Arabic", serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: var(--archive-light-bg); /* لون خلفية خفيف عند التمرير */
+  color: var(--archive-primary-color);
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--archive-text-color);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== 7. Theme Toggle Button ===== */
+.change-theme {
+  position: fixed;
+  right: 0;
+  top: 75px;
+  width: 40px;
+  height: 40px;
+  background: var(--archive-background-color);
+  border: none;
+  border-radius: 15px 0 0 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(1, 1, 1, 0.08) 0px 1px 12px;
+  animation: colorcycle 23s infinite;
+  opacity: 0.9;
+}
+
+.change-theme:hover {
+  background: #00485e;
+  transform: scale(1.1);
+}
+
+.change-theme-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.change-theme h1 {
+  font-size: 15px;
+  color: var(--archive-light-color);
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.change-theme i {
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+}
+
+/* ===== 8. Animations ===== */
+@keyframes colorcycle {
+  0% {
+    background: #0f1e2e;
+  }
+  25% {
+    background: #1aa3c5;
+  }
+  50% {
+    background: #ca5144;
+  }
+  75% {
+    background: #17c0bb;
+  }
+  100% {
+    background: #0f1e2e;
+  }
+}
+
+/* ===== 9. Footer Styles ===== */
+.footer {
+  background: none;
+  border-top: none;
+  margin-top: 80px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.copyright-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-top: 30px;
+  margin-bottom: 55px;
+}
+
+.designer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 2px solid var(--archive-placeholder-color);
+  border-left: 2px solid var(--archive-placeholder-color);
+}
+
+.designer-text {
+  font-size: 14px;
+  color: var(--archive-placeholder-color);
+  font-weight: 400;
+}
+
+.icon-group4 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon-btn4 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--archive-placeholder-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.icon-btn4:hover {
+  transform: translateY(-3px);
+}
+
+.icon-website:hover {
+  background-color: #192734;
+  color: var(--archive-light-color);
+}
+.icon-phone:hover {
+  background-color: #128c7e;
+  color: var(--archive-light-color);
+}
+.icon-facebook:hover {
+  background-color: #3b5998;
+  color: var(--archive-light-color);
+}
+.icon-whatsapp:hover {
+  background-color: #075e54;
+  color: var(--archive-light-color);
+}
+
+
+/* ===== 11. Responsive Design ===== */
+
+/* Tablet and smaller screens */
+@media (max-width: 990px) {
+  .header {
+    height: 80px;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .header.scrolled {
+    height: 60px;
+  }
+
+  .logo-container {
+    margin-right: 7%;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0;
+  }
+
+  .logo-text {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 10px;
+    left: 7%;
+    position: absolute;
+  }
+
+  .nav-toggle i {
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 30px;
+    margin-bottom: 7px;
+  }
+
+  .nav-toggle i:hover {
+    background: var(--archive-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 200px;
+    border-radius: 0 0 30px 0;
+    background: var(--archive-header-color);
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    margin-right: 0;
+    z-index: 999;
+    opacity: 95%;
+  }
+
+  .main-menu.active {
+    display: flex;
+  }
+
+  .menu-item {
+    font-size: 17px;
+    font-weight: 800;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    text-align: right;
+    align-self: start;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .menu-item:hover {
+    border-right: 2px solid var(--archive-secondary-color);
+    padding-right: 6px;
+  }
+
+  .menu-item.active {
+    color: var(--archive-secondary-color);
+    border-right: 2px solid var(--archive-secondary-color);
+    padding-right: 6px;
+  }
+
+  .menu-item i {
+    padding-left: 3px;
+    font-size: 15px;
+  }
+
+  .menu-item::after {
+    display: none;
+  }
+
+  .change-theme {
+    top: 90px;
+    width: 35px;
+    height: 35px;
+    border-radius: 13px 0 0 13px;
+  }
+
+  .change-theme i {
+    font-size: 19px;
+    padding-right: 4px;
+  }
+}
+
+/* Mobile and smaller screens */
+@media (max-width: 768px) {
+  .header {
+    height: 80px;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .header.scrolled {
+    height: 60px;
+  }
+
+  .logo-container {
+    margin-right: 7%;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0;
+  }
+
+  .logo-text {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 10px;
+    left: 7%;
+    position: absolute;
+  }
+
+  .nav-toggle i {
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 30px;
+    margin-bottom: 7px;
+  }
+
+  .nav-toggle i:hover {
+    background: var(--archive-button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 220px;
+    border-radius: 0 0 30px 0;
+    background: var(--archive-header-color);
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    margin-right: 0;
+    z-index: 999;
+    opacity: 95%;
+  }
+
+  .main-menu.active {
+    display: flex;
+  }
+
+  .menu-item {
+    font-size: 17px;
+    font-weight: 800;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    text-align: right;
+    align-self: start;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .menu-item:hover {
+    border-right: 2px solid var(--archive-secondary-color);
+    padding-right: 6px;
+  }
+
+  .menu-item.active {
+    color: var(--archive-secondary-color);
+    border-right: 2px solid var(--archive-secondary-color);
+    padding-right: 6px;
+  }
+
+  .menu-item i {
+    padding-left: 3px;
+    font-size: 15px;
+  }
+
+  .menu-item::after {
+    display: none;
+  }
+
+  .change-theme {
+    top: 90px;
+    width: 35px;
+    height: 35px;
+    border-radius: 13px 0 0 13px;
+  }
+
+  .change-theme i {
+    font-size: 19px;
+    padding-right: 4px;
+  }
+
+  .copyright-content {
+    gap: 2px;
+  }
+
+  .designer-text {
+    font-size: 13px;
+  }
+
+  .icon-btn4 {
+    width: 38px;
+    height: 38px;
+  }
+
+  .icon-group4 {
+    gap: 5px;
+  }
+
+  
+}
+
+/* Mobile and smaller screens */
+@media (max-width: 480px) {
+  .header {
+    height: 70px;
+  }
+
+  .header.scrolled {
+    height: 60px;
+  }
+
+  .logo-container {
+    margin-right: 5%;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-text {
+    font-size: 21px;
+  }
+
+  .nav-toggle {
+    margin-top: 8px;
+    left: 5%;
+  }
+
+  .nav-toggle i {
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .main-menu {
+    top: 68px;
+    width: 200px;
+  }
+
+  .menu-item {
+    font-size: 16px;
+    font-weight: 900;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    height: 20px;
+  }
+
+  .menu-item:hover {
+    padding-right: 6px;
+  }
+
+  .menu-item.active {
+    padding-right: 6px;
+  }
+
+  .menu-item i {
+    padding-left: 3px;
+    font-size: 14px;
+  }
+
+  .change-theme {
+    top: 85px;
+    width: 33px;
+    height: 33px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .change-theme i {
+    font-size: 18px;
+    padding-right: 4px;
+  }
+
+  .copyright-content {
+    gap: 1px;
+  }
+
+  .designer-text {
+    font-size: 11px;
+  }
+
+  .icon-btn4 {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .icon-group4 {
+    gap: 5px;
+  }
+}
+
+/* ===== Logout Button (match login button style) ===== */
+/* Applied to the injected button in nav.js: <button id="logoutBtn" class="menu-item login-btn"> */
+button.menu-item.login-btn#logoutBtn,
+.main-menu button.menu-item.login-btn#logoutBtn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 120px;
+  font-weight: 500;
+  font-family: "Noto Naskh Arabic", serif;
+  background: var(--archive-button-color);
+  color: var(--archive-light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.menu-item.login-btn#logoutBtn:hover,
+.main-menu button.menu-item.login-btn#logoutBtn:hover {
+  background: var(--archive-title-color);
+}
