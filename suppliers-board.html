@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموردين - أرشيف الثقة التجارية</title>
+    
+         <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+        
+        
+         <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- css Stylesheet -->
+    <link rel="stylesheet" href="archive.css">
+       
+    <style>
+
+@charset "utf-8";
+/* CSS Document - TrustGroupArchives */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Naskh Arabic", serif;
+    overflow-x: hidden;
+    position: relative;
+    background: var(--archive-background-color);
+    direction: rtl;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1198px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 18px;
+}
+
+/* suppliers */
+.suppliers-header {
+    display: flex;
+    flex-direction: row;
+    height: 308px;
+    color: var(--archive-text2-color);
+    padding: 8px;
+    box-sizing: border-box;
+    gap: 18px;
+    margin-top: 118px;
+    margin-bottom: 28px;
+}
+
+.suppliers-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.suppliers-title {
+    font-size: 37px;
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.suppliers-title i {
+    font-size: 48px;
+    padding-left: 13px;
+    vertical-align: middle;
+}
+
+.suppliers-subtitle {
+    font-size: 19px;
+    color: var(--archive-text-color);
+    font-family: "Noto Naskh Arabic", serif;
+    line-height: 1.4;
+    margin-top: 13px;
+}
+
+.suppliers-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    gap: 43px;
+    margin-top: 33px;
+}
+
+.suppliers-stat-box {
+    background: none;
+    padding: 6px;
+    border-radius: 6px;
+    text-align: center;
+    width: 218px;
+    margin-right: 28px;
+}
+
+.suppliers-stat-number {
+    font-size: 44px;
+    font-weight: bold;
+    color: var(--archive-secondary-color);
+}
+
+.suppliers-stat-box i {
+    font-size: 38px;
+}
+
+.suppliers-stat-label {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.suppliers-button {
+    flex: 1;
+    width: 100%;
+    display: inline-block;
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Noto Naskh Arabic", serif;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.suppliers-button:hover {
+    background: var(--archive-button-hover-color);
+}
+
+.suppliers-rate-board {
+    flex: 1;
+    background-color: none;
+    border-radius: 8px;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-left: 13px;
+    padding-bottom: 8px;
+    border: 2px dashed var(--archive-border-color);
+    font-family: "Noto Naskh Arabic", serif;
+    min-width: 468px;
+}
+
+.suppliers-rate-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.suppliers-rate-title {
+    font-size: 23px;
+    color: var(--archive-text-color);
+    flex: 1;
+    text-align: center;
+    font-family: "Noto+Naskh+Arabic", sans-serif;
+    font-weight: 600;
+}
+
+.suppliers-rate-title i {
+    font-size: 16px;
+    color: var(--archive-text-color);
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.suppliers-rate-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 18px;
+    border-bottom: 1px dashed var(--archive-border-color);
+}
+
+.suppliers-rate-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.suppliers-rate-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+    margin: 0;
+}
+
+.suppliers-rate-name {
+    font-size: 12px;
+    color: var(--archive-text2-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.suppliers-rate-points {
+    font-size: 12px;
+    color: var(--archive-text3-color);
+    margin-left: 1px;
+}
+
+.suppliers-rate-button {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    padding: 1px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 10px;
+    font-family: "Noto Naskh Arabic", serif;
+    display: block;
+    width: auto;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.suppliers-rate-button:hover {
+    background: var(--archive-button-hover-color);
+}
+
+/* Filters */
+.sup-filters-container {
+    margin-bottom: 38px;
+}
+
+.sup-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.sup-sreach {
+    min-width: 378px;
+    padding: 8px;
+    background: var(--archive-container-bg-color);
+    border: 1px solid var(--archive-border-color);
+    border-radius: 6px;
+    color: var(--archive-text3-color);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.sup-sreach:hover {
+    background: var(--archive-container-focus-color);
+}
+
+.sup-sreach::placeholder {
+    color: var(--archive-text-color);
+    font-size: 14px;
+    padding-right: 28px;
+}
+
+.sup-filter-group select,
+.sup-filter-group input {
+    width: 100%;
+    padding: 4px;
+    background: none;
+    border: 1px solid var(--archive-border-color);
+    border-radius: 6px;
+    color: var(--archive-text-color);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.sup-filter-group input:focus,
+.sup-filter-group select:focus {
+    border-color: var(--archive-text-color);
+    outline: none;
+    color: var(--archive-text3-color);
+    background: var(--archive-container-focus-color);
+}
+
+.sup-filter-group select option {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text2-color);
+}
+
+.sup-clear-filters-btn {
+    width: 100%;
+    background: none;
+    color: var(--archive-text2-color);
+    border: 1px solid var(--archive-border-color);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.sup-clear-filters-btn:hover {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text3-color);
+}
+
+.clear-filters-btn:active {
+    background-color: var(--archive-container-focus-color);
+    transform: scale(0.98);
+}
+
+/* Suppliers Grid and Cards */
+.suppliers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));
+    gap: 28px;
+    margin-top: 18px;
+}
+
+.supplier-card {
+    background: var(--archive-container-bg-color);
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid var(--archive-border-color);
+    transition: all 0.3s ease;
+    font-family: "Noto Naskh Arabic", serif;
+}
+
+.supplier-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.supplier-user {
+    font-size: 12px;
+    color: var(--archive-text2-color);
+    margin-bottom: 6px;
+    text-align: left;
+    margin-right: 3px;
+}
+
+.supplier-logo {
+    width: 63px;
+    height: 73px;
+    border-radius: 8%;
+    object-fit: cover;
+    opacity: 0.93;
+    border: 2px solid var(--archive-primary-color);
+}
+
+.supplier-details-info {
+    flex: 1;
+    margin-right: 3px;
+    margin-top: 8px;
+}
+
+.supplier-name {
+    color: var(--archive-primary-color);
+    margin-right: 1px;
+    font-size: 16px;
+    border-right: 2px solid var(--archive-primary-color);
+    padding-right: 5px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 600;
+}
+
+.supplier-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tag {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.tag i {
+    margin-left: 0;
+    color: var(--archive-primary-color);
+}
+
+.supplier-status-enable {
+    width: 7px;
+    height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.supplier-status-disable {
+    width: 7px;
+    height: 7px;
+    background: #ff3737;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.supplier-description {
+    color: var(--archive-text2-color);
+    font-size: 14px;
+    margin-bottom: 13px;
+    margin-top: 13px;
+    line-height: 1.5;
+    font-weight: 300;
+    height: 48px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.supplier-contact-info {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 13px;
+    flex-wrap: wrap;
+}
+
+.contact-detail {
+    color: var(--archive-text2-color);
+    font-size: 12px;
+}
+
+.supplier-button {
+    flex: 1;
+    min-width: 118px;
+    width: 100%;
+    background: none;
+    color: var(--archive-text2-color);
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: all 0.3s ease;
+    border: 1px solid var(--archive-border-color);
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.supplier-button:hover {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+}
+
+.supplier-button i {
+    padding-left: 4px;
+}
+
+/* إضافة أنماط لأزرار التبديل */
+.view-toggle {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.view-btn {
+    background: none;
+    border: 1px solid var(--archive-border-color);
+    color: var(--archive-text2-color);
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-family: "Noto Naskh Arabic", serif;
+    margin: 0 8px;
+}
+
+.view-btn:hover {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text3-color);
+}
+
+.view-btn.active {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+}
+
+/* أنماط عرض القائمة */
+.suppliers-grid.list-view {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.suppliers-grid.list-view .supplier-card {
+    display: flex;
+    align-items: center;
+    padding: 11px;
+    min-height: auto;
+    width: 100%;
+    max-width: 548px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.suppliers-grid.list-view .supplier-card-header {
+    flex: 1;
+    justify-content: flex-start;
+    gap: 3px;
+    margin-right: 3px;
+}
+
+.suppliers-grid.list-view .supplier-logo,
+.suppliers-grid.list-view .supplier-status-enable,
+.suppliers-grid.list-view .supplier-status-disable,
+.suppliers-grid.list-view .supplier-description,
+.suppliers-grid.list-view .supplier-button {
+    display: none;
+}
+
+.supplier-user {
+    font-size: 11px;
+    margin-bottom: 0;
+    text-align: left;
+    margin-right: 0;
+}
+
+.suppliers-grid.list-view .supplier-details-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-right: 3px;
+}
+
+.suppliers-grid.list-view .supplier-name {
+    font-size: 14px;
+    margin: 0;
+    font-family: "Noto Naskh Arabic", serif;
+}
+
+.suppliers-grid.list-view .supplier-tags {
+    margin: 0;
+    gap: 3px;
+}
+
+.suppliers-grid.list-view .tag {
+    font-size: 11px;
+    padding: 0 4px;
+    margin-right: 8px;
+}
+
+/* Responsive Design - Media Queries */
+
+/* لشاشات بحجم 990 بكسل وأكبر (أجهزة لوحية أفقية) */
+@media (max-width: 1100px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .suppliers-header {
+        flex-direction: column;
+        height: auto;
+        margin-top: 128px;
+        gap: 28px;
+    }
+
+    .suppliers-text {
+        text-align: center;
+    }
+
+    .suppliers-stats-container {
+        grid-template-columns: repeat(2, minmax(148px, 1fr));
+        gap: 18px;
+    }
+
+    .suppliers-stat-box {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .suppliers-stat-label {
+        padding: 5px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .suppliers-button {
+        padding: 5px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .suppliers-stat-number {
+        font-size: 43px;
+    }
+
+    .suppliers-stat-box i {
+        font-size: 36px;
+    }
+
+    .suppliers-rate-board {
+        min-width: 99%;
+        margin: 0 auto;
+    }
+
+    .suppliers-rate-title {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .suppliers-rate-title i {
+        font-size: 20px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .suppliers-rate-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 18px;
+        border-bottom: 1px dashed var(--archive-border-color);
+    }
+
+    .suppliers-rate-logo {
+        width: 33px;
+        height: 33px;
+    }
+
+    .suppliers-rate-info {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .suppliers-rate-name {
+        font-size: 14px;
+    }
+
+    .suppliers-rate-points {
+        font-size: 13px;
+        margin-left: 33px;
+    }
+
+    .suppliers-rate-button {
+        padding: 1px 13px;
+        border-radius: 5px;
+        font-size: 11px;
+        font-weight: 300;
+    }
+
+    .sup-filters-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 23px;
+    }
+
+    .sup-sreach {
+        padding: 7px;
+        font-size: 13px;
+        min-width: auto;
+    }
+
+    .sup-sreach::placeholder {
+        font-size: 13px;
+        padding-right: 3px;
+    }
+
+    .sup-filter-group select,
+    .sup-filter-group input {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .sup-clear-filters-btn {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    /* إضافة أنماط لأزرار التبديل */
+    .view-toggle {
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .view-btn {
+        padding: 6px 13px;
+        font-size: 12px;
+    }
+
+    .suppliers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 23px;
+    }
+
+    .supplier-card {
+        padding: 16px;
+        width: auto;
+        margin: 0;
+    }
+
+    .supplier-logo {
+        width: 73px;
+        height: 73px;
+    }
+
+    .supplier-name {
+        font-size: 16px;
+    }
+
+    .supplier-description {
+        font-size: 13px;
+    }
+
+    .supplier-button {
+        width: 100%;
+        padding: 6px;
+        font-size: 13px;
+        margin-top: 3px;
+    }
+
+    .view-toggle {
+        margin-bottom: 20px;
+        text-align: right;
+    }
+
+    .view-btn {
+        padding: 7px 16px;
+        font-size: 11px;
+    }
+
+    .suppliers-grid.list-view {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        flex-direction: column;
+    }
+
+    .suppliers-grid.list-view .supplier-card {
+        padding: 2px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .supplier-user {
+        display: none;
+    }
+
+    .suppliers-grid.list-view .supplier-details-info {
+        gap: 3px;
+        margin-right: 0;
+    }
+
+    .suppliers-grid.list-view .supplier-name {
+        font-size: 11px;
+    }
+
+    .suppliers-grid.list-view .supplier-tags {
+        margin: 0;
+        gap: 3px;
+    }
+
+    .suppliers-grid.list-view .tag {
+        font-size: 9px;
+        padding: 0 4px;
+        margin-right: 1px;
+    }
+}
+
+/* لشاشات بحجم 768 بكسل وأقل (أجهزة لوحية وهواتف كبيرة) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .suppliers-header {
+        flex-direction: column;
+        height: auto;
+        margin-top: 128px;
+        gap: 28px;
+    }
+
+    .suppliers-text {
+        text-align: center;
+    }
+
+    .suppliers-stats-container {
+        grid-template-columns: repeat(2, minmax(148px, 1fr));
+        gap: 18px;
+    }
+
+    .suppliers-stat-box {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .suppliers-stat-label {
+        padding: 4px;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .suppliers-button {
+        padding: 4px;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .suppliers-stat-number {
+        font-size: 38px;
+    }
+
+    .suppliers-stat-box i {
+        font-size: 34px;
+    }
+
+    .suppliers-rate-board {
+        min-width: 85%;
+        padding: 8px;
+    }
+
+    .suppliers-rate-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .suppliers-rate-title i {
+        font-size: 19px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .suppliers-rate-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 13px;
+    }
+
+    .suppliers-rate-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .suppliers-rate-info {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        gap: 6px;
+        margin: 0;
+    }
+
+    .suppliers-rate-name {
+        font-size: 13px;
+    }
+
+    .suppliers-rate-points {
+        font-size: 12px;
+        margin-left: 23px;
+    }
+
+    .suppliers-rate-button {
+        padding: 1px 10px;
+        border-radius: 5px;
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .sup-filters-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .sup-sreach {
+        padding: 6px;
+        font-size: 12px;
+        min-width: auto;
+    }
+
+    .sup-sreach::placeholder {
+        font-size: 12px;
+        padding-right: 2px;
+    }
+
+    .sup-filter-group select,
+    .sup-filter-group input {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .sup-clear-filters-btn {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .suppliers-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 23px;
+    }
+
+    .supplier-card {
+        padding: 13px;
+        width: 91%;
+        margin: 0 auto;
+    }
+
+    .supplier-logo {
+        width: 88px;
+        height: 88px;
+    }
+
+    .supplier-name {
+        font-size: 17px;
+    }
+
+    .supplier-description {
+        font-size: 14px;
+        height: 38px;
+    }
+
+    /* إضافة أنماط لأزرار التبديل */
+    .view-toggle {
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .view-btn {
+        padding: 6px 13px;
+        font-size: 12px;
+    }
+
+    .suppliers-grid.list-view {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 23px;
+        flex-direction: column;
+        gap: 23px;
+    }
+
+    .suppliers-grid.list-view .supplier-card {
+        padding: 6px;
+        width: 93%;
+        margin: 0 auto;
+    }
+
+    .supplier-user {
+        display: none;
+    }
+
+    .suppliers-grid.list-view .supplier-details-info {
+        gap: 13px;
+        margin-right: 0;
+    }
+
+    .suppliers-grid.list-view .supplier-name {
+        font-size: 13px;
+    }
+
+    .suppliers-grid.list-view .supplier-tags {
+        margin: 0;
+        gap: 3px;
+    }
+
+    .suppliers-grid.list-view .tag {
+        font-size: 11px;
+        padding: 0 4px;
+        margin-right: 1px;
+    }
+}
+
+/* لشاشات بحجم 480 بكسل وأقل (هواتف متوسطة) */
+@media (max-width: 480px) {
+    .suppliers-title {
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    .suppliers-title i {
+        font-size: 38px;
+    }
+
+    .suppliers-subtitle {
+        font-size: 16px;
+    }
+
+    .suppliers-stats-container {
+        grid-template-columns: repeat(2, minmax(148px, 1fr));
+        gap: 18px;
+    }
+
+    .suppliers-stat-number {
+        font-size: 35px;
+    }
+
+    .suppliers-stat-label {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .suppliers-button {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .suppliers-rate-board {
+        min-width: 99%;
+        margin: 0 auto;
+    }
+
+    .suppliers-rate-title {
+        font-size: 21px;
+    }
+
+    .suppliers-rate-name {
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .suppliers-rate-points {
+        font-size: 10px;
+        margin-left: 0;
+    }
+
+    .suppliers-rate-button {
+        padding: 1px 8px;
+        border-radius: 6px;
+        font-size: 9px;
+    }
+
+    .sup-filters-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        margin-bottom: 3px;
+    }
+
+    .sup-sreach {
+        padding: 4px;
+        font-size: 10px;
+        min-width: auto;
+    }
+
+    .sup-sreach::placeholder {
+        font-size: 10px;
+        padding-right: 0;
+    }
+
+    .sup-filter-group select,
+    .sup-filter-group input {
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    .sup-clear-filters-btn {
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    /* إضافة أنماط لأزرار التبديل */
+    .view-toggle {
+        margin-bottom: 13px;
+    }
+
+    .view-btn {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+
+    .suppliers-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .supplier-logo {
+        width: 78px;
+        height: 78px;
+    }
+
+    .supplier-name {
+        font-size: 15px;
+    }
+
+    .tag {
+        font-size: 10px;
+    }
+
+    .supplier-description {
+        font-size: 13px;
+        height: 38px;
+    }
+
+    .supplier-button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .suppliers-grid.list-view {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    .suppliers-grid.list-view .supplier-card {
+        padding: 2px;
+        width: 97%;
+        margin: 0 auto;
+    }
+
+    .supplier-user {
+        display: none;
+    }
+
+    .suppliers-grid.list-view .supplier-details-info {
+        gap: 13px;
+        margin-right: 0;
+    }
+
+    .suppliers-grid.list-view .supplier-name {
+        font-size: 11px;
+    }
+
+    .suppliers-grid.list-view .supplier-tags {
+        margin: 0;
+        gap: 1px;
+    }
+
+    .suppliers-grid.list-view .tag {
+        font-size: 9px;
+        padding: 0 4px;
+        margin-right: 0;
+    }
+}
+
+/* لشاشات بحجم 380 بكسل وأقل (هواتف صغيرة) */
+@media (max-width: 380px) {
+    .suppliers-title {
+        font-size: 26px;
+    }
+
+    .suppliers-title i {
+        font-size: 33px;
+    }
+
+    .suppliers-subtitle {
+        font-size: 14px;
+    }
+
+    .suppliers-stats-container {
+        grid-template-columns: repeat(2, minmax(148px, 1fr));
+        gap: 18px;
+    }
+
+    .suppliers-stat-number {
+        font-size: 31px;
+    }
+
+    .suppliers-stat-label {
+        font-size: 10px;
+    }
+
+    .suppliers-stat-box i {
+        font-size: 31px;
+    }
+
+    .suppliers-button {
+        font-size: 10px;
+    }
+
+    .suppliers-rate-title {
+        font-size: 19px;
+    }
+
+    .suppliers-rate-name {
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .suppliers-rate-points {
+        font-size: 9px;
+        margin-left: 0;
+    }
+
+    .suppliers-rate-button {
+        padding: 0 4px;
+        border-radius: 6px;
+        font-size: 8px;
+    }
+
+    .sup-filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        margin-bottom: 3px;
+    }
+
+    .sup-sreach {
+        padding: 4px;
+        font-size: 10px;
+        min-width: auto;
+    }
+
+    .sup-sreach::placeholder {
+        font-size: 10px;
+        padding-right: 0;
+    }
+
+    .sup-filter-group select,
+    .sup-filter-group input {
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    .sup-clear-filters-btn {
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    /* إضافة أنماط لأزرار التبديل */
+    .view-toggle {
+        margin-bottom: 13px;
+    }
+
+    .view-btn {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+
+    .suppliers-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .supplier-card {
+        padding: 8px;
+        width: 97%;
+        margin: 0 auto;
+    }
+
+    .supplier-logo {
+        width: 63px;
+        height: 63px;
+    }
+
+    .supplier-name {
+        font-size: 14px;
+    }
+
+    .tag {
+        font-size: 9px;
+    }
+
+    .supplier-description {
+        font-size: 12px;
+        margin-top: 12px;
+        height: 28px;
+    }
+
+    .supplier-button {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .suppliers-grid.list-view {
+        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .suppliers-grid.list-view .supplier-card {
+        padding: 2px;
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .supplier-user {
+        display: none;
+    }
+
+    .suppliers-grid.list-view .supplier-details-info {
+        gap: 3px;
+        margin-right: 0;
+    }
+
+    .suppliers-grid.list-view .supplier-name {
+        font-size: 10px;
+        padding-right: 1px;
+    }
+
+    .suppliers-grid.list-view .supplier-tags {
+        margin: 0;
+        gap: 3px;
+    }
+
+    .suppliers-grid.list-view .tag {
+        font-size: 8px;
+        padding: 0 4px;
+        margin-right: 0;
+    }
+}
+    </style>
+</head>
+<body class="theme1">  
+ 
+ <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+     <i class="fa-solid fa-palette"></i>
+    </button>
+     
+
+   <section id="suppliers" class="section">
+    <div class="container">
+        <div class="suppliers-header">
+            <div class="suppliers-text">
+                <h1 class="suppliers-title"><i class="fa-solid fa-users-rays"></i>دليل الموردين</h1>
+                <p class="suppliers-subtitle">إدارة ومتابعة معلومات الموردين المعتمدين لدينا و بيانات الاتصال لكل مورد</p>
+                <div class="suppliers-stats-container">
+                   <div class="suppliers-stat-box">
+                    <div class="suppliers-stat-number" id="suppliersCount"> 6 </div>
+                      <div class="suppliers-stat-label"> العدد الكلي للموردين </div>
+                    </div> 
+                    <div class="suppliers-stat-box">
+                    <div class="suppliers-stat-number"><i class="fa-solid fa-user-plus"></i></div>
+                        <a href="add-supplier.html" class="suppliers-button">
+                 إضافة مورد جديد ➕</a>                                  
+                    </div>
+                </div>
+            </div>
+         
+</div>
+         
+
+        
+
+        <div class="sup-filters-container">
+            <div class="sup-filters-grid">
+                <div class="sup-filter-group">
+                    <input class="sup-sreach" type="text" id="searchInput" placeholder="&#128269;   ابحث عن مورد " >
+                </div>
+                <div class="sup-filter-group">
+                    <select id="countryFilter" class="sup-filter-select">
+                        <option value="">جميع البلدان</option>
+                        <option value="الصين">الصين</option>
+                        <option value="تركيا">تركيا</option>
+                        <option value="الإمارات">الإمارات</option>
+                    </select>
+                </div>
+                <div class="sup-filter-group">
+                    <select id="industryFilter" class="sup-filter-select">
+                        <option value="">جميع المجالات</option>
+                        <option value="البريكاست">البريكاست</option>
+                        <option value="الماكينات">الماكينات</option>
+                        <option value="خطوط الإنتاج">خطوط الإنتاج</option>
+                        <option value="المعدات الصناعية">المعدات الصناعية</option>
+                    </select>
+                </div>
+                <div class="sup-filter-group">
+                    <button class="sup-clear-filters-btn" onclick="clearSupplierFilters()">مسح الفلاتر</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- إضافة أزرار التبديل بين العروض -->
+        <div class="view-toggle">
+            <button id="gridViewBtn" class="view-btn active">عرض شبكة</button>
+            <button id="listViewBtn" class="view-btn">عرض قائمة</button>
+        </div>
+
+        <div id="suppliersGrid" class="suppliers-grid">
+            <div class="supplier-card" data-supplier-id="1" data-country="الصين" data-industry="الإلكترونيات">
+                <div class="supplier-card-header">
+                <img src="img/company-1.jpg" alt="supplier-logo" class="supplier-logo">
+                    <div class="supplier-details-info">
+                        <h3 class="supplier-name"> شركة غوانغجو للإلكترونيات</h3>
+                        <div class="supplier-tags">
+                            <span class="tag" id="supplier-country"><i class="fa-solid fa-flag"></i> الصين</span>
+                            <span class="tag" id="supplier-category"><i class="fa-solid fa-layer-group"></i>  الإلكترونيات</span>
+                             <span class="tag" id="supplier-serial-number"><i class="fa-solid fa-bookmark"></i>  1</span>
+                        </div>
+                    </div>
+                    <div class="supplier-status-enable"></div>
+                </div>
+                <span class="supplier-user" id="supplier-user"><i class="fa fa-address-book-o" aria-hidden="true"></i>  admin</span>
+                <p class="supplier-description">متخصصون في تصنيع الهواتف المحمولة والأجهزة الإلكترونية</p>
+               <!-- <div class="supplier-contact-info">
+                    <span class="contact-detail">📞 +86 138 0013 8000</span>
+                    <span class="contact-detail">✉️ info@guangzhou-electronics.com</span>
+                </div>-->
+                <button onclick="window.location.href='single-supplier-demo.html'" class="supplier-button">
+                   <i class="fa fa-address-card-o" aria-hidden="true"></i> معلومات المورد
+                </button>
+            </div>
+
+            <div class="supplier-card" data-supplier-id="2" data-country="تركيا" data-industry="المنسوجات">
+                <div class="supplier-card-header">
+                <img src="img/company-2.jpg" alt="supplier-logo" class="supplier-logo">
+                    <div class="supplier-details-info">
+                        <h3 class="supplier-name">مصانع إسطنبول للمنسوجات</h3>
+                        <div class="supplier-tags">
+                            <span class="tag" id="supplier-country"><i class="fa-solid fa-flag"></i> تركيا</span>
+                            <span class="tag" id="supplier-category"><i class="fa-solid fa-layer-group"></i>  المنسوجات</span>
+                             <span class="tag" id="supplier-serial-number"><i class="fa-solid fa-bookmark"></i>  2</span>
+                        </div>
+                    </div>
+                    <div class="supplier-status-disable"></div>
+                </div>
+                <span class="supplier-user" id="supplier-user"><i class="fa fa-address-book-o" aria-hidden="true"></i>  admin</span>
+                <p class="supplier-description">تصنيع الملابس والأقمشة عالية الجودة</p>
+                <!--<div class="supplier-contact-info">
+                    <span class="contact-detail">📞 +90 212 555 0123</span>
+                    <span class="contact-detail">✉️ exports@istanbul-textiles.com</span>
+                </div>-->
+                <button onclick="window.location.href='single-supplier-demo.html'" class="supplier-button">
+                   <i class="fa fa-address-card-o" aria-hidden="true"></i> معلومات المورد
+                </button>
+            </div>
+
+             <div class="supplier-card" data-supplier-id="3" data-country="تركيا" data-industry="المنسوجات">
+                <div class="supplier-card-header">
+                <img src="img/company-3.jpg" alt="supplier-logo" class="supplier-logo">
+                    <div class="supplier-details-info">
+                        <h3 class="supplier-name">مصانع إسطنبول للمنسوجات</h3>
+                        <div class="supplier-tags">
+                            <span class="tag" id="supplier-country"><i class="fa-solid fa-flag"></i> تركيا</span>
+                            <span class="tag" id="supplier-category"><i class="fa-solid fa-layer-group"></i>  المنسوجات</span>
+                             <span class="tag" id="supplier-serial-number"><i class="fa-solid fa-bookmark"></i>  3</span>
+                        </div>
+                    </div>
+                    <div class="supplier-status-enable"></div>
+                </div>
+                <span class="supplier-user" id="supplier-user"><i class="fa fa-address-book-o" aria-hidden="true"></i>  admin</span>
+                <p class="supplier-description">تصنيع الملابس والأقمشة عالية الجودة</p>
+                <!--<div class="supplier-contact-info">
+                    <span class="contact-detail">📞 +90 212 555 0123</span>
+                    <span class="contact-detail">✉️ exports@istanbul-textiles.com</span>
+                </div>-->
+                <button onclick="window.location.href='single-supplier-demo.html'" class="supplier-button">
+                   <i class="fa fa-address-card-o" aria-hidden="true"></i> معلومات المورد
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+            
+                        
+                        
+  
+        
+        
+        
+            <div id="noSuppliers" class="hidden no-suppliers-message">
+                <div class="no-suppliers-icon">🏭</div>
+                <h3 class="no-suppliers-title">لا توجد موردين</h3>
+                <p>لم يتم العثور على موردين يطابقون معايير البحث</p>
+            </div>
+        </div>
+    </section>
+ <script>
+ // Suppliers Functions - وظائف الموردين
+
+let currentSuppliers = [];
+let filteredSuppliers = [];
+
+// تحميل الموردين من قاعدة البيانات
+async function loadSuppliersFromDatabase() {
+    try {
+        if (!window.suppliersService) {
+            console.warn('Suppliers service not available');
+            return;
+        }
+
+        const result = await window.suppliersService.getSuppliers();
+        if (result.success) {
+            currentSuppliers = result.suppliers || [];
+            filteredSuppliers = [...currentSuppliers];
+            renderSuppliers(currentSuppliers);
+        } else {
+            console.error('Error loading suppliers:', result.error);
+        }
+    } catch (error) {
+        console.error('Error loading suppliers:', error);
+    }
+}
+
+// عرض الموردين
+function renderSuppliers(suppliers) {
+    const suppliersGrid = document.getElementById('suppliersGrid');
+    if (!suppliersGrid) return;
+
+    suppliersGrid.innerHTML = '';
+
+    suppliers.forEach(supplier => {
+        const supplierCard = createSupplierCard(supplier);
+        suppliersGrid.appendChild(supplierCard);
+    });
+
+    const noSuppliers = document.getElementById('noSuppliers');
+    if (noSuppliers) {
+        if (!suppliers || suppliers.length === 0) {
+            noSuppliers.classList.remove('hidden');
+        } else {
+            noSuppliers.classList.add('hidden');
+        }
+    }
+}
+
+// إنشاء بطاقة مورد
+function createSupplierCard(supplier) {
+    const card = document.createElement('div');
+    card.className = 'supplier-card';
+    card.setAttribute('data-supplier-id', supplier.id);
+    card.setAttribute('data-country', supplier.country || '');
+    card.setAttribute('data-industry', supplier.industry || '');
+
+    const logoUrl = supplier.logo_url || 'img/company-1.jpg';
+    const statusClass = supplier.status === 'active' ? 'supplier-status-enable' : 'supplier-status-disable';
+    const rating = (supplier.rating != null && supplier.rating !== '') ? supplier.rating : '';
+
+    card.innerHTML = `
+        <div class="supplier-card-header">
+            <img src="${logoUrl}" alt="supplier-logo" class="supplier-logo">
+            <div class="supplier-details-info">
+                <h3 class="supplier-name">${supplier.name} ${rating !== '' ? `<span style='font-size:12px;color:var(--archive-warning-color,#f0b90b);margin-inline-start:8px;'><i class='fa-solid fa-star'></i> ${rating}/5</span>` : ''}</h3>
+                <div class="supplier-tags">
+                    <span class="tag"><i class="fa-solid fa-flag"></i> ${supplier.country || 'غير محدد'}</span>
+                    <span class="tag"><i class="fa-solid fa-layer-group"></i> ${supplier.industry || 'غير محدد'}</span>
+                    <span class="tag"><i class="fa-solid fa-bookmark"></i> ${supplier.id.slice(-4)}</span>
+                </div>
+            </div>
+            <div class="${statusClass}"></div>
+        </div>
+        <span class="supplier-user"><i class="fa fa-address-book-o" aria-hidden="true"></i> ${supplier.users?.username || 'غير محدد'}</span>
+        <p class="supplier-description">${supplier.description || 'لا يوجد وصف'}</p>
+        <button onclick="window.location.href='single-supplier.html?id=${supplier.id}'" class="supplier-button">
+           <i class="fa fa-address-card-o" aria-hidden="true"></i> معلومات المورد
+        </button>
+    `;
+
+    return card;
+}
+
+// فلترة الموردين
+async function filterSuppliers() {
+    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+    const countryFilter = document.getElementById('countryFilter')?.value || '';
+    const industryFilter = document.getElementById('industryFilter')?.value || '';
+
+    filteredSuppliers = currentSuppliers.filter(supplier => {
+        const nameLc = (supplier.name || '').toLowerCase();
+        const descLc = (supplier.description || '').toLowerCase();
+        const country = supplier.country || '';
+        const industry = supplier.industry || '';
+
+        const matchesSearch = !searchTerm || nameLc.includes(searchTerm) || descLc.includes(searchTerm);
+        const matchesCountry = !countryFilter || country === countryFilter;
+
+        const industries = industry.split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+        const matchesIndustry = !industryFilter || industries.includes(industryFilter.trim().toLowerCase());
+
+        return matchesSearch && matchesCountry && matchesIndustry;
+    });
+
+    renderSuppliers(filteredSuppliers);
+}
+
+// مسح الفلاتر
+function clearSupplierFilters() {
+    const searchInput = document.getElementById('searchInput');
+    const countryFilter = document.getElementById('countryFilter');
+    const industryFilter = document.getElementById('industryFilter');
+
+    if (searchInput) searchInput.value = '';
+    if (countryFilter) countryFilter.value = '';
+    if (industryFilter) industryFilter.value = '';
+
+    filterSuppliers();
+}
+
+// تهيئة صفحة الموردين
+document.addEventListener('DOMContentLoaded', async function () {
+    await loadSuppliersFromDatabase();
+
+    // إضافة مستمعي الأحداث
+    const searchInput = document.getElementById('searchInput');
+    const countryFilter = document.getElementById('countryFilter');
+    const industryFilter = document.getElementById('industryFilter');
+
+    if (searchInput) searchInput.addEventListener('input', filterSuppliers);
+    if (countryFilter) countryFilter.addEventListener('change', filterSuppliers);
+    if (industryFilter) industryFilter.addEventListener('change', filterSuppliers);
+
+    // معالجات عرض الشبكة/القائمة
+    const gridBtn = document.getElementById('gridViewBtn');
+    const listBtn = document.getElementById('listViewBtn');
+    const grid = document.getElementById('suppliersGrid');
+
+    if (gridBtn && listBtn && grid) {
+        gridBtn.addEventListener('click', () => {
+            grid.classList.remove('list-view');
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+        });
+        listBtn.addEventListener('click', () => {
+            grid.classList.add('list-view');
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+        });
+    }
+});
+
+ </script>
+
+   
+     
+    <script src="js/filters.js"></script>
+     
+    <script src="js/onclick-handlers.js"></script>
+ 
+    <script src="js/nav.js"></script>
+    
+        <script src="js/theme.js"></script>
+</body>
+</html>

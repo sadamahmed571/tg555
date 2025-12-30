@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المستخدم</title>
+    
+    <!-- ========== قسم خطوط جوجل ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- ========== قسم أيقونات الخطوط ========== -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- ========== قسم أنماط CSS ========== -->
+    <link rel="stylesheet" href="archive.css">
+   
+    
+    <style>
+ 
+@charset "utf-8";
+/* CSS Document - TrustGroupArchives */
+
+/* User Container */
+.single-user-container {
+border-radius: 10px;
+padding: 23px;
+margin: 18px 0;
+width: 100%;
+margin-top: 118px;
+background-color: var(--archive-container-bg-color);
+border: 1px solid var(--archive-border-color);
+}
+
+/* Section Titles */
+.section-title3 {
+background: var(--archive-title-color);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+font-size: 1.3rem;
+margin-bottom: 18px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(--archive-border-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.section-title3 i {
+margin-left: 8px;
+}
+
+/* User Section */
+.single-user-section {
+display: flex;
+align-items: flex-start;
+margin-bottom: 18px;
+padding-bottom: 18px;
+}
+
+.user-profile-column {
+display: flex;
+flex-direction: column; 
+align-items: center; 
+padding-left: 28px;  
+}
+
+.single-user-image {
+width: 138px;
+height: 138px;
+border-radius: 8px;
+object-fit: cover;
+border: 3px solid var(--archive-primary-color);
+margin-right: 0; 
+margin-bottom: 8px;
+opacity: 0.95;
+}
+
+.single-user-info {
+flex: 1; 
+padding-right: 18px; 
+}
+
+.single-user-info h2 {   
+display: none; 
+}
+
+.user-profile-column h2 {
+color: var(--archive-text-color);
+margin-top:11px;
+font-size: 22px;
+font-weight: 300;
+font-family: "BalooBhaijaan2", sans-serif;
+padding-right: 3px;
+}
+
+.user-profile-column i{
+padding-left: 3px;
+font-size: 16px;
+}
+
+/* User Stats */
+.single-user-stats {
+display: flex;
+gap: 38px;
+margin: 13px 0;
+}
+
+.stat-item3 {
+text-align: center;
+height: 113px;
+padding: 3px 8px;
+background-color: var(--archive-container-focus-color);
+border-radius: 6px;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.stat-item3 i{
+font-size:16px;
+font-weight: bold;
+color:var(--archive-text-color);
+margin-top:3px;
+padding-left:3px;
+}
+
+.stat-value {
+font-size:22px;
+font-weight: bold;
+color:var(--archive-text3-color);
+font-family: "BalooBhaijaan2", sans-serif;
+margin-top:8px;
+font-weight: 600;
+}
+
+.stat-value2 {
+font-size:28px;
+font-weight: 600;
+color:var(--archive-text3-color);
+font-family: "BalooBhaijaan2", sans-serif;
+margin-top:6px;
+font-weight: 600;
+}
+
+.stat-value3 {
+font-size:13px;
+font-weight: 200;
+color:var(--archive-text3-color);
+font-family: "BalooBhaijaan2", sans-serif;
+margin-top:13px;
+font-weight: 500;
+}
+
+.stat-label {
+font-size:17px;
+color: var(--archive-text-color);
+font-weight:850;
+font-family: "BalooBhaijaan2", sans-serif;
+margin-top:3px;
+}
+
+/* Action Buttons */
+.single-user-action-buttons {
+display: flex;
+gap:18px;
+margin-top: 33px;
+margin-right: 0; 
+flex-wrap: wrap;
+}
+
+.single-user-action-buttons i{
+font-size:11px;
+padding-left:2px;
+color: var(--archive-light-color);
+vertical-align: middle;
+}
+
+.btn {
+padding: 5px 13px;
+border-radius: 3px;
+border: none;
+cursor: pointer;
+font-size: 13px ;
+font-weight:700;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+gap: 3px;
+opacity: 0.9;
+}
+
+.btn-primary {
+background: var(--archive-button-color);
+color: var(--archive-light-color);
+}
+
+.btn-primary:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.btn-secondary {
+background: var(--archive-extra-color);
+color: var(--archive-light-color);
+}
+
+.btn-secondary:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.btn-danger {
+background: var(--archive-extra6-color);
+color: var(--archive-light-color);
+}
+
+.btn-danger:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.btn-tasx {
+background: var(--archive-extra2-color);
+color: var(--archive-light-color);
+}
+
+.btn-tasx:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.btn-hounr {
+background: var(--archive-extra3-color);
+color: var(--archive-light-color);
+}
+
+.btn-hounr:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+/* Info Grid */
+.info-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
+gap: 18px;
+margin-top: 18px;
+}
+
+.info-section-title {
+background: var(--archive-title-color);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+font-size: 25px;
+margin-top: 28px;
+padding : 0;
+border-top: 1px solid var(--archive-border-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.info-section-title h2 {
+color: var(--archive-primary-color);
+margin-top:11px;
+margin-right:38px;
+font-size: 21px;
+font-weight: 600;
+padding-right: 3px;
+}
+
+.edit-btn {
+background: var(--archive-button-color);
+color: var(--archive-light-color);
+border: none;
+padding: 4px 13px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.3s ease;
+opacity: 0.9;
+font-weight: 700;
+}
+
+.edit-btn i{
+padding-left: 3px;
+font-size: 11px;
+color: var(--archive-light-color);
+vertical-align: middle;
+margin-bottom: 1px;
+}
+
+.edit-btn:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.info-item3 {
+background-color: var(--archive-container-focus-color);
+padding: 8px;
+border-radius: 8px 0 0 8px;
+border-right: 2px solid var(--archive-border-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+} 
+
+.info-label {
+font-size: 15px;
+color: var(--archive-text-color);
+font-weight:850;
+}
+
+.info-label::before {
+content: " 「 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 700;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-left: 0;
+}
+
+.info-label::after {
+content: " 」 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 700;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-right: 1px;
+}
+
+.info-value {
+font-weight: 500;
+color: var(--archive-text2-color);      
+font-size: 14px;
+padding-top: 5px;
+margin-right: 13px;
+}
+
+.info-value2 {
+font-weight: 200;
+color: var(--archive-text2-color);      
+font-size: 14px;
+padding-top: 5px;
+margin-right: 13px;
+font-family: "BalooBhaijaan2", sans-serif;
+}
+
+/* Contact Grid */
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+gap: 23px;
+margin-top: 18px;
+padding-bottom: 38px;
+}
+
+.contact-section-title {
+background: var(--archive-title-color);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+font-size: 25px;
+margin-top: 63px;
+padding : 0;
+border-top: 1px solid var(--archive-border-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.contact-section-title h2 {
+color: var(--archive-primary-color);
+margin-top:11px;
+margin-right:38px;
+font-size: 21px;
+font-weight: 600;
+padding-right: 3px;
+}
+
+.edit-btn2 {
+background: var(--archive-button-color);
+color: var(--archive-light-color);
+border: none;
+padding: 4px 13px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.3s ease;
+opacity: 0.9;
+font-weight: 700;
+}
+
+.edit-btn2 i{
+padding-left: 3px;
+font-size: 11px;
+color: var(--archive-light-color);
+vertical-align: middle;
+margin-bottom: 1px;
+}
+.edit-btn2:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.contact-item3 {
+background-color: var(--archive-container-focus-color);
+padding: 8px;
+border-radius: 8px 0 0 8px;
+border-right: 2px solid var(--archive-border-color);
+display: flex;
+justify-content: space-between;
+align-items: center;
+} 
+
+.contact-label {
+font-size: 15px;
+color: var(--archive-text-color);
+font-weight: 850;
+}
+
+.contact-label::before {
+content: " 「 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 500;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-left: 0;
+}
+
+.contact-label::after {
+content: " 」 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 500;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-right: 1px;
+}
+
+.contact-value {
+font-weight: 500;
+color: var(--archive-text2-color);      
+font-size: 13px;
+padding-top: 5px;
+margin-right: 13px;
+}
+
+.contact-value2 {
+font-weight: 200;
+color: var(--archive-text2-color);      
+font-size: 13px;
+padding-top: 5px;
+margin-right: 13px;
+font-family: "BalooBhaijaan2", sans-serif;
+}
+
+/* Bio section */
+.bio-box {
+background: var(--archive-container-focus-color);
+border: 1px solid var(--archive-border-color);
+border-radius: 8px;
+padding: 13px;
+margin-top: 13px;
+}
+.bio-text { color: var(--archive-text2-color); line-height: 1.8; font-size: 13px; }
+
+/* phone list for extra numbers */
+.phone-list { margin: 6px 0 0; padding-right: 16px; list-style: disc; color: var(--archive-text2-color); }
+.phone-list li { margin-bottom: 2px; }
+
+.contact-btn {
+background: var(--archive-extra2-color);
+color: var(--archive-light-color);
+border: none;
+width: 33px;
+height: 33px;
+font-size: 13px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-left: 5px;  
+opacity: 0.9;
+}
+
+.b-icon {        
+font-size: 17px;
+} 
+
+.contact-btn:hover {
+opacity: 1;
+transform: scale(1.1);
+background: var(--archive-extra-color);
+}
+
+/* Modal Styles */
+.single-user-modal {
+display : none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+z-index: 1000;
+align-items: center;
+justify-content: center;
+}
+
+.single-user-modal-content {
+background-color: var(--archive-container-bg-color);
+padding: 23px;
+border-radius: 8px;
+width: 90%;
+max-width: 498px;
+border: 1px solid var(--archive-border-color);
+}
+
+.single-user-modal-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 18px;
+border-bottom: 1px solid var(--archive-border-color);
+padding-bottom: 8px;
+}
+
+.single-user-modal-title {
+color: var(--archive-primary-color);
+font-size: 20px;
+}
+
+.single-user-close-btn {
+background: none;
+border: none;
+color: var(--archive-extra6-color);
+font-size: 30px;
+cursor: pointer;
+opacity: 0.9;
+}
+
+.single-user-close-btn:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+.single-user-form-group {
+margin-bottom: 18px;
+}
+
+.single-user-form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 600;
+color: var(--archive-text-color);      
+font-size: 16px;
+margin-right: 50px;
+}
+
+.single-user-form-group label::before {
+content: " 「 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 600;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-left: 0;
+}
+
+.single-user-form-group label::after {
+content: " 」 ";  
+font-family: "Font Awesome 5 Free";  
+font-weight: 600;
+color: var(--archive-text-color);      
+font-size: 15px;
+padding-right: 1px;
+}
+
+.single-user-form-control {
+width: 100%;
+padding: 8px;
+background-color: var(--archive-container-focus-color);
+border: 1px solid var(--archive-border-color);
+border-radius: 3px;
+color: var(--archive-text3-color);
+}
+
+.single-user-form-control:focus {
+outline: none;
+border-color: var(--archive-border-hover-color);
+}
+
+textarea.single-user-form-control {
+min-height: 118px;
+resize: vertical;
+}
+
+.single-user-modal-footer {
+display: flex;
+justify-content: flex-end;
+gap: 8px;
+margin-top: 18px;
+}
+
+/* Back Section */
+.back3-section {
+text-align: center;
+padding: 18px;
+margin-top: 58px;
+}
+
+.back3-btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 23px;
+background:var(--archive-button-color);
+color: var(--archive-light-color) ;
+border: none;
+border-radius: 6px;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s;
+text-decoration: none;
+opacity: 0.95;
+}
+
+.back3-btn i{
+font-size: 12px;
+}
+
+.back3-btn:hover {
+opacity: 1;
+transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+
+/* For screens up to 990px */
+@media (max-width: 990px) {
+    body {
+        padding: 13px;
+    }
+
+    .single-user-container {
+        padding: 18px;
+        margin-top: 98px;
+		
+    }
+
+    .section-title3 {
+        font-size: 1.1rem;
+    }
+
+    .single-user-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-profile-column {
+        padding-left: 0;
+    }
+
+    .single-user-image {
+        width: 118px;
+        height: 118px;
+    }
+
+    .user-profile-column h2 {
+        font-size: 22px;
+    }
+
+    .user-profile-column i {
+        font-size: 16px;
+    }
+    .single-user-info {
+       flex: 1; 
+       padding-right: 0; 
+    }
+    .single-user-stats {
+         grid-template-columns: repeat(3, 1fr);
+        gap: 23px;
+    }
+
+    .stat-item3 {
+        height: 88px;
+    }
+
+    .stat-item3 i {
+        font-size: 14px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+		margin-top:6px;
+    }
+
+    .stat-value2 {
+        font-size: 23px;
+		margin-top:6px;
+    }
+
+    .stat-value3 {
+        font-size: 12px;
+		margin-top:13px;
+		margin-bottom:8px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+		font-weight: 500;
+    }
+
+    .single-user-action-buttons i {
+        font-size: 11px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    .info-section-title {
+        font-size: 22px;
+    }
+
+    .info-section-title h2 {
+        font-size: 20px;
+    }
+
+    .edit-btn {
+        font-size: 13px;
+		padding:3px 13px;
+    }
+
+    .edit-btn i {
+        font-size: 10px;
+		margin-bottom: 0;
+    }
+
+    .info-label {
+        font-size: 15px;
+		font-weight: 900;
+    }
+
+    .info-label::before, .info-label::after {
+        font-size: 14px;
+    }
+
+    .info-value {
+        font-size: 14px;
+    }
+
+    .info-value2 {
+        font-size: 13px;
+    }
+
+    .contact-section-title {
+        font-size: 22px;
+    }
+
+    .contact-section-title h2 {
+        font-size: 20px;
+    }
+
+    .edit-btn2 {
+        font-size: 13px;
+		padding:3px 13px;
+    }
+
+    .edit-btn2 i {
+        font-size: 10px;
+		margin-bottom: 0;
+    }
+
+    .contact-label {
+        font-size: 15px;
+		font-weight: 900;
+    }
+
+    .contact-label::before, .contact-label::after {
+        font-size: 14px;
+    }
+
+    .contact-value {
+        font-size: 13px;
+    }
+
+    .contact-value2 {
+        font-size: 12px;
+    }
+
+    .contact-btn {
+        font-size: 12px;
+		margin-left: 23px;
+    }
+
+    .b-icon {
+        font-size: 16px;
+    }
+
+    .single-user-modal-title {
+        font-size: 20px;
+    }
+
+    .single-user-close-btn {
+        font-size: 26px;
+    }
+
+    .single-user-form-group label {
+        font-size: 16px;
+    }
+
+    .single-user-form-group label::before, .single-user-form-group label::after {
+        font-size: 15px;
+    }
+
+    .back3-btn {
+        font-size: 15px;
+    }
+
+    .back3-btn i {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 13px;
+    }
+
+    .single-user-container {
+        padding: 13px;
+        margin-top: 118px;
+    }
+
+    .section-title3 {
+        font-size: 1rem;
+    }
+
+    .single-user-image {
+        width: 98px;
+        height: 98px;
+		margin-top: 13px;
+    }
+
+    .user-profile-column h2 {
+        font-size: 21px;
+    }
+
+    .user-profile-column i {
+        font-size: 14px;
+    }
+    .single-user-stats {
+       display: flex;
+        gap: 13px;
+       margin-top: 23px  ;
+     }
+    .stat-item3 {
+        height: 118px;
+    }
+
+    .stat-item3 i {
+        font-size: 13px;
+    }
+
+    .stat-value {
+        font-size: 19px;
+		margin-top:6px;
+		font-weight: 500;
+    }
+
+    .stat-value2 {
+        font-size: 21px;
+		margin-top:6px;
+		font-weight: 500;
+    }
+
+    .stat-value3 {
+        font-size: 10px;
+		margin-top:8px;
+		margin-bottom:3px;
+		font-weight: 400;
+    }
+
+    .stat-label {
+        font-size: 15px;
+		font-weight: 500;
+    }
+
+    .stat-label {
+        font-size: 14px;
+		margin-top: 6px;
+    }
+
+    .single-user-action-buttons {
+        gap: 18px;
+		justify-content: center;
+		align-items: center;
+    }
+
+    .single-user-action-buttons i {
+        font-size: 10px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    }
+
+    .info-section-title {
+        font-size: 20px;
+    }
+
+    .info-section-title h2 {
+        font-size: 18px;
+    }
+
+    .edit-btn {
+        font-size: 13px;
+        padding: 3px 14px;
+    }
+
+    .edit-btn i {
+        font-size: 10px;
+    }
+
+    .info-label {
+        font-size: 15px;
+    }
+
+    .info-label::before, .info-label::after {
+        font-size: 14px;
+    }
+
+    .info-value {
+        font-size: 13px;
+    }
+
+    .info-value2 {
+        font-size: 13px;
+    }
+
+    .contact-grid {
+       grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .contact-section-title {
+        font-size: 20px;
+    }
+
+    .contact-section-title h2 {
+        font-size: 18px;
+    }
+
+    .edit-btn2 {
+        font-size: 13px;
+        padding: 3px 14px;
+    }
+
+    .edit-btn2 i {
+        font-size: 10px;
+    }
+	.contact-item3 {
+        padding: 5px;
+    }
+
+
+    .contact-label {
+        font-size: 14px;
+    }
+
+    .contact-label::before, .contact-label::after {
+        font-size: 13px;
+    }
+
+    .contact-value {
+        font-size: 12px;
+		margin-right: 3px;
+    }
+
+    .contact-value2 {
+        font-size: 12px;
+		margin-right: 3px;
+    }
+
+    .contact-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+		margin-left: 1px;
+    }
+
+    .b-icon {
+        font-size: 12px;
+    }
+
+    .single-user-modal-content {
+        padding: 18px;
+    }
+
+    .single-user-modal-title {
+        font-size: 16px;
+    }
+
+    .single-user-close-btn {
+        font-size: 22px;
+    }
+
+    .single-user-form-group label {
+        font-size: 12px;
+    }
+
+    .single-user-form-group label::before, .single-user-form-group label::after {
+        font-size: 12px;
+    }
+
+    .back3-btn {
+        font-size: 14px;
+        padding: 6px 18px;
+    }
+
+    .back3-btn i {
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For screens up to 480px */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .single-user-container {
+        padding: 8px;
+        margin-top: 108px;
+    }
+
+    .section-title3 {
+        font-size: 0.9rem;
+    }
+
+    .single-user-image {
+        width: 98px;
+        height: 98px;
+		margin-top: 23px;
+    }
+
+    .user-profile-column h2 {
+        font-size: 19px;
+    }
+
+    .user-profile-column i {
+        font-size: 14px;
+    }
+     .single-user-stats {
+       display: flex;
+        gap: 13px;
+       margin-top: 23px  ;
+     }
+    .stat-item3 {
+        height: 118px;
+    }
+
+    .stat-item3 i {
+        font-size: 13px;
+    }
+
+    .stat-value {
+        font-size: 18px;
+		margin-top:6px;
+		font-weight: 450;
+    }
+
+    .stat-value2 {
+        font-size: 21px;
+		margin-top:6px;
+		font-weight: 450;
+    }
+
+    .stat-value3 {
+        font-size: 10px;
+		margin-top:8px;
+		margin-bottom:3px;
+		font-weight: 400;
+    }
+
+    .stat-label {
+        font-size: 12px;
+		font-weight: 500;
+		margin-top: 6px;
+    }
+
+    
+
+     .single-user-action-buttons {
+        gap: 10px;
+		justify-content: center;
+		align-items: center;
+    }
+
+    .single-user-action-buttons i {
+        font-size: 9px;
+    }
+
+    .btn {
+        font-size: 11px;
+        padding: 4px 13px;
+    }
+
+    .info-section-title {
+        font-size: 20px;
+    }
+
+    .info-section-title h2 {
+        font-size: 17px;
+    }
+
+    .edit-btn {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .edit-btn i {
+        font-size: 9px;
+    }
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    } 
+	
+	.info-item3 {
+        padding: 6px;
+    }
+    .info-label {
+        font-size: 14px;
+    }
+
+    .info-label::before, .info-label::after {
+        font-size: 12px;
+    }
+
+    .info-value {
+        font-size: 12px;
+    }
+
+    .info-value2 {
+        font-size: 11px;
+    }
+    
+	
+	 .contact-grid {
+       grid-template-columns: repeat(1, 1fr);
+        gap: 8px;
+    }
+	
+	
+    .contact-section-title {
+        font-size: 20px;
+    }
+
+    .contact-section-title h2 {
+        font-size: 17px;
+    }
+
+    .edit-btn2 {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .edit-btn2 i {
+        font-size: 9px;
+    }
+    .contact-item3 {
+        width: 90%;
+		margin:0 auto;
+		padding: 8px;
+    } 
+    .contact-label {
+        font-size: 14px;
+    }
+
+    .contact-label::before, .contact-label::after {
+        font-size: 13px;
+    }
+
+    .contact-value {
+        font-size: 13px;
+		margin-right: 12px;
+    }
+
+    .contact-value2 {
+        font-size: 12px;
+		margin-right: 12px;
+    }
+
+    .contact-btn {
+        width: 33px;
+        height: 33px;
+        font-size: 12px;
+		margin-left: 18px;
+    }
+
+    .b-icon {
+        font-size: 15px;
+    }
+
+    .single-user-modal-content {
+        padding: 13px;
+        width: 95%;
+    }
+
+    .single-user-modal-title {
+        font-size: 14px;
+    }
+
+    .single-user-close-btn {
+        font-size: 18px;
+    }
+
+    .single-user-form-group label {
+        font-size: 11px;
+    }
+
+    .single-user-form-group label::before, .single-user-form-group label::after {
+        font-size: 11px;
+    }
+
+    .back3-btn {
+        font-size: 13px;
+        padding: 4px 13px;
+    }
+
+    .back3-btn i {
+        font-size: 8px;
+		margin-left: 1px;
+    }
+}
+
+
+
+
+
+/* For screens up to 380px */
+@media (max-width: 380px) {
+    body {
+        padding: 3px;
+    }
+
+    .single-user-container {
+        padding: 6px;
+        margin-top: 48px;
+    }
+
+    .section-title3 {
+        font-size: 0.8rem;
+    }
+
+    .single-user-image {
+        width: 68px;
+        height: 68px;
+    }
+
+    .user-profile-column h2 {
+        font-size: 14px;
+    }
+
+    .user-profile-column i {
+        font-size: 8px;
+    }
+
+    .stat-item3 {
+        height: 68px;
+        padding: 0 4px;
+    }
+
+    .stat-item3 i {
+        font-size: 8px;
+    }
+
+    .stat-value {
+        font-size: 14px;
+    }
+
+    .stat-value2 {
+        font-size: 20px;
+    }
+
+    .stat-value3 {
+        font-size: 9px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    .single-user-action-buttons {
+        gap: 6px;
+    }
+
+    .single-user-action-buttons i {
+        font-size: 7px;
+    }
+
+    .btn {
+        font-size: 9px;
+        padding: 0 6px;
+    }
+
+    .info-section-title {
+        font-size: 16px;
+    }
+
+    .info-section-title h2 {
+        font-size: 12px;
+    }
+
+    .edit-btn {
+        font-size: 9px;
+        padding: 0 6px;
+    }
+
+    .edit-btn i {
+        font-size: 7px;
+    }
+
+    .info-label {
+        font-size: 10px;
+    }
+
+    .info-label::before, .info-label::after {
+        font-size: 10px;
+    }
+
+    .info-value {
+        font-size: 9px;
+    }
+
+    .info-value2 {
+        font-size: 9px;
+    }
+
+    .contact-section-title {
+        font-size: 16px;
+    }
+
+    .contact-section-title h2 {
+        font-size: 12px;
+    }
+
+    .edit-btn2 {
+        font-size: 9px;
+        padding: 0 6px;
+    }
+
+    .edit-btn2 i {
+        font-size: 7px;
+    }
+
+    .contact-label {
+        font-size: 10px;
+    }
+
+    .contact-label::before, .contact-label::after {
+        font-size: 10px;
+    }
+
+    .contact-value {
+        font-size: 8px;
+    }
+
+    .contact-value2 {
+        font-size: 8px;
+    }
+
+    .contact-btn {
+        width: 23px;
+        height: 23px;
+        font-size: 9px;
+    }
+
+    .b-icon {
+        font-size: 10px;
+    }
+
+    .single-user-modal-content {
+        padding: 8px;
+        width: 100%;
+    }
+
+    .single-user-modal-title {
+        font-size: 12px;
+    }
+
+    .single-user-close-btn {
+        font-size: 16px;
+    }
+
+    .single-user-form-group label {
+        font-size: 10px;
+    }
+
+    .single-user-form-group label::before, .single-user-form-group label::after {
+        font-size: 10px;
+    }
+
+    .back3-btn {
+        font-size: 9px;
+        padding: 3px 10px;
+    }
+
+    .back3-btn i {
+        font-size: 5px;
+    }
+}     
+ 
+    </style>
+</head>
+<body class="theme1">  
+ 
+ <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+     <i class="fa-solid fa-palette"></i>
+    </button>
+    
+    <!-- ========== المحتوى الرئيسي ========== -->
+    <main>
+        <div class="single-user-container">
+            
+            <!-- ========== قسم الملف الشخصي ========== -->
+            <div class="single-user-section" id="userHeaderSection">
+                <div class="user-profile-column">
+                    <img id="userAvatar" src="img/user.png" alt="صورة المستخدم" class="single-user-image">
+                    <h2 id="userDisplayName"><i class="fas fa-user"></i> ...</h2>
+                </div>
+
+                <div class="single-user-info">
+                    <!-- إحصائيات المستخدم -->
+                    <div class="single-user-stats">
+                        <div class="stat-item3">
+                            <div class="stat-label">
+                                <i class="fas fa-trophy" aria-hidden="true"></i> النقاط المحققة
+                            </div>
+                            <div class="stat-value" id="userPoints">0</div>
+                        </div>
+                        <div class="stat-item3">
+                            <div class="stat-label">
+                                <i class="fas fa-box" aria-hidden="true"></i> المنتجات المضافة
+                            </div>
+                            <div class="stat-value2" id="userProductsCount">0</div>
+                        </div>
+                        <div class="stat-item3">
+                            <div class="stat-label">
+                                <i class="fas fa-clock" aria-hidden="true"></i> آخـــــر تـــــواجــــد
+                            </div>
+                            <div class="stat-value3" id="userLastSeen">N/A</div>
+                        </div>
+                    </div>
+                    
+                    <!-- أزرار الإجراءات -->
+                    <div class="single-user-action-buttons">
+                        <button class="btn btn-primary" id="editUserBtn"><i class="fa-solid fa-id-card"></i> تعديل بيانات المستخدم</button>
+                        <button class="btn btn-secondary" id="freezeUserBtn"><i class="fas fa-lock"></i> تجميد العضوية</button>
+                        <button class="btn btn-danger" id="deleteUserBtn"><i class="fas fa-trash"></i> حذف المستخدم</button>
+                        <button class="btn btn-tasx" id="sendTaskBtn"><i class="fas fa-paper-plane"></i> إرسال مهمة</button>
+                        <button class="btn btn-hounr" id="honorUserBtn"><i class="fas fa-award"></i> تكريم المستخدم</button>
+                        <button class="btn btn-primary" id="givePointBtn"><i class="fas fa-plus-circle"></i> منح نقطة</button>
+                        <button class="btn btn-warning" id="managePointsBtn"><i class="fas fa-cog"></i> إدارة النقاط</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== قسم المعلومات الأساسية ========== -->
+            <div class="info-section-title" id="basicInfoHeader">
+                <h2><i class="fas fa-info-circle"></i> المعلومات الأساسية</h2>
+                <button class="edit-btn" id="basicInfoEditBtn"><i class="fas fa-edit"></i> تعديل</button>
+            </div>
+            
+            <div class="info-grid" id="basicInfoGrid">
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">الاسم كاملاً</div>
+                        <div class="info-value" id="fullName">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">الاسم الأول</div>
+                        <div class="info-value" id="firstName">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">اسم العائلة</div>
+                        <div class="info-value" id="lastName">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">البلد</div>
+                        <div class="info-value" id="country">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">العمر</div>
+                        <div class="info-value" id="age">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">تاريخ الميلاد</div>
+                        <div class="info-value" id="birthDate">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">الجنس</div>
+                        <div class="info-value" id="gender">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">السكن</div>
+                        <div class="info-value" id="address">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">اسم المستخدم</div>
+                        <div class="info-value2" id="username">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">الدور</div>
+                        <div class="info-value2" id="userRole">...</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">كلمة المرور</div>
+                        <div class="info-value2" id="password">••••••••</div>
+                    </div>
+                </div>
+                <div class="info-item3">
+                    <div>
+                        <div class="info-label">تاريخ الانضمام</div>
+                        <div class="info-value2" id="joinedAt">...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== قسم معلومات التواصل ========== -->
+            <div class="contact-section-title" id="contactInfoHeader">
+                <h2><i class="fas fa-address-book"></i> معلومات التواصل</h2>
+                <button class="edit-btn2" id="contactInfoEditBtn"><i class="fas fa-edit"></i> تعديل</button>
+            </div>
+            
+            <div class="contact-grid" id="contactInfoGrid">
+                <div class="contact-item3">
+                    <div>
+                        <div class="contact-label">رقم الهاتف</div>
+                        <div class="contact-value2" id="phone">...</div>
+                    </div>
+                    <button class="contact-btn" id="callBtn"><i class="fas fa-phone-alt"></i></button>
+                </div>
+                <div class="contact-item3">
+                    <div>
+                        <div class="contact-label">أرقام هواتف إضافية</div>
+                        <ul class="phone-list" id="phonesList">
+                            <!-- <li>+967 7xx xxx xxx</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-item3">
+                    <div>
+                        <div class="contact-label">البريد الإلكتروني</div>
+                        <div class="contact-value2" id="email">...</div>
+                    </div>
+                    <button class="contact-btn" id="emailBtn"><i class="fas fa-envelope"></i></button>
+                </div>
+                <div class="contact-item3">
+                    <div>
+                        <div class="contact-label">رقم الواتساب</div>
+                        <div class="contact-value2" id="whatsapp">...</div>
+                    </div>
+                    <button class="contact-btn" id="whatsappBtn"><i class="fa-brands fa-whatsapp b-icon"></i></button>
+                </div>
+                <div class="contact-item3">
+                    <div>
+                        <div class="contact-label">ملاحظات</div>
+                        <div class="contact-value" id="notes">...</div>
+                    </div>
+                    <button class="contact-btn" id="notesBtn"><i class="fas fa-sticky-note"></i></button>
+                </div>
+            </div>
+
+            <!-- ========== قسم النبذة الشخصية ========== -->
+            <div class="info-section-title" id="bioSectionHeader">
+                <h2><i class="fas fa-pencil-alt"></i> النبذة الشخصية</h2>
+            </div>
+            <div class="bio-box">
+                <p class="bio-text" id="bio">...</p>
+            </div>
+        </div>
+
+        <!-- ========== نافذة إدارة النقاط ========== -->
+        <div id="pointsModal" class="single-user-modal" aria-hidden="true">
+            <div class="single-user-modal-content">
+                <div class="single-user-modal-header">
+                    <h3 class="single-user-modal-title"><i class="fas fa-star"></i> إدارة النقاط</h3>
+                    <button class="single-user-close-btn" id="pointsCloseBtn">&times;</button>
+                </div>
+                
+                <div class="single-user-form-group">
+                    <label>النقاط الحالية: <span id="currentPointsDisplay">0</span></label>
+                </div>
+                
+                <div class="single-user-form-group">
+                    <label for="pointsAction">اختر الإجراء</label>
+                    <select id="pointsAction" class="single-user-form-control">
+                        <option value="">اختر الإجراء</option>
+                        <option value="deduct">خصم نقاط</option>
+                        <option value="reset">تصفير جميع النقاط</option>
+                    </select>
+                </div>
+                
+                <div class="single-user-form-group hidden" id="deductAmountGroup">
+                    <label for="deductAmount">عدد النقاط المراد خصمها</label>
+                    <input type="number" id="deductAmount" class="single-user-form-control" min="1" placeholder="أدخل عدد النقاط">
+                </div>
+                
+                <div class="single-user-modal-footer">
+                    <button class="btn btn-danger" id="cancelPointsBtn">إلغاء</button>
+                    <button class="btn btn-primary" id="confirmPointsBtn">تنفيذ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== نافذة إرسال المهمة ========== -->
+        <div id="taskModal" class="single-user-modal" aria-hidden="true">
+            <div class="single-user-modal-content">
+                <div class="single-user-modal-header">
+                    <h3 class="single-user-modal-title"><i class="fas fa-tasks"></i> إرسال مهمة جديدة</h3>
+                    <button class="single-user-close-btn" id="taskCloseBtn">&times;</button>
+                </div>
+                
+                <div class="single-user-form-group">
+                    <label for="taskTitle">عنوان المهمة</label>
+                    <input type="text" id="taskTitle" class="single-user-form-control" placeholder="أدخل عنوان المهمة">
+                </div>
+                
+                <div class="single-user-form-group">
+                    <label for="taskDeadline">موعد التسليم</label>
+                    <input type="text" id="taskDeadline" class="single-user-form-control" placeholder="حدد موعد انجاز المهمة (اختياري)">
+                </div>
+                
+                <div class="single-user-form-group">
+                    <label for="taskDescription">وصف المهمة</label>
+                    <textarea id="taskDescription" class="single-user-form-control" placeholder="أدخل وصف المهمة أو الرسالة"></textarea>
+                </div>
+                
+                <div class="single-user-modal-footer">
+                    <button class="btn btn-danger" id="cancelTaskBtn">إلغاء</button>
+                    <button class="btn btn-primary" id="confirmSendTaskBtn">إرسال</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== زر العودة ========== -->
+        <div class="back3-section">
+            <a href="archive-admin-panal.html" class="back3-btn">
+                <i class="fa fa-angle-double-right"></i> العودة الى صفحة الادارة
+            </a>
+        </div>
+    </main>
+
+     
+    
+     <script src="js/filters.js"></script>
+     
+    <script src="js/onclick-handlers.js"></script>
+ 
+    <script src="js/nav.js"></script>
+    
+        <script src="js/theme.js"></script>
+</body>
+</html>

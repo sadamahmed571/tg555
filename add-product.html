@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>إضافة منتج جديد</title>
+        
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <!-- css Stylesheet -->
+    <link rel="stylesheet" href="css/archive.css">
+    
+
+    <style>
+        /* CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Main Container */
+        .product-container {
+            max-width: 1000px;
+            margin: 98px auto 28px;
+            padding: 0 18px;
+            color: var(--archive-text2-color);
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: var(--archive-container-bg-color);
+            border-radius: 0 0 15px 15px;
+            border: none;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .product-header {
+            padding: 23px 28px;
+            border-bottom: none;
+            background: var(--archive-container-focus-color);
+        }
+
+        .product-title {
+            font-size: 25px;
+            background: var(--archive-title-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .product-body {
+            padding: 28px;
+        }
+
+        /* Form Styles */
+        .product-form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+
+        .product-form-group {
+            margin-bottom: 18px;
+        }
+
+        .product-form-label {
+            display: block;
+            color: var(--archive-text-color);
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        .product-form-label i {
+            margin-left: 1px;
+            font-size: 12px;
+        }
+
+        .product-form-input,
+        .product-form-select,
+        .product-form-textarea {
+            width: 100%;
+            padding: 6px 10px;
+            border: 1px solid var(--archive-border-hover-color);
+            border-radius: 6px;
+            background-color: var(--archive-container-focus-color);
+            color: var(--archive-text2-color);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 13px;
+            transition: all 0.3s;
+            max-width: 100%;
+        }
+
+        .product-form-input:focus,
+        .product-form-select:focus,
+        .product-form-textarea:focus {
+            outline: none;
+            border-color: var(--archive-text-color);
+        }
+
+        .product-form-input::placeholder,
+        .product-form-textarea::placeholder {
+            color: var(--archive-border-hover-color);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Sections */
+        .product-section {
+            margin-bottom: 33px;
+            padding: 18px;
+            border-radius: 10px;
+            background-color: var(--archive-container-bg-color);
+            border: none;
+        }
+
+        .product-section-title {
+            color: var(--archive-primary-color);
+            font-size: 19px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--archive-border-color);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* File Upload */
+        .product-file-container {
+            position: relative;
+        }
+
+        .product-file-input {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .product-file-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px;
+            border: 2px dashed var(--archive-border-color);
+            border-radius: 8px;
+            background-color: var(--archive-container-focus-color);
+            color: var(--archive-border-hover-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-height: 118px;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .product-file-label:hover {
+            border-color: var(--archive-text-color);
+            color: var(--archive-text2-color);
+        }
+
+        .file-info {
+            margin-top: 8px;
+            font-size: 15px;
+            color: var(--archive-primary-color);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* Utilities */
+        .w100 { width: 98px; }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .gap10 { gap: 8px; }
+        .hint { display: block; color: #ffb700; }
+        .p15 { padding: 13px; }
+        .mt20 { margin-top: 18px; }
+        .mt10 { margin-top: 8px; }
+        .auto { width: auto; }
+        .p10-15 { padding: 8px 13px; }
+
+        /* Image Preview */
+        .product-image-previews {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 13px;
+            margin-top: 18px;
+        }
+
+        .product-image-preview {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 118px;
+        }
+
+        .product-image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image-remove {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            background: var(--archive-extra6-color);
+            color: var(--archive-light-color);
+            border: none;
+            border-radius: 50%;
+            width: 23px;
+            height: 23px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dynamic Fields */
+        .product-dynamic-container {
+            margin-top: 13px;
+            width: 100%;
+        }
+
+        .product-field-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .product-field-input {
+            flex: 1;
+            min-width: 0; /* لمنع التجاوز */
+        }
+
+        .product-add-btn,
+        .product-remove-btn {
+            background: var(--archive-border-color);
+            color: var(--archive-light-color);
+            border: none;
+            border-radius: 6px;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .product-add-btn {
+            background: var(--archive-button-color);
+        }
+
+        .product-add-btn:hover {
+            background: var(--archive-title-color);
+        }
+
+        .product-remove-btn {
+            background: var(--archive-extra6-color);
+        }
+
+        .product-remove-btn:hover {
+            background: var(--archive-extra4-color);
+        }
+
+        /* Suppliers Section */
+        .product-suppliers-container {
+            margin-top: 18px;
+        }
+
+        .product-supplier-card {
+            background-color: var(--archive-container-bg-color);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 18px;
+            border: none;
+            width: 100%;
+        }
+
+        .product-supplier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--archive-border-color);
+        }
+
+        .product-supplier-title {
+            color: var(--archive-primary-color);
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 13px;
+            margin-top: 13px;
+        }
+
+        .product-price-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-price-label {
+            color: var(--archive-text-color);
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+
+        .product-price-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .product-price-input input {
+            flex: 1;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            min-width: 0;
+        }
+
+        .product-currency {
+            padding: 0 10px;
+            background: var(--archive-border-color);
+            color: var(--archive-text2-color);
+            border: 1px solid var(--archive-border-color);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Checkbox and Radio */
+        .product-checkbox-group,
+        .product-radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 13px;
+        }
+
+        .product-checkbox-label,
+        .product-radio-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: var(--archive-text2-color);
+        }
+
+        .product-checkbox-input,
+        .product-radio-input {
+            accent-color: var(--archive-primary-color);
+        }
+
+        /* Form Actions */
+        .product-form-actions {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid var(--archive-border-color);
+            width: 100%;
+        }
+
+        .product-submit-btn,
+        .product-reset-btn,
+        .product-cancel-btn {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: 'Vazirmatn', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .product-submit-btn {
+            background: var(--archive-button-color);
+            color: var(--archive-light-color);
+        }
+
+        .product-submit-btn:hover {
+            background: var(--archive-title-color);
+            transform: translateY(-2px);
+        }
+
+        .product-reset-btn {
+            background: var(--archive-third-color);
+            color: var(--archive-light-color);
+        }
+
+        .product-reset-btn:hover {
+            background: var(--archive-extra6-color);
+        }
+
+        .product-cancel-btn {
+            background: var(--archive-extra6-color);
+            color: var(--archive-light-color);
+            text-decoration: none;
+        }
+
+        .product-cancel-btn:hover {
+            background: var(--archive-third-color);
+        }
+
+        /* New Fields */
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px;
+        }
+
+        /* Keywords */
+        .hidden { display: none; }
+        .keywords-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 50px;
+            width: 100%;
+        }
+        .keyword-tag {
+            background: #e3f2fd;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .keyword-remove-btn {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 2px;
+        }
+        .keyword-input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            min-width: 150px;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        .form-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            width: 100%;
+        }
+        .form-message.success { background: #d4edda; color: #155724; display: block; }
+        .form-message.error { background: #f8d7da; color: #721c24; display: block; }
+
+        /* ==================== */
+        /* RESPONSIVE DESIGN */
+        /* ==================== */
+
+        /* شاشات 990px فأصغر */
+        @media (max-width: 990px) {
+            .product-container {
+                margin: 78px auto 23px;
+                padding: 0 13px;
+            }
+            
+            .product-header {
+                padding: 18px 23px;
+            }
+            
+            .product-title {
+                font-size: 22px;
+            }
+            
+            .product-body {
+                padding: 23px;
+            }
+            
+            .product-form-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .product-section {
+                padding: 16px;
+                margin-bottom: 28px;
+            }
+            
+            .product-section-title {
+                font-size: 17px;
+                margin-bottom: 16px;
+            }
+            
+            .product-form-label {
+                font-size: 15px;
+            }
+            
+            .product-form-input,
+            .product-form-select,
+            .product-form-textarea {
+                font-size: 12px;
+                padding: 5px 9px;
+            }
+            
+            .product-details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-price-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .product-supplier-card {
+                padding: 16px;
+            }
+            
+            .product-supplier-title {
+                font-size: 16px;
+            }
+            
+            .product-form-actions {
+                margin-top: 23px;
+                padding-top: 16px;
+            }
+            
+            .product-submit-btn,
+            .product-reset-btn,
+            .product-cancel-btn {
+                font-size: 10px;
+                padding: 4px 10px;
+            }
+        }
+
+        /* شاشات 768px فأصغر */
+        @media (max-width: 768px) {
+            .product-container {
+                margin: 73px 0 18px 0;
+                padding: 0 10px;
+                width: 100%;
+            }
+            
+            .product-header {
+                padding: 16px 15px;
+                margin: 0 -10px;
+                border-radius: 0;
+                width: calc(100% + 20px);
+            }
+            
+            .product-title {
+                font-size: 20px;
+                flex-direction: column;
+                gap: 3px;
+                text-align: center;
+            }
+            
+            .product-body {
+                padding: 18px 10px;
+                margin: 0;
+            }
+            
+            .product-form-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin: 0;
+            }
+            
+            .product-section {
+                padding: 13px 10px;
+                margin-bottom: 23px;
+                border-radius: 0;
+            }
+            
+            .product-section-title {
+                font-size: 16px;
+                margin-bottom: 13px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            
+            .product-form-label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            
+            .product-form-input,
+            .product-form-select,
+            .product-form-textarea {
+                font-size: 12px;
+                padding: 8px 10px;
+                width: 100%;
+            }
+            
+            .product-details-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .product-file-label {
+                min-height: 98px;
+                padding: 10px;
+                width: 100%;
+            }
+            
+            .file-info {
+                font-size: 13px;
+            }
+            
+            .product-image-previews {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+            
+            .product-image-preview {
+                height: 98px;
+            }
+            
+            .product-field-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                width: 100%;
+            }
+            
+            .product-add-btn,
+            .product-remove-btn {
+                width: 100%;
+                height: 38px;
+            }
+            
+            .product-supplier-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .product-supplier-title {
+                font-size: 15px;
+            }
+            
+            .product-price-label {
+                font-size: 14px;
+            }
+            
+            .product-checkbox-group,
+            .product-radio-group {
+                gap: 10px;
+            }
+            
+            .product-form-actions {
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 18px;
+                padding-top: 13px;
+            }
+            
+            .product-submit-btn,
+            .product-reset-btn,
+            .product-cancel-btn {
+                font-size: 10px;
+                padding: 12px;
+                width: 100%;
+                min-height: 44px;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-price-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* شاشات 480px فأصغر */
+        @media (max-width: 480px) {
+            .product-container {
+                margin: 68px 0 13px 0;
+                padding: 0 8px;
+                min-width: 100%;
+            }
+            
+            .product-header {
+                padding: 13px 10px;
+                margin: 0 -8px;
+                width: calc(100% + 16px);
+            }
+            
+            .product-body {
+                padding: 13px 5px;
+            }
+            
+            .product-title {
+                font-size: 18px;
+                text-align: center;
+                padding: 0 5px;
+            }
+            
+            .product-section {
+                padding: 10px 8px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+            }
+            
+            .product-section-title {
+                font-size: 16px;
+                padding: 0 0 8px 0;
+                margin: 0 0 15px 0;
+            }
+            
+            .product-form-label {
+                font-size: 13px;
+            }
+            
+            .product-form-label i {
+                font-size: 12px;
+            }
+            
+            .product-form-input,
+            .product-form-select,
+            .product-form-textarea {
+                font-size: 11px;
+                padding: 8px 10px;
+                width: 100%;
+            }
+            
+            .product-file-label {
+                min-height: 88px;
+                padding: 8px;
+                font-size: 12px;
+                width: 100%;
+            }
+            
+            .file-info {
+                font-size: 12px;
+            }
+            
+            .product-image-previews {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 8px;
+            }
+            
+            .product-image-preview {
+                height: 78px;
+            }
+            
+            .product-image-remove {
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+            }
+            
+            .product-supplier-card {
+                padding: 13px;
+            }
+            
+            .product-supplier-title {
+                font-size: 14px;
+            }
+            
+            .product-price-label {
+                font-size: 13px;
+            }
+            
+            .product-currency {
+                font-size: 12px;
+                padding: 0 8px;
+                min-width: 60px;
+            }
+            
+            .product-checkbox-group,
+            .product-radio-group {
+                gap: 8px;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            
+            .product-field-group {
+                flex-wrap: wrap;
+            }
+            
+            .product-price-input {
+                width: 100%;
+            }
+            
+            .product-submit-btn,
+            .product-reset-btn,
+            .product-cancel-btn {
+                font-size: 10px;
+                padding: 12px;
+                width: 100%;
+            }
+            
+            .keywords-tags {
+                padding: 8px;
+            }
+            
+            .keyword-input {
+                min-width: 100px;
+                font-size: 13px;
+            }
+        }
+
+        /* شاشات 380px فأصغر */
+        @media (max-width: 380px) {
+            .product-container {
+                margin: 58px 0 10px 0;
+                padding: 0 5px;
+            }
+            
+            .product-header {
+                padding: 10px 8px;
+                margin: 0 -5px;
+                width: calc(100% + 10px);
+            }
+            
+            .product-body {
+                padding: 10px 3px;
+            }
+            
+            .product-title {
+                font-size: 16px;
+            }
+            
+            .product-section {
+                padding: 8px 5px;
+            }
+            
+            .product-section-title {
+                font-size: 15px;
+            }
+            
+            .product-form-label {
+                font-size: 12px;
+            }
+            
+            .product-form-input,
+            .product-form-select,
+            .product-form-textarea {
+                font-size: 10px;
+                padding: 8px 10px;
+            }
+            
+            .product-file-label {
+                min-height: 78px;
+                padding: 15px 10px;
+                font-size: 11px;
+            }
+            
+            .product-image-previews {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-image-preview {
+                height: 68px;
+            }
+            
+            .product-supplier-card {
+                padding: 10px;
+            }
+            
+            .product-add-btn,
+            .product-remove-btn {
+                width: 100%;
+                height: 40px;
+            }
+            
+            .product-submit-btn,
+            .product-reset-btn,
+            .product-cancel-btn {
+                font-size: 10px;
+                padding: 12px;
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+        }
+
+        /* تحسين تجربة اللمس */
+        @media (max-width: 768px) {
+            .product-submit-btn,
+            .product-reset-btn,
+            .product-cancel-btn,
+            .product-add-btn,
+            .product-remove-btn {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+        }
+    </style>
+</head>
+<body class="theme1">  
+    <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-header">
+                <h1 class="product-title"><i class="fas fa-cube"></i> إضافة منتج جديد</h1>
+            </div>
+            
+            <div class="product-body">
+                <form id="productForm" class="product-form">
+                    <!-- استيراد الذكاء الاصطناعي -->
+                    <div class="product-section" id="ai-import-section">
+                        <h2 class="product-section-title"><i class="fas fa-robot"></i> الاستيراد بالذكاء الاصطناعي</h2>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="importUrl">
+                                <i class="fas fa-link"></i> رابط المنتج (للاستيراد التلقائي)
+                            </label>
+                            <input type="url" id="importUrl" class="product-form-input" placeholder="https://example.com/product-page">
+                        </div>
+                        
+                        <button type="button" class="product-submit-btn" onclick="importProductData()">
+                            <i class="fas fa-download"></i> استيراد بيانات المنتج
+                        </button>
+                    </div>
+
+                    <!-- القسم 1: المعلومات الأساسية والتصنيف -->
+                    <div class="product-section" id="section-1">
+                        <h2 class="product-section-title"><i class="fas fa-info-circle"></i> المعلومات الأساسية والتصنيف</h2>
+                        
+                        <div class="product-form-grid">
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productName">
+                                    <i class="fas fa-tag"></i> اسم المنتج *
+                                </label>
+                                <input type="text" id="productName" name="productName" class="product-form-input" placeholder="أدخل اسم المنتج" required>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productCategory">
+                                    <i class="fas fa-folder"></i> الفئة الرئيسية *
+                                </label>
+                                <select id="productCategory" name="productCategory" class="product-form-input" required>
+                                    <option value="">اختر الفئة الرئيسية</option>
+                                    <option value="الماكينات">الماكينات</option>
+                                    <option value="خطوط الإنتاج">خطوط الإنتاج</option>
+                                    <option value="المعدات الصناعية">المعدات الصناعية</option>
+                                    <option value="بناء حديث">بناء حديث</option>
+                                </select>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productSubCategory">
+                                    <i class="fas fa-folder-open"></i> الفئة الفرعية
+                                </label>
+                                <select id="productSubCategory" name="productSubCategory" class="product-form-input">
+                                    <option value="">اختر الفئة الفرعية</option>
+                                    <optgroup label="البريكاست">
+                                        <option value="جدران">جدران</option>
+                                        <option value="أرضيات">أرضيات</option>
+                                        <option value="سلالم">سلالم</option>
+                                    </optgroup>
+                                    <optgroup label="الماكينات">
+                                        <option value="ماكينات CNC">ماكينات CNC</option>
+                                        <option value="ماكينات لحام">ماكينات لحام</option>
+                                        <option value="ماكينات قطع">ماكينات قطع</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productBrand">
+                                    <i class="fas fa-copyright"></i> العلامة التجارية
+                                </label>
+                                <input type="text" id="productBrand" name="productBrand" class="product-form-input" placeholder="أدخل العلامة التجارية">
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productModel">
+                                    <i class="fas fa-cube"></i> الموديل
+                                </label>
+                                <input type="text" id="productModel" name="productModel" class="product-form-input" placeholder="أدخل موديل المنتج">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productType">
+                                    <i class="fas fa-cubes"></i> نوع المنتج
+                                </label>
+                                <input type="text" id="productType" name="productType" class="product-form-input" placeholder="مثال: صناعي، بناء، زراعي">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productSKU">
+                                    <i class="fas fa-barcode"></i> الرقم التسلسلي للمخزون (SKU)
+                                </label>
+                                <input type="text" id="productSKU" name="productSKU" class="product-form-input" placeholder="سيتم إنشاؤه تلقائياً" readonly>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="sku2">
+                                    <i class="fas fa-barcode"></i> SKU 2
+                                </label>
+                                <input type="text" id="sku2" name="sku2" class="product-form-input" placeholder="الرقم التسلسلي الإضافي">
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="countryOfOrigin">
+                                    <i class="fas fa-globe"></i> بلد المنشأ
+                                </label>
+                                <input type="text" id="countryOfOrigin" name="countryOfOrigin" class="product-form-input" placeholder="بلد تصنيع المنتج">
+                            </div>
+                        </div>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="productDescription">
+                                <i class="fas fa-align-left"></i> وصف المنتج (الوظيفة والتطبيق) *
+                            </label>
+                            <textarea id="productDescription" name="productDescription" class="product-form-textarea" rows="4" placeholder="وصف المنتج يركز على وظيفته الأساسية وكيف يُستخدم في المجال الصناعي" required></textarea>
+                        </div>
+                    </div>
+    
+                    <!-- القسم 2: المواصفات الفنية والتقنية -->
+                    <div class="product-section" id="section-2">
+                        <h2 class="product-section-title"><i class="fas fa-cogs"></i> المواصفات الفنية والتقنية</h2>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label">
+                                <i class="fas fa-tasks"></i> التطبيق والاستخدامات
+                            </label>
+                            <div class="product-dynamic-container" id="usagesContainer">
+                                <div class="product-field-group" data-index="0">
+                                    <input type="text" name="usages[]" class="product-form-input product-field-input" placeholder="أضف تطبيق أو استخدام رئيسي">
+                                    <button type="button" class="product-remove-btn" onclick="removeDynamicField(this)">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="product-add-btn auto p10-15" onclick="addDynamicField('usagesContainer', 'استخدام جديد')">
+                                <i class="fas fa-plus"></i> إضافة استخدام
+                            </button>
+                        </div>
+
+                        <div class="product-form-grid">
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productWeight">
+                                    <i class="fas fa-weight-hanging"></i> الوزن الصافي
+                                </label>
+                                <div class="product-field-group">
+                                    <input type="number" id="productWeight" name="productWeight" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                                    <select name="weightUnit" class="product-form-select w100">
+                                        <option value="كجم">كجم</option>
+                                        <option value="طن">طن</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="electricalVoltage">
+                                    <i class="fas fa-bolt"></i> متطلبات الطاقة (الجهد)
+                                </label>
+                                <div class="product-field-group">
+                                    <input type="number" id="electricalVoltage" name="electricalVoltage" class="product-form-input" placeholder="الجهد (مثال: 380)" step="1" min="0">
+                                    <span class="product-unit">V</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="electricalConsumption">
+                                    <i class="fas fa-plug"></i> متطلبات الطاقة (الاستهلاك)
+                                </label>
+                                <div class="product-field-group">
+                                    <input type="number" id="electricalConsumption" name="electricalConsumption" class="product-form-input" placeholder="الاستهلاك (مثال: 55)" step="0.1" min="0">
+                                    <span class="product-unit">kW</span>
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productionCapacity">
+                                    <i class="fas fa-chart-line"></i> السعة / الكفاءة الإنتاجية
+                                </label>
+                                <input type="text" id="productionCapacity" name="productionCapacity" class="product-form-input" placeholder="مثال: 100 متر مكعب/ساعة">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="mainMaterial">
+                                    <i class="fas fa-flask"></i> المواد الإنشائية الأساسية
+                                </label>
+                                <input type="text" id="mainMaterial" name="mainMaterial" class="product-form-input" placeholder="مثال: فولاذ مقاوم للصدأ، ألمنيوم">
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="qualityStandards">
+                                    <i class="fas fa-certificate"></i> معايير الجودة والاعتماد
+                                </label>
+                                <input type="text" id="qualityStandards" name="qualityStandards" class="product-form-input" placeholder="مثال: ISO 9001، شهادة CE">
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="warranty">
+                                    <i class="fas fa-shield-alt"></i> الضمان
+                                </label>
+                                <select id="warranty" name="warranty" class="product-form-input">
+                                    <option value="">اختر مدة الضمان</option>
+                                    <option value="6 أشهر">6 أشهر</option>
+                                    <option value="1 سنة">1 سنة</option>
+                                    <option value="2 سنوات">2 سنوات</option>
+                                    <option value="3 سنوات">3 سنوات</option>
+                                    <option value="custom">مخصص</option>
+                                </select>
+                                <input type="text" id="warrantyCustom" name="warrantyCustom" class="product-form-input mt10 hidden" placeholder="أدخل مدة الضمان المخصصة">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productColors">
+                                    <i class="fas fa-palette"></i> الألوان المتاحة
+                                </label>
+                                <input type="text" id="productColors" name="productColors" class="product-form-input" placeholder="أدخل الألوان مفصولة بفواصل">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="shippingStatus">
+                                    <i class="fas fa-shipping-fast"></i> حالة الشحن
+                                </label>
+                                <select id="shippingStatus" name="shippingStatus" class="product-form-input">
+                                    <option value="متوفر">متوفر</option>
+                                    <option value="غير متوفر">غير متوفر</option>
+                                    <option value="تحت الطلب">تحت الطلب</option>
+                                </select>
+                            </div>
+
+                            <div class="product-form-group full-width">
+                                <label class="product-form-label" for="basicComponents">
+                                    <i class="fas fa-clipboard-list"></i> مكونات المنتج الأساسية (قائمة سريعة)
+                                </label>
+                                <input type="text" id="basicComponents" name="basicComponents" class="product-form-input" placeholder="أدخل المكونات مفصولة بفواصل (مثال: محرك، جسم معدني، نظام تحكم PLC)">
+                            </div>
+                        </div>
+
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label">
+                                <i class="fas fa-ruler-combined"></i> الأبعاد الهندسية (متر)
+                            </label>
+                            <div class="product-form-grid grid-3 gap10">
+                                <input type="number" id="productLength" name="productLength" class="product-form-input" placeholder="الطول (م)" step="0.01" min="0">
+                                <input type="number" id="productWidth" name="productWidth" class="product-form-input" placeholder="العرض (م)" step="0.01" min="0">
+                                <input type="number" id="productHeight" name="productHeight" class="product-form-input" placeholder="الارتفاع (م)" step="0.01" min="0">
+                            </div>
+                        </div>
+
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label">
+                                <i class="fas fa-list"></i> الميزات التقنية الإضافية
+                            </label>
+                            <div class="product-dynamic-container" id="featuresContainer">
+                                <div class="product-field-group" data-index="0">
+                                    <input type="text" name="features[]" class="product-form-input product-field-input" placeholder="أضف ميزة تقنية جديدة">
+                                    <button type="button" class="product-remove-btn" onclick="removeDynamicField(this)">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="product-add-btn auto p10-15" onclick="addDynamicField('featuresContainer', 'ميزة جديدة')">
+                                <i class="fas fa-plus"></i> إضافة ميزة
+                            </button>
+                        </div>
+
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label">
+                                <i class="fas fa-exclamation-triangle"></i> ملاحظات على المنتج (عيوب)
+                            </label>
+                            <div class="product-dynamic-container" id="negativePointsContainer">
+                                <div class="product-field-group" data-index="0">
+                                    <input type="text" name="negativePoints[]" class="product-form-input product-field-input" placeholder="أضف سلبية أو نقطة ضعف">
+                                    <button type="button" class="product-remove-btn" onclick="removeDynamicField(this)">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="product-add-btn auto p10-15" onclick="addDynamicField('negativePointsContainer', 'سلبية جديدة')">
+                                <i class="fas fa-plus"></i> إضافة سلبية
+                            </button>
+                        </div>
+                    </div>
+    
+                    <!-- القسم 3: التسعير والشروط التجارية -->
+                    <div class="product-section" id="section-3">
+                        <h2 class="product-section-title"><i class="fas fa-money-check-alt"></i> التسعير والشروط التجارية</h2>
+                        
+                        <div class="product-form-grid">
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productCost">
+                                    <i class="fas fa-money-bill"></i> سعر التكلفة (داخلي)
+                                </label>
+                                <div class="product-price-input">
+                                    <span class="product-currency">$</span>
+                                    <input type="number" id="productCost" name="productCost" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="priceFrom">
+                                    <i class="fas fa-dollar-sign"></i> سعر البيع (من)
+                                </label>
+                                <div class="product-price-input">
+                                    <span class="product-currency">$</span>
+                                    <input type="number" id="priceFrom" name="priceFrom" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="priceTo">
+                                    <i class="fas fa-dollar-sign"></i> سعر البيع (إلى)
+                                </label>
+                                <div class="product-price-input">
+                                    <span class="product-currency">$</span>
+                                    <input type="number" id="priceTo" name="priceTo" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="pricingUnit">
+                                    <i class="fas fa-calculator"></i> وحدة التسعير الأساسية
+                                </label>
+                                <select id="pricingUnit" name="pricingUnit" class="product-form-input">
+                                    <option value="piece">قطعة</option>
+                                    <option value="sqm">متر مربع</option>
+                                    <option value="ton">طن</option>
+                                    <option value="meter">متر</option>
+                                    <option value="other">أخرى...</option>
+                                </select>
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="minimumOrderQuantity">
+                                    <i class="fas fa-boxes"></i> الحد الأدنى لكمية الطلب (MOQ)
+                                </label>
+                                <input type="number" id="minimumOrderQuantity" name="minimumOrderQuantity" class="product-form-input" placeholder="مثال: 100" step="1" min="1">
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productDiscount">
+                                    <i class="fas fa-percent"></i> الخصم
+                                </label>
+                                <div class="product-price-input">
+                                    <span class="product-currency">%</span>
+                                    <input type="number" id="productDiscount" name="productDiscount" class="product-form-input" placeholder="0" step="1" min="0" max="100">
+                                </div>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productTax">
+                                    <i class="fas fa-receipt"></i> الضريبة
+                                </label>
+                                <div class="product-price-input">
+                                    <span class="product-currency">%</span>
+                                    <input type="number" id="productTax" name="productTax" class="product-form-input" placeholder="0" step="1" min="0" max="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="paymentTerms">
+                                <i class="fas fa-handshake"></i> شروط الدفع المقترحة
+                            </label>
+                            <select id="paymentTerms" name="paymentTerms" class="product-form-input">
+                                <option value="advance">دفع مقدم (Advance Payment)</option>
+                                <option value="LC">اعتماد مستندي (L/C)</option>
+                                <option value="installments">دفعات على مراحل</option>
+                                <option value="T/T">تحويل بنكي (T/T)</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <!-- القسم 4: المرفقات والتوثيق -->
+                    <div class="product-section" id="section-4">
+                        <h2 class="product-section-title"><i class="fas fa-paperclip"></i> المرفقات والتوثيق</h2>
+                        
+                        <div class="product-form-grid grid-2">
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productImages">
+                                    <i class="fas fa-images"></i> صور المنتج الرئيسية
+                                </label>
+                                <input type="file" id="productImages" name="productImages" class="product-file-input" multiple accept="image/*">
+                                <label for="productImages" class="product-file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i> رفع صور المنتج (متعدد)
+                                </label>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="additionalImages">
+                                    <i class="fas fa-images"></i> صور إضافية
+                                </label>
+                                <input type="file" id="additionalImages" name="additionalImages" class="product-file-input" multiple accept="image/*">
+                                <label for="additionalImages" class="product-file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i> رفع صور إضافية
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="product-form-group full-width mt20">
+                            <label class="product-form-label" for="productlink">
+                               <i class="fa fa-link" aria-hidden="true"></i> رابط المنتج
+                            </label>
+                            <input type="url" id="productlink" name="productlink" class="product-form-input" placeholder="https://example.com/product">
+                        </div>
+                        
+                        <div class="product-form-group full-width mt20">
+                            <label class="product-form-label" for="productVideo">
+                                <i class="fab fa-youtube"></i> رابط فيديو للمنتج (YouTube)
+                            </label>
+                            <input type="url" id="productVideo" name="productVideo" class="product-form-input" placeholder="https://www.youtube.com/watch?v=...">
+                        </div>
+
+                        <div class="product-form-grid grid-2">
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productCatalogPdf">
+                                    <i class="fas fa-file-pdf"></i> كاتلوج المنتج (PDF واحد)
+                                </label>
+                                <input type="file" id="productCatalogPdf" name="productCatalogPdf" class="product-file-input" accept=".pdf">
+                                <label for="productCatalogPdf" class="product-file-label">
+                                    <i class="fas fa-upload"></i> رفع ملف الكاتلوج
+                                </label>
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="operationManual">
+                                    <i class="fas fa-book-open"></i> دليل التشغيل والصيانة
+                                </label>
+                                <input type="file" id="operationManual" name="operationManual" class="product-file-input" accept=".pdf,.doc,.docx">
+                                <label for="operationManual" class="product-file-label">
+                                    <i class="fas fa-upload"></i> رفع ملف الدليل
+                                </label>
+                            </div>
+                            
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="qualityCertificates">
+                                    <i class="fas fa-medal"></i> شهادات الجودة والاعتماد
+                                </label>
+                                <input type="file" id="qualityCertificates" name="qualityCertificates" class="product-file-input" multiple accept=".pdf,.jpg,.png">
+                                <label for="qualityCertificates" class="product-file-label">
+                                    <i class="fas fa-upload"></i> رفع الشهادات (متعدد)
+                                </label>
+                            </div>
+
+                            <div class="product-form-group">
+                                <label class="product-form-label" for="productDrawings">
+                                    <i class="fas fa-drafting-compass"></i> رسومات ومخططات المنتج
+                                </label>
+                                <input type="file" id="productDrawings" name="productDrawings" class="product-file-input" accept=".dwg,.dxf,.cad,.zip">
+                                <label for="productDrawings" class="product-file-label">
+                                    <i class="fas fa-upload"></i> رفع ملفات DWG/CAD
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- القسم 5: الموردين والمخزون -->
+                    <div class="product-section" id="section-5">
+                        <h2 class="product-section-title"><i class="fas fa-truck-loading"></i> الموردين والمخزون</h2>
+                        
+                        <div class="product-suppliers-container" id="suppliersContainer">
+                            <div class="product-supplier-card" data-supplier-index="0">
+                                <h3 class="product-supplier-title"><i class="fas fa-star"></i> بيانات المورد والمخزون</h3>
+                                
+                                <div class="product-form-grid">
+                                    <div class="product-form-group">
+                                        <label class="product-form-label" for="mainSupplierSelect_0">
+                                            <i class="fas fa-store"></i> اسم المورد
+                                        </label>
+                                        <select class="product-form-select" name="suppliers[0][type]" onchange="toggleSupplierCustom(this, 0)">
+                                            <option value="">اختر من الموردين المسجلين</option>
+                                            <option value="existing">مورد مسجل</option>
+                                            <option value="custom">إدخال اسم مخصص</option>
+                                        </select>
+                                        <select class="product-form-input mt10" name="suppliers[0][existing]" id="existingSupplier_0" style="display: none;">
+                                            <option value="">اختر المورد</option>
+                                        </select>
+                                        <input type="text" name="suppliers[0][custom]" id="customSupplier_0" class="product-form-input mt10 hidden" placeholder="أدخل اسم المورد الجديد">
+                                    </div>
+                                    
+                                    <div class="product-form-group">
+                                        <label class="product-form-label" for="supplierPrice_0">
+                                            <i class="fas fa-money-bill-alt"></i> سعر الشراء
+                                        </label>
+                                        <div class="product-field-group">
+                                            <input type="number" name="suppliers[0][price]" id="supplierPrice_0" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                                            <span class="product-unit">USD/CNY</span> 
+                                        </div>
+                                    </div>
+
+                                    <div class="product-form-group">
+                                        <label class="product-form-label" for="inventoryQuantity_0">
+                                            <i class="fas fa-warehouse"></i> الكمية في المخزون
+                                        </label>
+                                        <input type="number" name="suppliers[0][quantity]" id="inventoryQuantity_0" class="product-form-input" placeholder="مثال: 500" step="1" min="0">
+                                    </div>
+
+                                    <div class="product-form-group">
+                                        <label class="product-form-label" for="inventoryUnit_0">
+                                            <i class="fas fa-balance-scale"></i> وحدة المخزون
+                                        </label>
+                                        <select name="suppliers[0][unit]" id="inventoryUnit_0" class="product-form-input">
+                                            <option value="عدد">العدد</option>
+                                            <option value="متر">المتر</option>
+                                            <option value="طن">الطن</option>
+                                            <option value="لفة">اللفة</option>
+                                            <option value="other">أخرى...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" class="product-remove-btn mt10" onclick="removeSupplier(this)" style="display: none;">
+                                    <i class="fas fa-trash"></i> حذف المورد
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="product-add-btn auto p10-15" onclick="addSupplier()">
+                            <i class="fas fa-plus"></i> إضافة مورد آخر / مصدر
+                        </button>
+                    </div>
+    
+                    <!-- القسم 6: التسويق -->
+                    <div class="product-section" id="section-6">
+                        <h2 class="product-section-title"><i class="fas fa-bullhorn"></i> التسويق</h2>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="shortDescription">
+                                <i class="fas fa-align-left"></i> الوصف القصير
+                            </label>
+                            <textarea id="shortDescription" name="shortDescription" class="product-form-textarea" rows="3" placeholder="وصف مختصر للمنتج يظهر للعملاء"></textarea>
+                        </div>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="marketingPhrase">
+                                <i class="fas fa-quote-right"></i> الجملة التسويقية
+                            </label>
+                            <input type="text" id="marketingPhrase" name="marketingPhrase" class="product-form-input" placeholder="عبارة تسويقية جذابة للمنتج">
+                        </div>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="badge">
+                                <i class="fas fa-award"></i> الشارة
+                            </label>
+                            <select id="badge" name="badge" class="product-form-input" onchange="toggleBadgeCustom()">
+                                <option value="">اختر شارة</option>
+                                <option value="جديد">جديد</option>
+                                <option value="الأكثر مبيعاً">الأكثر مبيعاً</option>
+                                <option value="عرض خاص">عرض خاص</option>
+                                <option value="محدود">محدود</option>
+                                <option value="custom">مخصص</option>
+                            </select>
+                            <input type="text" id="badgeCustom" name="badgeCustom" class="product-form-input mt10 hidden" placeholder="أدخل الشارة المخصصة">
+                        </div>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label">
+                                <i class="fas fa-key"></i> الكلمات المفتاحية (SEO)
+                            </label>
+                            <div class="keywords-tags" id="keywordsContainer">
+                                <input type="text" id="keywordInput" class="keyword-input" placeholder="أدخل كلمة مفتاحية ثم اضغط Enter">
+                            </div>
+                            <input type="hidden" id="seoKeywords" name="seoKeywords">
+                        </div>
+                    </div>
+    
+                    <!-- القسم 7: إعدادات العرض -->
+                    <div class="product-section" id="section-7">
+                        <h2 class="product-section-title"><i class="fas fa-eye"></i> إعدادات العرض</h2>
+                        
+                        <div class="product-form-group">
+                            <label class="product-form-label" style="cursor: pointer;">
+                                <input type="checkbox" id="showInStore" name="showInStore" checked>
+                                <i class="fas fa-store"></i> عرض في المتجر
+                            </label>
+                        </div>
+                        
+                        <div class="product-form-group full-width">
+                            <label class="product-form-label" for="productNotes">
+                                <i class="fas fa-sticky-note"></i> ملاحظات إضافية (مساحة نصية للموظفين)
+                            </label>
+                            <textarea id="productNotes" name="productNotes" class="product-form-textarea" rows="3" placeholder="ملاحظات داخلية لا تظهر للعملاء (مثل تاريخ الشراء، تحديثات الصيانة)"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="product-form-actions">
+                        <button type="submit" class="product-submit-btn" id="save-product-btn">
+                            <i class="fas fa-save"></i> حفظ المنتج
+                        </button>
+                        <button type="reset" class="product-reset-btn">
+                            <i class="fas fa-redo"></i> مسح النموذج
+                        </button>
+                        <a href="dashboard.html" class="product-cancel-btn">
+                            <i class="fas fa-times"></i> إلغاء
+                        </a>
+                        <div id="form-message" class="form-message hidden mt10"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include page scripts -->
+    <script src="js/theme-init.js"></script>
+    <script src="js/onclick-handlers.js"></script>
+    <script src="js/add-product-page-init.js"></script>
+    <script src="js/form-autosave.js"></script>
+    
+    <!-- Javascript -->
+    <script src="js/nav.js"></script>
+    <script src="js/chat.js"></script>     
+    <script src="js/theme.js"></script>
+    
+    <script>
+        // Add Product Functions - وظائف إضافة منتج
+
+        // إظهار/إخفاء حقل المورد المخصص
+        function toggleCustomSupplier(prefix) {
+            const selectElement = document.querySelector(`#${prefix}Supplier`) || document.querySelector(`select[onchange*="${prefix}"]`);
+            const customInput = document.getElementById(`${prefix}SupplierCustom`);
+
+            if (!selectElement || !customInput) return;
+
+            if (selectElement.value === 'custom') {
+                customInput.style.display = 'block';
+            } else {
+                customInput.style.display = 'none';
+            }
+        }
+
+        // إضافة مورد إضافي
+        function addSupplier() {
+            const suppliersContainer = document.getElementById('suppliersContainer');
+            if (!suppliersContainer) return;
+
+            const supplierCount = suppliersContainer.children.length + 1;
+
+            const supplierElement = document.createElement('div');
+            supplierElement.className = 'product-supplier-card';
+            supplierElement.innerHTML = `
+                <div class="product-supplier-header">
+                    <h3 class="product-supplier-title"><i class="fas fa-truck"></i> مورد إضافي #${supplierCount}</h3>
+                    <button type="button" class="product-remove-btn" onclick="removeSupplier(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="product-form-grid">
+                    <div class="product-form-group">
+                        <label class="product-form-label">
+                            <i class="fas fa-store"></i> اسم المورد
+                        </label>
+                        <select class="product-form-select" onchange="toggleCustomSupplier('additional${supplierCount}')">
+                            <option value="">اختر من الموردين</option>
+                            <option value="1">شركة التقنية الحديثة</option>
+                            <option value="2">مجموعة الهواتف الذكية</option>
+                            <option value="3">شركة الصوتيات المتقدمة</option>
+                            <option value="custom">آخر اكتبه</option>
+                        </select>
+                        <input type="text" id="additional${supplierCount}SupplierCustom" class="product-form-input" placeholder="أدخل اسم المورد الجديد" style="display: none; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label">
+                            <i class="fas fa-link"></i> رابط المنتج
+                        </label>
+                        <input type="url" class="product-form-input" placeholder="https://example.com/product">
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label">
+                            <i class="fas fa-file-pdf"></i> ملف PDF
+                        </label>
+                        <div class="product-file-container">
+                            <input type="file" id="additional${supplierCount}SupplierPdf" class="product-file-input" accept=".pdf">
+                            <label for="additional${supplierCount}SupplierPdf" class="product-file-label" style="min-height: auto; padding: 10px;">
+                                <i class="fas fa-file-upload"></i> رفع ملف PDF
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="product-form-label"><i class="fas fa-money-bill"></i> الأسعار</h4>
+                <div class="product-price-grid">
+                    <div class="product-price-group">
+                        <span class="product-price-label">سعر USD</span>
+                        <div class="product-price-input">
+                            <span class="product-currency">$</span>
+                            <input type="number" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="product-price-group">
+                        <span class="product-price-label">سعر CNY</span>
+                        <div class="product-price-input">
+                            <span class="product-currency">¥</span>
+                            <input type="number" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="product-price-group">
+                        <span class="product-price-label">سعر YER</span>
+                        <div class="product-price-input">
+                            <span class="product-currency">ر.ي</span>
+                            <input type="number" class="product-form-input" placeholder="0.00" step="0.01" min="0">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            suppliersContainer.appendChild(supplierElement);
+            
+            // تعديل الشكل للشاشات الصغيرة
+            if (window.innerWidth <= 768) {
+                const gridElements = supplierElement.querySelectorAll('.product-form-grid, .product-price-grid');
+                gridElements.forEach(element => {
+                    element.style.gridTemplateColumns = '1fr';
+                });
+            }
+        }
+
+        // إزالة مورد
+        function removeSupplier(button) {
+            const container = document.getElementById('suppliersContainer');
+            if (container && container.children.length > 1) {
+                button.closest('.product-supplier-card').remove();
+            } else {
+                alert('يجب أن يكون هناك مورد واحد على الأقل');
+            }
+        }
+
+        // معالج ملف الكتالوج
+        document.addEventListener('DOMContentLoaded', function () {
+            const catalogInput = document.getElementById('productCatalogPdf');
+            const removeBtn = document.getElementById('removeCatalogBtn');
+            const infoBox = document.getElementById('catalogInfo');
+            const nameEl = document.getElementById('catalogName');
+            const sizeEl = document.getElementById('catalogSize');
+
+            if (catalogInput) {
+                catalogInput.addEventListener('change', function () {
+                    const f = this.files && this.files[0];
+                    if (f) {
+                        nameEl.textContent = f.name;
+                        sizeEl.textContent = `(${Math.ceil(f.size / 1024)} KB)`;
+                        infoBox.style.display = '';
+                        removeBtn.style.display = '';
+                    } else {
+                        infoBox.style.display = 'none';
+                        removeBtn.style.display = 'none';
+                        nameEl.textContent = '';
+                        sizeEl.textContent = '';
+                    }
+                });
+            }
+
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function () {
+                    if (!catalogInput) return;
+                    catalogInput.value = '';
+                    infoBox.style.display = 'none';
+                    removeBtn.style.display = 'none';
+                    nameEl.textContent = '';
+                    sizeEl.textContent = '';
+                });
+            }
+
+            // معالج الملفات الإضافية
+            const extraInput = document.getElementById('productExtraFiles');
+            const countEl = document.getElementById('extraFilesCount');
+            const listEl = document.getElementById('extraFilesList');
+
+            if (extraInput) {
+                extraInput.addEventListener('change', function () {
+                    const files = Array.from(this.files || []);
+                    countEl.textContent = files.length;
+                    listEl.innerHTML = '';
+                    files.forEach(file => {
+                        const li = document.createElement('li');
+                        li.style.marginBottom = '6px';
+                        const icon = document.createElement('i');
+                        icon.className = 'fas fa-file';
+                        icon.style.marginLeft = '6px';
+                        icon.style.color = 'var(--archive-primary-color)';
+                        const nameNode = document.createTextNode(file.name + ' ');
+                        const size = document.createElement('small');
+                        size.style.color = '#6b7280';
+                        size.textContent = `(${Math.ceil(file.size / 1024)} KB)`;
+                        li.appendChild(icon);
+                        li.appendChild(nameNode);
+                        li.appendChild(size);
+                        listEl.appendChild(li);
+                    });
+                });
+            }
+
+            // تعديل الشكل للشاشات الصغيرة عند التحميل
+            if (window.innerWidth <= 768) {
+                const grids = document.querySelectorAll('.product-form-grid, .product-price-grid, .product-details-grid');
+                grids.forEach(grid => {
+                    if (grid.classList.contains('grid-2') || grid.classList.contains('grid-3')) {
+                        grid.style.gridTemplateColumns = '1fr';
+                    }
+                });
+                
+                // تعديل الأزرار
+                const buttons = document.querySelectorAll('.product-add-btn, .product-remove-btn');
+                buttons.forEach(btn => {
+                    if (btn.classList.contains('auto')) {
+                        btn.style.width = '100%';
+                        btn.style.height = '40px';
+                    }
+                });
+            }
+
+            // تعديل الشكل عند تغيير حجم النافذة
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 768) {
+                    const grids = document.querySelectorAll('.product-form-grid, .product-price-grid, .product-details-grid');
+                    grids.forEach(grid => {
+                        if (grid.classList.contains('grid-2') || grid.classList.contains('grid-3')) {
+                            grid.style.gridTemplateColumns = '1fr';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

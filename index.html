@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة الثقة التجارية - جاري التحميل</title>
+    <style>
+        /* تنسيق لتوسيط وتجميل شاشة التحميل */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f3f7;
+            color: #ff6600;
+            text-align: center;
+        }
+		.logo  {
+            margin :0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+			padding-bottom:  35px;
+        }
+
+       
+
+        .logo  img {
+            width: 155px;
+            height: 155px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+			 margin :0 auto;
+        }
+
+        /* تنسيق Spinner (عنصر التحميل الدائري) */
+        .spinner {
+            border: 8px solid #ff8534;
+            border-top: 8px solid #ff6600; /* لون حركة الدوران */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.2s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        /* الحركة الكرتونية للدوران */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .store-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff6600;
+        }
+    </style>
+    <script>
+        // تحديد الحد الفاصل: الشاشات الأكبر من 768px هي سطح مكتب
+        const breakpoint = 768; 
+        
+        // مسارات المجلدات المحدثة
+        const desktopFolder = "archive-board.html"; 
+        const mobileFolder = "archive-board.html";
+
+        function redirectUser() {
+            // عرض الشاشة الحالي
+            const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            if (screenWidth > breakpoint) {
+                // شاشة كبيرة (سطح مكتب)
+                window.location.replace(desktopFolder);
+            } else {
+                // شاشة صغيرة (هاتف/جهاز لوحي)
+                window.location.replace(mobileFolder);
+            }
+        }
+        
+        // تأخير بسيط (1000 مللي ثانية = ثانية واحدة) لإتاحة ظهور شاشة التحميل
+        window.onload = function() {
+            setTimeout(redirectUser, 1000); 
+        };
+    </script>
+</head>
+<body>
+<div class="logo">
+                    <img src="logo.png" alt="مجموعة الثقة التجارية">
+                </div>
+    <div class="spinner"></div>
+    <div class="store-name">مجموعة الثقة التجارية</div>
+    <p>جاري التحميل، يرجى الانتظار...</p>
+</body>
+</html>

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة عرض سعر جديد</title>
+        
+   
+         <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+        
+        
+         <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        
+        <!-- css Stylesheet -->
+   <link rel="stylesheet" href="archive.css">
+       
+
+    <style>
+ 
+ /* CSS Reset */
+
+/* Main Container */
+.product-container {
+    max-width: 1000px;
+    margin: 98px auto 28px;
+    padding: 0 18px;
+	color:var(--archive-text2-color);
+}
+
+.product-card {
+    background-color: var(--archive-container-bg-color);
+    border-radius: 0 0 15px 15px;
+    border: none;
+    overflow: hidden;
+}
+
+.product-header {
+    padding: 23px 28px;
+    border-bottom: none;
+    background: var(--archive-container-focus-color);
+}
+
+.product-title {
+    font-size: 25px;
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.product-body {
+    padding: 28px;
+}
+
+/* Form Styles */
+.product-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.product-form-group {
+    margin-bottom: 18px;
+}
+
+.product-form-label {
+    display: block;
+    color: var(--archive-text-color);
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.product-form-label i {
+    margin-left: 1px;
+    font-size: 12px;
+}
+
+.product-form-input,
+.product-form-select,
+.product-form-textarea {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--archive-border-hover-color);
+    border-radius: 6px;
+    background-color: var(--archive-container-focus-color);
+    color: var(--archive-text2-color);
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.product-form-input:focus,
+.product-form-select:focus,
+.product-form-textarea:focus {
+    outline: none;
+    border-color: var(--archive-text-color);
+}
+
+.product-form-input::placeholder,
+.product-form-textarea::placeholder {
+    color: var(--archive-border-hover-color);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Sections */
+.product-section {
+    margin-bottom: 33px;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: var(--archive-container-bg-color);
+    border: none;
+}
+
+.product-section-title {
+    color: var(--archive-primary-color);
+    font-size: 19px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--archive-border-color);
+    display: flex;
+	flex-direction:row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* File Upload */
+.product-file-container {
+    position: relative;
+}
+
+.product-file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.product-file-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px;
+    border: 2px dashed var(--archive-border-color);
+    border-radius: 8px;
+    background-color: var(--archive-container-focus-color);
+    color: var(--archive-border-hover-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    min-height: 118px;
+    flex-direction: column;
+}
+
+.product-file-label:hover {
+    border-color: var(--archive-text-color);
+    color: var(--archive-text2-color);
+}
+
+.file-info {
+    margin-top: 8px;
+    font-size: 15px;
+    color: var(--archive-primary-color);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Utilities extracted from inline styles in add-product.html */
+.w100 { width: 98px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.gap10 { gap: 8px; }
+.hint { display: block; color: #ffb700; }
+.p15 { padding: 13px; }
+.mt20 { margin-top: 18px; }
+.mt10 { margin-top: 8px; }
+.auto { width: auto; }
+.p10-15 { padding: 8px 13px; }
+
+/* Image Preview */
+.product-image-previews {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 13px;
+    margin-top: 18px;
+}
+
+.product-image-preview {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 118px;
+}
+
+.product-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-image-remove {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: var(--archive-extra6-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dynamic Fields */
+.product-dynamic-container {
+    margin-top: 13px;
+}
+
+.product-field-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.product-field-input {
+    flex: 1;
+}
+
+.product-add-btn,
+.product-remove-btn {
+    background: var(--archive-border-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 6px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.product-add-btn {
+    background: var(--archive-button-color);
+}
+
+.product-add-btn:hover {
+    background: var(--archive-title-color);
+}
+
+.product-remove-btn {
+    background: var(--archive-extra6-color);
+}
+
+.product-remove-btn:hover {
+    background: var(--archive-extra4-color);
+}
+
+/* Suppliers Section */
+.product-suppliers-container {
+    margin-top: 18px;
+}
+
+.product-supplier-card {
+    background-color: var(--archive-container-bg-color);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+    border: none;
+}
+
+.product-supplier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--archive-border-color);
+}
+
+.product-supplier-title {
+    color: var(--archive-primary-color);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.product-price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 13px;
+    margin-top: 13px;
+}
+
+.product-price-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-price-label {
+    color: var(--archive-text-color);
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+
+.product-price-input {
+    display: flex;
+    align-items: center;
+}
+
+.product-price-input input {
+    flex: 1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.product-currency {
+    padding: 0 10px;
+    background: var(--archive-border-color);
+    color: var(--archive-text2-color);
+    border: 1px solid var(--archive-border-color);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Checkbox and Radio */
+.product-checkbox-group,
+.product-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 13px;
+}
+
+.product-checkbox-label,
+.product-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: var(--archive-text2-color);
+}
+
+.product-checkbox-input,
+.product-radio-input {
+    accent-color: var(--archive-primary-color);
+}
+
+/* Form Actions */
+.product-form-actions {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--archive-border-color);
+}
+
+.product-submit-btn,
+.product-reset-btn,
+.product-cancel-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Vazirmatn', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.product-submit-btn {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+}
+
+.product-submit-btn:hover {
+    background: var(--archive-title-color);
+    transform: translateY(-2px);
+}
+
+.product-reset-btn {
+    background: var(--archive-third-color);
+    color: var(--archive-light-color);
+}
+
+.product-reset-btn:hover {
+    background: var(--archive-extra6-color);
+}
+
+.product-cancel-btn {
+    background: var(--archive-extra6-color);
+    color: var(--archive-light-color);
+    text-decoration: none;
+}
+
+.product-cancel-btn:hover {
+    background: var(--archive-third-color);
+}
+
+/* New Fields */
+.product-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+/* ==================== */
+/* RESPONSIVE DESIGN */
+/* ==================== */
+
+/* شاشات 990px فأصغر */
+@media (max-width: 990px) {
+    .product-container {
+        margin:78px auto 23px;
+        padding: 0 13px;
+    }
+    
+    .product-header {
+        padding: 18px 23px;
+    }
+    
+    .product-title {
+        font-size: 22px;
+    }
+    
+    .product-body {
+        padding: 23px;
+    }
+    
+    .product-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .product-section {
+        padding: 16px;
+        margin-bottom: 28px;
+    }
+    
+    .product-section-title {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+    
+    .product-form-label {
+        font-size: 15px;
+    }
+    
+    .product-form-input,
+    .product-form-select,
+    .product-form-textarea {
+        font-size: 12px;
+        padding: 5px 9px;
+    }
+    
+    .product-details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-price-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .product-supplier-card {
+        padding: 16px;
+    }
+    
+    .product-supplier-title {
+        font-size: 16px;
+    }
+    
+    .product-form-actions {
+        margin-top: 23px;
+        padding-top: 16px;
+    }
+    
+    .product-submit-btn,
+    .product-reset-btn,
+    .product-cancel-btn {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+
+/* شاشات 768px فأصغر */
+@media (max-width: 768px) {
+    .product-container {
+        margin: 73px auto 18px;
+        padding: 0 3px;
+    }
+    
+    .product-header {
+        padding: 16px 8px;
+    }
+    
+    .product-title {
+        font-size: 20px;
+        flex-direction: column;
+        gap: 3px;
+        text-align: center;
+    }
+    
+    .product-body {
+        padding: 18px;
+    }
+    
+    .product-form-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .product-section {
+        padding: 13px;
+        margin-bottom: 23px;
+    }
+    
+    .product-section-title {
+        font-size: 16px;
+        margin-bottom: 13px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .product-form-label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .product-form-input,
+    .product-form-select,
+    .product-form-textarea {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .product-details-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .product-file-label {
+        min-height: 98px;
+        padding: 10px;
+    }
+    
+    .file-info {
+        font-size: 13px;
+    }
+    
+    .product-image-previews {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .product-image-preview {
+        height: 98px;
+    }
+    
+    .product-field-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+    
+    .product-add-btn,
+    .product-remove-btn {
+        width: 100%;
+        height: 38px;
+    }
+    
+    .product-supplier-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .product-supplier-title {
+        font-size: 15px;
+    }
+    
+    .product-price-label {
+        font-size: 14px;
+    }
+    
+    .product-checkbox-group,
+    .product-radio-group {
+        gap: 10px;
+    }
+    
+    .product-form-actions {
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 18px;
+        padding-top: 13px;
+    }
+    
+    .product-submit-btn,
+    .product-reset-btn,
+    .product-cancel-btn {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+
+/* شاشات 480px فأصغر */
+@media (max-width: 480px) {
+    .product-container {
+        margin: 68px auto 13px;
+        padding: 0 8px;
+    }
+    
+    .product-header {
+        padding: 13px;
+    }
+    
+    .product-title {
+        font-size: 18px;
+    }
+    
+    .product-body {
+        padding: 13px;
+    }
+    
+    .product-section {
+        padding: 10px;
+        margin-bottom: 18px;
+    }
+    
+    .product-section-title {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+    }
+    
+    .product-form-label {
+        font-size: 13px;
+    }
+    
+    .product-form-label i {
+        font-size: 12px;
+    }
+    
+    .product-form-input,
+    .product-form-select,
+    .product-form-textarea {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+    
+    .product-file-label {
+        min-height: 88px;
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .file-info {
+        font-size: 12px;
+    }
+    
+    .product-image-previews {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 8px;
+    }
+    
+    .product-image-preview {
+        height: 78px;
+    }
+    
+    .product-image-remove {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+    
+    .product-supplier-card {
+        padding: 13px;
+    }
+    
+    .product-supplier-title {
+        font-size: 14px;
+    }
+    
+    .product-price-label {
+        font-size: 13px;
+    }
+    
+    .product-currency {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+    
+    .product-checkbox-group,
+    .product-radio-group {
+        gap: 8px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .product-submit-btn,
+    .product-reset-btn,
+    .product-cancel-btn {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+
+/* شاشات 380px فأصغر */
+@media (max-width: 380px) {
+    .product-container {
+        margin: 38px auto 8px;
+        padding: 0 6px;
+    }
+    
+    .product-header {
+        padding: 10px;
+    }
+    
+    .product-title {
+        font-size: 16px;
+    }
+    
+    .product-body {
+        padding: 10px;
+    }
+    
+    .product-section {
+        padding: 8px;
+        margin-bottom: 13px;
+    }
+    
+    .product-section-title {
+        font-size: 14px;
+    }
+    
+    .product-form-label {
+        font-size: 12px;
+    }
+    
+    .product-form-input,
+    .product-form-select,
+    .product-form-textarea {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+    
+    .product-file-label {
+        min-height: 78px;
+        padding: 6px;
+        font-size: 11px;
+    }
+    
+    .product-image-previews {
+        grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    }
+    
+    .product-image-preview {
+        height: 68px;
+    }
+    
+    .product-supplier-card {
+        padding: 10px;
+    }
+    
+    .product-submit-btn,
+    .product-reset-btn,
+    .product-cancel-btn {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}    
+    </style>
+</head>
+ <body class="theme1">  
+ 
+ <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+     <i class="fa-solid fa-palette"></i>
+    </button>
+        
+ 
+    <!-- Main Content -->
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-header">
+                <h1 class="product-title"><i class="fas fa-file-invoice-dollar"></i> إضافة عرض سعر جديد</h1>
+            </div>
+            
+            <div class="product-body">
+               <form id="quotationForm" class="product-form" >
+    
+    <div class="product-section" id="section-1">
+        <h2 class="product-section-title"><i class="fas fa-info-circle"></i> ١. معلومات العرض الأساسية</h2>
+        
+        <div class="product-form-grid">
+            <div class="product-form-group">
+                <label class="product-form-label" for="supplierCompany">
+                    <i class="fas fa-building"></i> اسم الشركة 
+                </label>
+                <input type="text" id="supplierCompany" class="product-form-input" value="مجموعة الثقة التجارية" readonly>
+            </div>
+
+            <div class="product-form-group">
+                <label class="product-form-label" for="quotationNumber">
+                    <i class="fas fa-hashtag"></i> رقم عرض السعر (Quotation #) *
+                </label>
+                <input type="text" id="quotationNumber" class="product-form-input" placeholder="أدخل رقم العرض" required>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="issueDate">
+                    <i class="fas fa-calendar-check"></i> تاريخ الإصدار *
+                </label>
+                <input type="date" id="issueDate" class="product-form-input" required>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="expiryDate">
+                    <i class="fas fa-calendar-times"></i> تاريخ الانتهاء/الصلاحية *
+                </label>
+                <input type="date" id="expiryDate" class="product-form-input" required>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="responsibleEmployee">
+                    <i class="fas fa-user-tie"></i> اسم الموظف المسؤول *
+                </label>
+                <input type="text" id="responsibleEmployee" class="product-form-input" placeholder="أدخل اسم الموظف" required>
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-section" id="section-2">
+        <h2 class="product-section-title"><i class="fas fa-user"></i> ٢. معلومات العميل</h2>
+        
+        <div class="product-form-grid">
+            <div class="product-form-group">
+                <label class="product-form-label" for="clientName">
+                    <i class="fas fa-user"></i> اسم العميل / اسم الشركة الطالبة *
+                </label>
+                <input type="text" id="clientName" class="product-form-input" placeholder="أدخل اسم العميل أو الشركة" required>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="clientContact">
+                    <i class="fas fa-user-check"></i> جهة الاتصال المسؤولة في شركة العميل
+                </label>
+                <input type="text" id="clientContact" class="product-form-input" placeholder="أدخل اسم جهة الاتصال">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="clientPhone">
+                    <i class="fas fa-phone"></i> رقم هاتف العميل
+                </label>
+                <input type="tel" id="clientPhone" class="product-form-input" placeholder="أدخل رقم الهاتف">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="clientEmail">
+                    <i class="fas fa-envelope"></i> بريد العميل الإلكتروني
+                </label>
+                <input type="email" id="clientEmail" class="product-form-input" placeholder="أدخل البريد الإلكتروني">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="clientTaxId">
+                    <i class="fas fa-file-invoice"></i> رقم الملف الضريبي للعميل
+                </label>
+                <input type="text" id="clientTaxId" class="product-form-input" placeholder="أدخل رقم الملف الضريبي">
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-section" id="section-3">
+        <h2 class="product-section-title"><i class="fas fa-list"></i> ٣. تفاصيل المنتجات والخدمات (البنود)</h2>
+        
+        <div class="product-dynamic-container" id="itemsContainer">
+            <div class="product-supplier-card">
+               
+                
+                <div class="product-form-grid">
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemProduct">
+                            <i class="fas fa-cube"></i> رقم المنتج / الموديل *
+                        </label>
+                        <select id="itemProduct" class="product-form-input" required onchange="fetchProductData(this)">
+                            <option value="">اختر المنتج من قاعدة البيانات</option>
+                            <!-- يتم ملء هذا ديناميكيًا من قاعدة البيانات -->
+                        </select>
+                    </div>
+                    
+                    <div class="product-form-group full-width">
+                        <label class="product-form-label" for="itemDescription">
+                            <i class="fas fa-align-left"></i> وصف البند (الاسم الفني)
+                        </label>
+                        <input type="text" id="itemDescription" class="product-form-input" placeholder="سيتم ملء آليًا">
+                    </div>
+                    
+                    <div class="product-form-group full-width">
+                        <label class="product-form-label" for="itemSpecs">
+                            <i class="fas fa-cogs"></i> المواصفات الفنية الموجزة
+                        </label>
+                        <textarea id="itemSpecs" class="product-form-textarea" rows="2" placeholder="سيتم ملء آليًا"></textarea>
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemUnit">
+                            <i class="fas fa-balance-scale"></i> وحدة القياس
+                        </label>
+                        <select id="itemUnit" class="product-form-input">
+                            <option value="قطعة">قطعة</option>
+                            <option value="متر مربع">متر مربع</option>
+                            <option value="طن">طن</option>
+                            <option value="لتر">لتر</option>
+                            <option value="طقم">طقم</option>
+                        </select>
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemQuantity">
+                            <i class="fas fa-boxes"></i> الكمية المطلوبة *
+                        </label>
+                        <input type="number" id="itemQuantity" class="product-form-input" placeholder="أدخل الكمية" min="1" required onchange="calculateSubtotal(this)">
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemUnitPrice">
+                            <i class="fas fa-dollar-sign"></i> سعر الوحدة الصافي
+                        </label>
+                        <input type="number" id="itemUnitPrice" class="product-form-input" placeholder="سيتم ملء آليًا" step="0.01" min="0" onchange="calculateSubtotal(this)">
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemDiscount">
+                            <i class="fas fa-percent"></i> الخصم على الوحدة (%)
+                        </label>
+                        <input type="number" id="itemDiscount" class="product-form-input" placeholder="0" step="0.1" min="0" max="100" onchange="calculateSubtotal(this)">
+                    </div>
+                    
+                    <div class="product-form-group">
+                        <label class="product-form-label" for="itemSubtotal">
+                            <i class="fas fa-calculator"></i> المجموع الفرعي للبند
+                        </label>
+                        <input type="number" id="itemSubtotal" class="product-form-input" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" class="product-add-btn auto p10-15  " onclick="addItem()">
+            <i class="fas fa-plus"></i> إضافة بند آخر
+        </button>
+    </div>
+    
+    <div class="product-section" id="section-4">
+        <h2 class="product-section-title"><i class="fas fa-money-check-alt"></i> ٤. الإجماليات والشروط المالية</h2>
+        
+        <div class="product-form-grid">
+            <div class="product-form-group">
+                <label class="product-form-label" for="subtotal">
+                    <i class="fas fa-sigma"></i> المجموع الفرعي لكافة البنود
+                </label>
+                <input type="number" id="subtotal" class="product-form-input" readonly>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="packagingCost">
+                    <i class="fas fa-box"></i> تكلفة التغليف والتجهيز
+                </label>
+                <input type="number" id="packagingCost" class="product-form-input" placeholder="0.00" step="0.01" min="0" onchange="calculateTotal()">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="shippingCost">
+                    <i class="fas fa-truck"></i> تكلفة الشحن والتسليم
+                </label>
+                <input type="number" id="shippingCost" class="product-form-input" placeholder="0.00" step="0.01" min="0" onchange="calculateTotal()">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="vat">
+                    <i class="fas fa-receipt"></i> إجمالي الضريبة المضافة (VAT)
+                </label>
+                <input type="number" id="vat" class="product-form-input" placeholder="0.00" step="0.01" min="0" onchange="calculateTotal()">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="grandTotal">
+                    <i class="fas fa-money-bill-wave"></i> إجمالي المبلغ النهائي المستحق
+                </label>
+                <input type="number" id="grandTotal" class="product-form-input" readonly>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="currency">
+                    <i class="fas fa-coins"></i> العملة المستخدمة في الفاتورة
+                </label>
+                <select id="currency" class="product-form-input">
+                    <option value="USD">USD</option>
+                    <option value="SAR">SAR</option>
+                    <option value="AED">AED</option>
+                    <option value="YER">YER</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-section" id="section-5">
+        <h2 class="product-section-title"><i class="fas fa-handshake"></i> ٥. الشروط التجارية واللوجستية</h2>
+        
+        <div class="product-form-grid">
+            <div class="product-form-group full-width">
+                <label class="product-form-label" for="paymentTerms">
+                    <i class="fas fa-hand-holding-dollar"></i> شروط الدفع (تفصيل نسب الدفع)
+                </label>
+                <textarea id="paymentTerms" class="product-form-textarea" rows="3" placeholder="أدخل تفاصيل شروط الدفع"></textarea>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="deliveryLocation">
+                    <i class="fas fa-map-marker-alt"></i> مكان التسليم (الوجهة)
+                </label>
+                <input type="text" id="deliveryLocation" class="product-form-input" placeholder="أدخل مكان التسليم">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="incoterm">
+                    <i class="fas fa-globe"></i> شروط التجارة الدولية المعتمدة (Incoterm)
+                </label>
+                <select id="incoterm" class="product-form-input">
+                    <option value="EXW">EXW</option>
+                    <option value="FOB">FOB</option>
+                    <option value="CIF">CIF</option>
+                    <option value="DDP">DDP</option>
+                </select>
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="deliveryTime">
+                    <i class="fas fa-clock"></i> المهلة الزمنية للتسليم
+                </label>
+                <input type="text" id="deliveryTime" class="product-form-input" placeholder="مثال: 30 يومًا">
+            </div>
+            
+            <div class="product-form-group">
+                <label class="product-form-label" for="warrantyPeriod">
+                    <i class="fas fa-shield-alt"></i> فترة الضمان المُقدمة على المنتج
+                </label>
+                <input type="text" id="warrantyPeriod" class="product-form-input" placeholder="مثال: 12 شهرًا">
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-section" id="section-6">
+        <h2 class="product-section-title"><i class="fas fa-sticky-note"></i> ٦. ملاحظات إضافية</h2>
+        
+        <div class="product-form-grid">
+            <div class="product-form-group full-width">
+                <label class="product-form-label" for="technicalNotes">
+                    <i class="fas fa-tools"></i> ملاحظات فنية
+                </label>
+                <textarea id="technicalNotes" class="product-form-textarea" rows="3" placeholder="أدخل ملاحظات فنية"></textarea>
+            </div>
+            
+            <div class="product-form-group full-width">
+                <label class="product-form-label" for="generalNotes">
+                    <i class="fas fa-comment"></i> ملاحظات عامة
+                </label>
+                <textarea id="generalNotes" class="product-form-textarea" rows="3" placeholder="أدخل ملاحظات عامة"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="product-form-actions">
+        <button type="submit" class="product-submit-btn" id="save-quotation-btn">
+            <i class="fas fa-save"></i> حفظ عرض السعر
+        </button>
+        <button type="button" class="product-submit-btn" id="generate-pdf-btn">
+            <i class="fas fa-file-pdf"></i> إنشاء PDF
+        </button>
+     
+        <a href="dashboard.html" class="product-cancel-btn">
+            <i class="fas fa-times"></i> إلغاء
+        </a>
+        <div id="form-message" class="form-message hidden mt10"></div>
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+        
+         
+    <!-- Include page scripts -->
+      
+   
+    <script src="js/onclick-handlers.js"></script>
+    
+    <script src="js/form-autosave.js"></script>
+    
+    <!--  Javascript -->
+    <script src="js/nav.js"></script>
+    <script src="js/chat.js"></script>     
+    <script src="js/theme.js"></script>
+</body>
+</html>

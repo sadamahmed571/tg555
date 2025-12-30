@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل العميل - أرشيف الثقة التجارية</title>
+        
+    <!-- جميع الروابط السابقة تبقى كما هي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <!-- css Stylesheet -->
+    <link rel="stylesheet" href="archive.css">
+   
+    <style>
+/* CSS Document - TrustGroupArchives - single-client.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Naskh Arabic", serif;
+}
+
+body {
+    background-color: var(--archive-background-color);
+    line-height: 1.6;
+    padding: 19px;
+    max-width: 1199px;
+    margin: 0 auto;
+}
+
+.client-container {
+    border-radius: 11px;
+    padding: 29px;
+    margin: 19px 0;
+    width: 100%;
+    margin-top: 109px;
+}
+
+.client-container i {
+    padding-left: 3px;
+}
+
+.client-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 29px;
+    flex-wrap: wrap;
+    gap: 19px;
+}
+
+.client-logo {
+    width: 109px;
+    height: 109px;
+    border-radius: 9px;
+    object-fit: contain;
+    background: var(--archive-container-bg-color);
+    border: 2px solid var(--archive-primary-color);
+}
+
+.client-title {
+    flex: 1;
+}
+
+.client-title h2 {
+    color: var(--archive-primary-color);
+    font-size: 26px;
+    margin-bottom: 9px;
+    border-right: 3px solid var(--archive-primary-color);
+    padding-right: 14px;
+    font-weight: 500;
+}
+
+.client-title p {
+    color: var(--archive-text-color);
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 29px;
+}
+
+.info-box {
+    background: var(--archive-container-bg-color);
+    border-radius: 9px;
+    padding: 19px;
+    border: 1px solid var(--archive-border-color);
+}
+
+.info-box h3 {
+    color: var(--archive-primary-color);
+    margin-bottom: 14px;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 500;
+}
+
+.info-box h3 i {
+    color: var(--archive-primary-color);
+}
+
+.info-box p {
+    margin-bottom: 9px;
+    color: var(--archive-text2-color);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.info-box p strong {
+    min-width: 99px;
+    color: var(--archive-text-color);
+    font-weight: 500;
+}
+
+.info-box a {
+    color: var(--archive-primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-box a:hover {
+    color: var(--archive-title-color);
+    text-decoration: underline;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(129px, 2fr));
+    gap: 29px;
+    margin-bottom: 29px;
+}
+
+.title2 {
+    color: var(--archive-primary-color);
+    margin-bottom: 24px;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 59px;
+    margin-right: 39px;
+    font-weight: 550;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 9px;
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.action-btn:hover {
+    background: var(--archive-title-color);
+    transform: translateY(-2px);
+}
+
+.action-btn.whatsapp {
+    background: #245637;
+}
+
+.action-btn.whatsapp:hover {
+    background: #407d56;
+}
+
+.action-btn.email {
+    background: #562424;
+}
+
+.action-btn.email:hover {
+    background: #365b75;
+}
+
+.action-btn.website {
+    background: #562447;
+}
+
+.action-btn.website:hover {
+    background: #5c4167;
+}
+
+.action-btn.facebook {
+    background: #243756;
+}
+
+.action-btn.facebook:hover {
+    background: #33466f;
+}
+
+.action-btn.phone {
+    background: #245256;
+}
+
+.action-btn.phone:hover {
+    background: #6a2c26;
+}
+
+.action-btn.wechat {
+    background: #564324;
+}
+
+.action-btn.wechat:hover {
+    background: #705120;
+}
+
+.action-btn.instagram {
+    background: #562438;
+}
+
+.action-btn.instagram:hover {
+    background: #6d2542;
+}
+
+.action-btn.location {
+    background: #565324;
+}
+
+.action-btn.location:hover {
+    background: #948d1c;
+}
+
+.client-rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 7px;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+.download-section {
+    text-align: center;
+    padding: 19px;
+    margin-top: 19px;
+    display: flex;
+    justify-content: center;
+    gap: 19px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 29px;
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background: var(--archive-title-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+
+/* 990px */
+@media (max-width: 990px) {
+    .client-container {
+        padding: 19px;
+        margin-top: 99px;
+    }
+    
+    .client-grid {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+    
+    .quick-actions {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 19px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .client-container {
+        padding: 14px;
+        margin-top: 94px;
+    }
+    
+    .client-logo {
+        width: 94px;
+        height: 119px;
+    }
+    
+    .client-title h2 {
+        font-size: 20px;
+        padding-right: 9px;
+    }
+    
+    .client-title p {
+        font-size: 15px;
+        width: 94%;
+    }
+    
+    .client-grid {
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+    
+    .info-box {
+        padding: 14px;
+    }
+    
+    .info-box h3 {
+        font-size: 18px;
+        margin-bottom: 17px;
+    }
+    
+    .info-box p {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+    
+    .info-box p strong {
+        min-width: 69px;
+    }
+    
+    .quick-actions {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+    
+    .title2 {
+        font-size: 18px;
+        margin-top: 39px;
+        margin-right: 29px;
+    }
+    
+    .action-btn {
+        padding: 7px;
+        font-size: 13px;
+    }
+    
+    .download-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-btn {
+        padding: 11px 24px;
+        font-size: 14px;
+    }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+    .client-container {
+        padding: 9px;
+        margin-top: 89px;
+    }
+    
+    .client-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .client-logo {
+        width: 79px;
+        height: 99px;
+    }
+    
+    .client-title h2 {
+        font-size: 18px;
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 2px solid var(--archive-primary-color);
+        padding-bottom: 9px;
+    }
+    
+    .client-title p {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .client-grid {
+        gap: 14px;
+    }
+    
+    .info-box {
+        padding: 11px;
+    }
+    
+    .info-box h3 {
+        font-size: 16px;
+    }
+    
+    .info-box p {
+        font-size: 13px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .info-box p strong {
+        min-width: auto;
+    }
+    
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+    }
+    
+    .title2 {
+        font-size: 16px;
+        margin-top: 29px;
+        margin-right: 19px;
+    }
+    
+    .action-btn {
+        padding: 5px;
+        font-size: 11px;
+    }
+    
+    .action-btn i {
+        font-size: 11px;
+    }
+    
+    .download-btn {
+        padding: 9px 19px;
+        font-size: 13px;
+    }
+}
+
+/* 380px */
+@media (max-width: 380px) {
+    .client-container {
+        padding: 7px;
+        margin-top: 84px;
+    }
+    
+    .client-logo {
+        width: 69px;
+        height: 89px;
+    }
+    
+    .client-title h2 {
+        font-size: 17px;
+    }
+    
+    .client-title p {
+        font-size: 13px;
+    }
+    
+    .info-box {
+        padding: 9px;
+    }
+    
+    .info-box h3 {
+        font-size: 15px;
+    }
+    
+    .info-box p {
+        font-size: 12px;
+    }
+    
+    .quick-actions {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+    
+    .title2 {
+        font-size: 15px;
+        margin-top: 24px;
+        margin-right: 14px;
+    }
+    
+    .action-btn {
+        padding: 7px;
+        font-size: 13px;
+    }
+    
+    .download-btn {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+}
+    </style>
+</head>
+<body class="theme1">  
+
+ <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+     <i class="fa-solid fa-palette"></i>
+    </button>
+        
+
+  <div class="client-container">
+        <div class="client-header">
+            <img id="clientLogo" src="img/company-1.jpg" alt="شعار العميل" class="client-logo">
+            <div class="single-user-section" id="userHeaderSection">
+                <div class="user-profile-column">
+                    <h2 id="clientName"><i class="fas fa-building"></i> —</h2>
+                    <p id="clientDescription"><i class="fas fa-star"></i> —</p>
+                    <div class="client-rating" id="clientRatingUI">
+                        <div class="stars" id="ratingStars">
+                            <i data-value="1" class="fa-regular fa-star"></i>
+                            <i data-value="2" class="fa-regular fa-star"></i>
+                            <i data-value="3" class="fa-regular fa-star"></i>
+                            <i data-value="4" class="fa-regular fa-star"></i>
+                            <i data-value="5" class="fa-regular fa-star"></i>
+                        </div>
+                        <span id="ratingValue" class="fw600">0/5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="client-grid">
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> معلومات الكيان التجاري الأساسية</h3>
+                <p><strong><i class="fas fa-signature"></i> الاسم الرسمي (عربي):</strong> <span id="clientNameAr">—</span></p>
+                <p><strong><i class="fas fa-signature"></i> الاسم الرسمي (إنجليزي):</strong> <span id="clientNameEn">—</span></p>
+                <p><strong><i class="fas fa-file-contract"></i> السجل التجاري:</strong> <span id="commercialRegister">—</span></p>
+                <p><strong><i class="fas fa-globe"></i> البلد / المدينة:</strong> <span id="clientCountryCity">—</span></p>
+                <p><strong><i class="fas fa-map-marker-alt"></i> العنوان الرسمي:</strong> <span id="clientAddress">—</span></p>
+                <p><strong><i class="fas fa-industry"></i> القطاع الصناعي:</strong> <span id="clientIndustry">—</span></p>
+                <p><strong><i class="fas fa-users"></i> حجم الشركة:</strong> <span id="companySize">—</span></p>
+            </div>
+            <div class="info-box">
+                <h3><i class="fas fa-address-book"></i> جهات الاتصال الرئيسية</h3>
+                <p><strong><i class="fas fa-user-tie"></i> اسم جهة الاتصال الرئيسية:</strong> <span id="primaryContactName">—</span></p>
+                <p><strong><i class="fas fa-briefcase"></i> المنصب:</strong> <span id="primaryContactTitle">—</span></p>
+                <p><strong><i class="fas fa-phone"></i> الهاتف المباشر:</strong> <span id="primaryContactPhone">—</span></p>
+                <p><strong><i class="fas fa-envelope"></i> البريد الإلكتروني:</strong> <span id="primaryContactEmail">—</span></p>
+                <p><strong><i class="fas fa-user-cog"></i> جهة الاتصال الفنية:</strong> <span id="technicalContactName">—</span></p>
+                <p><strong><i class="fas fa-phone-alt"></i> هاتف الاتصال الفني:</strong> <span id="technicalContactPhone">—</span></p>
+                <p><strong><i class="fas fa-at"></i> بريد الاتصال الفني:</strong> <span id="technicalContactEmail">—</span></p>
+            </div>
+            <div class="info-box">
+                <h3><i class="fas fa-folder-open"></i> الأرشفة والمتابعة الداخلية</h3>
+                <p><strong><i class="fas fa-file-pdf"></i> المرفقات:</strong> <span id="clientAttachments">—</span></p>
+                <p><strong><i class="fas fa-sticky-note"></i> الملاحظات الداخلية:</strong> <span id="internalNotes">—</span></p>
+                <p><strong><i class="fas fa-calendar-plus"></i> تاريخ الإضافة:</strong> <span id="clientCreatedAt">—</span></p>
+                <p><strong><i class="fas fa-user"></i> الموظف المسؤول:</strong> <span id="responsibleEmployee">—</span></p>
+            </div>
+        </div>
+        
+        <div class="quick-actions">
+            <a href="tel:+8613800138000" class="action-btn phone">
+                <i class="fas fa-phone"></i> اتصال
+            </a>
+            <a href="https://wa.me/8613800138000" target="_blank" class="action-btn whatsapp">
+                <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+            <a href="mailto:info@example.com" class="action-btn email">
+                <i class="fas fa-envelope"></i> إيميل
+            </a>
+            <a href="#" class="action-btn location">
+                <i class="fas fa-map"></i> خريطة
+            </a>
+        </div>
+        
+        <div class="download-section">
+            <a id="clientPdfLink" href="#" class="download-btn">
+                <i class="fas fa-download"></i> تحميل ملف العميل PDF
+            </a>
+            <a href="clients-board.html" class="download-btn">
+                <i class="fa fa-angle-double-right"></i> العودة الى لوحة العملاء
+            </a>
+        </div>
+    </div>
+
+            
+                        
+                        
+
+      
+    <!--  Javascript -->
+    <script src="js/nav.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+</html>

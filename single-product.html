@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل منتج ZNC EDM</title>
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- css Stylesheet -->
+    <link rel="stylesheet" href="archive.css">
+    
+    <style>
+
+        .product-container {
+            padding: 75px 30px;
+        }
+        
+        /* تنسيق التبويبات */
+        .tabs-header {
+            display: flex;
+			 flex-direction: row;
+            border-bottom:none;
+            margin-bottom: 0px;
+        }
+        
+        .tab-btn {
+            padding: 8px 23px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--archive-archive-text2-color);
+            border-bottom: 3px solid var(--archive-archive-placeholder-color);
+            transition: all 0.3s ease;
+            font-size: 17px;
+			opacity: 0.9;
+			text-align: center;
+        }
+        
+        .tab-btn.active {
+            color: var(--archive-archive-text3-color);
+            border-bottom: 2px solid var(--archive-archive-text3-color);
+			opacity: 1;
+        }
+        
+        .tab-btn:hover {
+            color: var(--archive-archive-text-color);
+			border-bottom: 2px solid var(--archive-archive-text-color);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 18px 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+       
+        
+      
+        .info-table-container {
+            width: 100%;
+            margin:  0;
+            border-radius: 8px;
+            overflow: hidden;
+           
+            border: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .info-table thead {
+            background-color: none;
+            color: var(--archive-archive-text-color);
+        }
+        
+        .info-table th {
+            padding: 15px 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        
+        .info-table tbody tr {
+            border-bottom: 1px solid var(--archive-archive-border-color);
+            transition: background-color 0.2s;
+        }
+        
+        .info-table tbody tr:nth-child(even) {
+            background-color: var(--archive-archive-container-focus-color);
+        }
+        
+        .info-table tbody tr:nth-child(odd) {
+            background-color: var(--archive-archive-container-bg-color);
+        }
+        
+         
+        
+        .info-table td {
+            padding: 13px 18px;
+            color: var(--archive-archive-text-color);
+        }
+        
+        .info-table td:first-child {
+            font-weight: 600;
+            color: var(--archive-archive-text2-color);
+            width: 30%;
+            border-left: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .info-table td i {
+            margin-left: 8px;
+            color: var(--archive-archive-placeholder-color);
+            width: 18px;
+            text-align: center;
+        }
+        
+        .value-badge {
+            display: inline-block;
+            background: var(----extra-color);
+            color: var(--archive-archive-light-color);
+            padding: 3px 11px;
+            border-radius: 18px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .disc-list {
+            list-style-type: none;
+            padding-right: 18px;
+            margin: 8px 0;
+        }
+        
+        .disc-list li {
+            margin-bottom: 7px;
+            position: relative;
+        }
+        
+        .disc-list li:before {
+            content: "•";
+            color: var(--archive-archive-secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 5px;
+            font-size: 17px;
+        }
+        
+        /* تنسيق الأقسام الأخرى */
+        .price-container {
+            background: none;
+            border-radius: 8px;
+            padding: 0;
+            margin-bottom: 35px;
+            border:none;
+        }
+        
+        .price-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--archive-archive-text2-color);
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--archive-archive-border-color);
+        }
+        
+        .price-title i {
+            margin-left: 8px;
+            color: var(--archive-archive-secondary-color);
+        }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 9px;
+        }
+        
+        .price-item {			 
+			align-items: center;
+            background: var(--archive-archive-container-bg-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border:none;
+        }
+        
+        .pricing-label {
+            font-size: 12px;
+            color: var(--archive-archive-text2-color);
+            margin-bottom: 5px;
+        }
+        
+        .pricing-label i {
+			font-size: 10px;
+            margin-left: 5px;
+            color: var(--archive-archive-secondary-color);
+        }
+        
+        .price-amount {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--archive-archive-text2-color);
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 13px;
+            margin-top: 18px;
+        }
+        
+        .product-btn {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .Favorite-btn {
+            background: var(--archive-archive-button-color);
+            color: var(--archive-archive-light-color);
+        }
+        
+         
+        
+        .share-btn {
+            background: var(--archive-archive-footer-color);
+            color: var(--archive-archive-light-color);
+        }
+        
+        .share-btn:hover {
+            background: var(--archive-archive-dark-color);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 13px rgba(44, 62, 80, 0.3);
+        }
+        
+        /* تصميم جديد للأقسام الفرعية */
+        .sub-section {
+            margin-bottom: 28px;
+            padding: 15px;
+            background: var(--archive-archive-container-bg-color);
+            border-radius: 8px;
+            border: none;
+        }
+        
+        .sub-section h4 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--archive-archive-border-color);
+            color: var(--archive-archive-text-color);
+            font-size: 17px;
+        }
+        
+        .sub-section h4 i {
+            margin-left: 8px;
+            color: var(--archive-archive-text-color);
+        }
+        
+        /* تصميم الملفات والروابط */
+        .files-container, .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 13px;
+            margin-top: 13px;
+        }
+        
+        .file-item, .link-item {
+            background: var(--archive-archive-container-focus-color);
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid var(--archive-archive-border-color);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+       
+        
+        .file-icon {
+            font-size: 23px;
+            color: var(--archive-archive-secondary-color);
+            margin-left: 13px;
+        }
+        
+        .file-name, .site-name {
+            flex: 1;
+            font-weight: 600;
+            color: var(--archive-archive-text2-color);
+        }
+        
+        .file-btn {
+            background: var(--archive-archive-secondary-color);
+            color: var(--archive-archive-light-color);
+            border: none;
+            padding: 7px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.3s ease;
+        }
+        
+        .file-btn:hover {
+            background: var(--archive-archive-button-hover-color);
+        }
+        
+        .product-link2 {
+            color: var(--archive-archive-secondary-color);
+            text-decoration: none;
+            font-size: 13px;
+            word-break: break-all;
+        }
+        
+        .product-link2:hover {
+            color: var(--archive-archive-text2-color);
+            text-decoration: underline;
+        }
+        
+        /* تصميم الموردين */
+        .suppliers-tab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 18px;
+        }
+        
+        .supplier-card-tab {
+            background: var(--archive-archive-container-bg-color);
+            border-radius: 8px;
+            padding: 18px;
+            border: 1px solid var(--archive-archive-border-color);
+            transition: all 0.3s ease;
+        }
+        
+       
+        
+        .supplier-card-header {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--archive-archive-text2-color);
+            margin-bottom: 13px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--archive-archive-border-color);
+        }
+        
+        .supplier-details {
+            margin-bottom: 18px;
+        }
+        
+        .supplier-detail {
+            margin-bottom: 7px;
+            color: var(--archive-archive-text-color);
+            font-size: 13px;
+        }
+        
+        .supplier-detail i {
+            margin-left: 8px;
+            color: var(--archive-archive-secondary-color);
+            width: 17px;
+            text-align: center;
+        }
+        
+        .supplier-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .supplier-actions a, .supplier-actions button {
+            flex: 1;
+            text-align: center;
+            padding: 9px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .supplier-actions a {
+            background: var(--archive-archive-container-focus-color);
+            color: var(--archive-archive-text2-color);
+            text-decoration: none;
+            border: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .supplier-actions a:hover {
+            background: var(--archive-archive-extra-color);
+        }
+        
+        .supplier-actions button {
+            background: var(--archive-archive-extra3-color);
+            color: var(--archive-archive-light-color);
+            border: none;
+        }
+        
+        .supplier-actions button:hover {
+            background: var(--archive-archive-button-hover-color);
+        }
+        
+        /* التنسيق العام */
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-bottom: 38px;
+        }
+        
+        @media (max-width: 992px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+            
+             
+            
+             
+        }
+          @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            
+            
+             
+        }
+        .product-title {
+            font-size: 26px;
+            color: var(--archive-archive-text2-color);
+            margin-bottom: 13px;
+            font-weight: 800;
+        }
+        
+        .product-description {
+            font-size: 15px;
+            color: var(--archive-archive-text-color);
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+        
+        .main-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 13px;
+            border: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .download-image-btn {
+            position: absolute;
+            bottom: 13px;
+            left: 13px;
+            background: var(--archive-archive-meta-overlay-color);
+            color: var(--archive-archive-light-color);
+            border: none;
+            padding: 9px 13px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-image-btn:hover {
+            background: var(--archive-archive-footer-color);
+            transform: translateY(-2px);
+        }
+        
+        .image-thumbnails {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .thumbnail {
+            width: 78px;
+            height: 78px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--archive-archive-secondary-color);
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    padding: 4px 15px;
+    border-radius: 15px;
+    border: 1px solid var(--archive-archive-border-hover-color);
+    color: var(--archive-archive-text2-color);
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.meta-item i {
+    font-size: 10px;
+    padding-left: 2px;
+    vertical-align: middle;
+} 
+        
+        .span-all {
+            grid-column: 1 / -1;
+        }
+		
+		
+		
+		
+		
+		
+/* ========================================
+   الشاشات الصغيرة (768px وأصغر)
+   ======================================== */
+@media screen and (max-width: 768px) {
+    /* تعديل حاوية المنتج */
+    .product-container {
+        margin-top: 100px;
+		   padding: 5px 3px;
+        
+    }
+    
+    /* تعديل التخطيط */
+    .product-layout {
+        gap: 10px;
+        
+    }
+    
+    /* تعديل معرض الصور */
+    .main-image {
+        max-height: 220px;
+    }
+    
+    /* تحويل شبكة الموردين إلى عمود واحد */
+    .suppliers-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    /* تعديل حاوية المورد */
+    .supplier-container {
+        padding: 12px;
+    }
+    
+    .selling-price,
+    .supplier-name {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    
+    .selling-price i {
+        font-size: 13px;    
+    }   
+    
+    /* تعديل شبكة الأسعار */
+     .price-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    .price-title {
+        font-size: 16px;
+    }
+    
+    .price-title i {
+        font-size: 14px;
+    }
+    
+    .price-item {
+        padding: 8px 20px;
+    }
+    
+    .price-amount {
+        font-size: 13px;
+        margin-top: 4px;
+    }
+    
+    .pricing-label {
+        font-size: 11px;
+    }
+    
+    /* تعديل شبكة المنتجات المشابهة */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .product-card-img {
+        height: 150px;
+    }
+    
+    .product-card-title {
+        font-size: 14px;
+        height: 35px;
+    }
+    
+    .product-card-price {
+        font-size: 16px;
+    }
+    
+    /* تعديل أزرار المنتج */
+    .product-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .product-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    /* تعديل معلومات الشحن */
+    .shipping-info {
+        gap: 10px;
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .shipping-item {
+        font-size: 12px;
+    }
+    
+    .shipping-item i {
+        font-size: 11px;
+    }
+    
+    
+    .tabs-header {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        padding: 5px  ;
+        font-size: 13px;
+        flex: 1 1 auto;
+        min-width: 100px;
+		border-bottom: 2px solid var(--archive-archive-placeholder-color);
+    }
+    
+    .tab-content {
+        font-size: 13px;
+    }
+     
+        
+        .tab-btn.active {
+            border-bottom: 2px solid var(--archive-archive-text3-color);
+        }
+    /* تعديل حجم النصوص */
+    .product-title {
+        font-size: 16px;
+        margin-top: 20px;
+		margin-bottom: 5px;
+    }
+    
+    .product-title::before {
+        font-size: 16px;
+    }
+    
+    .product-description {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+   
+    
+    /* تعديل البيانات الوصفية */
+    .product-meta {
+        gap: 8px;
+    }
+    
+    .meta-item {
+        padding: 2px 12px;
+        font-size: 11px;
+    }
+    
+    .meta-item i {
+        font-size: 9px;
+    }
+    
+    /* تعديل الصور المصغرة */
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+    
+     
+    
+    /* تعديل عناصر الروابط */
+    .link-item {
+        padding: 12px;
+    }
+    
+    .site-name {
+        font-size: 14px;
+    }
+    
+    .site-name i {
+        font-size: 16px;
+    }
+    
+    .product-link2 {
+        font-size: 13px;
+    }
+    
+    /* تعديل عنوان القسم */
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    /* تحسينات للقسم السفلي على الشاشات الصغيرة */
+    .general-info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .general-info-item {
+        padding: 12px;
+    }
+    
+    .general-info-item .label {
+        font-size: 13px;
+    }
+    
+    .general-info-item .value {
+        font-size: 14px;
+    }
+    
+    .tab-content ul.disc-list {
+        padding-right: 0px;
+    }
+    
+    .tab-content ul.disc-list li {
+        font-size: 12px;
+    }
+    
+    .tab-content h4 {
+        font-size: 15px;
+        margin: 7px 0 9px;
+    }
+    
+    .files-container  {
+         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .file-item  {
+            padding: 5px;
+
+        }
+        
+      
+        .file-icon {
+            font-size: 13px;
+            color: var(--archive-archive-placeholder-color);
+            margin-left: 5px;
+        }
+        
+        .file-name, .site-name {
+            flex: 1;
+            font-weight: 600;
+            color: var(--archive-archive-text2-color);
+			font-size: 12px;
+        }
+        
+        .file-btn {
+            background:none;
+            color:var(--archive-archive-text3-color);
+            border: none;
+            padding: 0;
+			margin-left: 4px;
+            border-radius: 0px;
+            font-size: 11px;
+        }
+        
+        .file-btn:hover {
+           color: var(--archive-archive-text-color);
+        }
+         .links-container {
+         grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
+        .link-item {
+            padding: 10px 10px;
+			border: none;
+
+        }
+		.link-item i{
+             font-size: 11px;
+			 padding-left: 7px;
+
+        }
+        .product-link2 {
+            color: var(--archive-archive-secondary-color);
+            text-decoration: none;
+            font-size: 11px;
+            word-break: break-all;
+        }
+        
+        .product-link2:hover {
+            color: var(--archive-archive-text2-color);
+            text-decoration: underline;
+        }
+        
+        /* تصميم الموردين */
+        .suppliers-tab-list {
+            
+            gap: 30px;
+        }
+        
+        .supplier-card-tab {
+            background: var(--archive-archive-container-bg-color);
+            padding: 15px;
+            border: none;
+        }
+        
+        
+        
+        .supplier-card-header {
+            font-size: 14px;
+            color: var(--archive-archive-text-color);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--archive-archive-border-color);
+        }
+        
+
+        .supplier-actions a, .supplier-actions button {
+            
+            padding: 5px;
+            
+            font-size: 11px;
+
+        }
+        
+        .supplier-actions a {
+            background: var(--archive-archive-container-focus-color);
+            color: var(--archive-archive-text2-color);
+            text-decoration: none;
+            border: 1px solid var(--archive-archive-border-color);
+        }
+        
+        .supplier-actions a:hover {
+            background: var(--archive-archive-extra-color);
+        }
+        
+        .supplier-actions button {
+            
+            color: var(--archive-archive-light-color);
+            border: none;
+        }
+        
+        .supplier-actions button:hover {
+            background: var(--archive-archive-button-hover-color);
+        }
+        
+    .suppliers-tab-list {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .supplier-card-tab {
+        padding: 15px;
+    }
+    
+    .section-intro {
+        padding: 15px;
+    }
+    
+    .section-intro i {
+        font-size: 28px;
+    }
+    
+    .section-intro h3 {
+        font-size: 18px;
+    }
+	
+	
+	
+        
+      
+        .info-table-container {
+            width: 100%;
+            margin:  0;
+            border-radius: 8px;
+            overflow: hidden;
+           
+            border: none;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        
+        
+        
+        .info-table th {
+            padding: 13px 18px;
+            font-size: 15px;
+        }
+        
+         
+        
+        
+        
+        .info-table td {
+            padding: 9px 13px;
+            font-size: 12px;
+        }
+        
+        .info-table td:first-child {
+            width: 35%;
+              padding: 9px 8px;
+        }
+        
+        .info-table td i {
+            margin-left: 5px;
+            width: 10px;
+        }
+        
+        .value-badge {
+            padding: 1px 15px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+        
+        .disc-list {
+            list-style-type: none;
+            padding-right: 15px;
+            margin: 2px 0;
+        }
+        
+        .disc-list li {
+            margin-bottom: 6px;
+            position: relative;
+        }
+        
+        .disc-list li:before {
+            color: var(--archive-archive-placeholder-color);
+            margin-right: 7px;
+            font-size: 15px;
+        }
+		.download-image-btn {
+           
+            padding: 5px 13px;
+
+            font-size: 12px;
+
+        }
+}
+
+ 
+    </style>
+</head>
+<body class="theme1">
+    <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="product-container">
+            <div id="product-details">
+                <!-- Upper Section: Product Layout -->
+                <div class="product-layout">
+                    <!-- Right Column: Product Info and Main Image -->
+                    <div class="right-column">
+                        <div class="product-gallery">
+                            <div class="product-info">
+                                <div class="product-meta">
+                                    <div class="meta-item"><i class="fas fa-box"></i><span id="productType">آلات صناعية</span></div>
+                                    <div class="meta-item"><i class="fas fa-user"></i><span id="editor">admin</span></div>
+                                    <div class="meta-item"><i class="fas fa-calendar"></i><span id="additionTime">2025-01-15</span></div>
+                                    <div class="meta-item"><i class="fas fa-barcode"></i><span id="productSKU">sku-0002</span></div>
+                                    <div class="meta-item"><i class="fas fa-layer-group"></i><span id="productSubCategory">ماكينات القطع بالشرارة</span></div>
+                                    <div class="meta-item"><i class="fas fa-copyright"></i><span id="productBrand">ZNC</span></div>
+                                    <div class="meta-item"><i class="fas fa-cube"></i><span id="productModel">ZNC350</span></div>
+                                </div>
+                                <h1 class="product-title" id="productName">ماكينة قطع بالشرارة الكهربائية ZNC EDM</h1>
+                                <p class="product-description" id="productDescription">
+                                    تتميز ماكينة ZNC EDM بدقة عالية وثبات ممتاز في الأداء، تم تصميمها خصيصًا لتصنيع القوالب المعقدة والقطع الدقيقة باستخدام تقنية التفريغ الكهربائي. مثالية للأعمال الصناعية الدقيقة.
+                                </p>
+                            </div>
+
+                            <div class="main-image rel">
+                                <img id="mainImage" src="img/machinery.jpg" alt="صورة المنتج" onerror="this.src='public/images/placeholder.png'">
+                                <button id="downloadImageBtn"   class="download-image-btn">
+                                    <i class="fas fa-download"></i>
+                                      تنزيل 
+                                </button>
+                            </div>
+
+                            <div class="image-thumbnails" id="additionalImages">
+                                <div class="thumbnail active"><img src="img/machinery.jpg" alt="thumb" onerror="this.src='public/images/placeholder.png'"></div>
+                                <div class="thumbnail"><img src="img/machinery.jpg" alt="thumb"onerror="this.src='public/images/placeholder.png'" ></div>
+                                <div class="thumbnail"><img src="img/machinery.jpg" alt="thumb" onerror="this.src='public/images/placeholder.png'"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left Column: Price, Actions -->
+                    <div class="left-column">
+                        <div class="price-container">
+                            <div class="price-title"><i class="fa-solid fa-money-check-dollar"></i> الاسعار والشروط</div>
+                            <div class="price-details" id="priceDetails">
+                                <div class="price-grid ">
+                                    <div class="price-item" id="productCost">
+                                        <div class="pricing-label"><i class="fa-solid fa-coins"></i> سعر التكلفة</div>
+                                        <div class="price-amount" id="priceFrom">من :$15,000</div>
+										 <div class="price-amount" id="priceTo">الى :$18,000</div>
+                                    </div> 
+                                    <div class="price-item">
+                                        <div class="pricing-label"><i class="fa-solid fa-scale-balanced"></i> وحدة التسعير</div>
+                                        <div class="price-amount" id="pricingUnit">قطعة</div>
+                                    </div>
+                                    <div class="price-item">
+                                        <div class="pricing-label"><i class="fa-solid fa-boxes-stacked"></i> الحد الأدنى للطلب (MOQ)</div>
+                                        <div class="price-amount" id="minimumOrderQuantity">1</div>
+                                    </div>
+                                    <div class="price-item">
+                                        <div class="pricing-label"><i class="fa-solid fa-percent"></i> الخصم</div>
+                                        <div class="price-amount" id="productDiscount">5%</div>
+                                    </div>
+                                    <div class="price-item">
+                                        <div class="pricing-label"><i class="fa-solid fa-file-invoice-dollar"></i> الضريبة</div>
+                                        <div class="price-amount" id="productTax">15%</div>
+                                    </div>
+                                    <div class="price-item span-all">
+                                        <div class="pricing-label"><i class="fa-solid fa-hand-holding-dollar"></i> شروط الدفع</div>
+                                        <div class="price-amount" id="paymentTerms">دفعات 50% مقدماً والباقي عند الشحن</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="product-btn Favorite-btn" id="quoteBtn"><i class="fas fa-file-pdf"></i> انشاء عرض سعر</button>
+                            <button class="product-btn share-btn" id="catalogBtn"><i class="fa-solid fa-file-pdf"></i> <i class="fa-solid fa-download"></i> الكاتلوج</button>                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower Section: Product Tabs -->
+                <div class="lower-section">
+                    <div class="product-tabs">
+                        <div class="tabs-header">
+                            <div class="tab-btn active" data-tab="general">بيانات عامة</div>
+                            <div class="tab-btn" data-tab="usages">استخدامات المنتج</div>
+                            <div class="tab-btn" data-tab="specs">مواصفات المنتج</div>
+                            <div class="tab-btn" data-tab="proscons">الميزات و السلبيات</div>
+                            <div class="tab-btn" data-tab="files">ملفات و روابط</div>
+                            <div class="tab-btn" data-tab="suppliers">الموردون</div>
+                        </div>
+
+                        <div class="tab-content active" id="general">
+                            
+                            
+                            <div class="info-table-container">
+                                <table class="info-table">
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fas fa-tag"></i> اسم المنتج</td>
+                                            <td id="productNameValue">ماكينة قطع بالشرارة الكهربائية ZNC EDM</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-folder"></i> الفئة الرئيسية</td>
+                                            <td id="productCategory">آلات صناعية</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-layer-group"></i> الفئة الفرعية</td>
+                                            <td id="productSubCategoryValue">ماكينات القطع بالشرارة</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-copyright"></i> العلامة التجارية</td>
+                                            <td id="productBrandValue">ZNC</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-cube"></i> الموديل</td>
+                                            <td id="productModelValue">ZNC350</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-industry"></i> نوع المنتج</td>
+                                            <td id="productTypeValue">آلة قطع صناعية</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-barcode"></i> الرقم التسلسلي</td>
+                                            <td id="productSKUValue">sku-0002</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-globe"></i> بلد المنشأ</td>
+                                            <td id="countryOfOrigin">الصين</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-user"></i> المسجل</td>
+                                            <td id="editorValue">admin</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-calendar-alt"></i> تاريخ الإضافة</td>
+                                            <td id="additionTimeValue">2025-01-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-tags"></i> الكلمات المفتاحية</td>
+                                            <td id="keywords">ماكينة قطع، شرارة كهربائية، آلة صناعية، ZNC، EDM</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-shipping-fast"></i> حالة الشحن</td>
+                                            <td id="shippingStatus"><span class="value-badge">متوفر</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="usages">
+                           
+                            
+                            <div class="sub-section">
+                               
+                                <ul class="disc-list pr20 my10-20" id="usagesList">
+                                    <li>تصنيع القوالب المعدنية المعقدة</li>
+                                    <li>قطع المعادن بدقة عالية</li>
+                                    <li>صناعة الإكسسوارات والمجوهرات</li>
+                                    <li>تصنيع أدوات القطع والمثاقب</li>
+                                    <li>الأبحاث والتطوير في المعامل الصناعية</li>
+                                    <li>صيانة وتصنيع قطع الغيار الدقيقة</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="specs">
+                            
+                            <div class="info-table-container">
+                                <table class="info-table">
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fas fa-ruler"></i> الطول</td>
+                                            <td id="productLength">180 سم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-ruler"></i> العرض</td>
+                                            <td id="productWidth">120 سم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-ruler"></i> الارتفاع</td>
+                                            <td id="productHeight">150 سم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-weight-hanging"></i> الوزن الصافي</td>
+                                            <td id="productWeight">1200 كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-weight"></i> وحدة الوزن</td>
+                                            <td>كجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-bolt"></i> الجهد الكهربائي</td>
+                                            <td id="electricalVoltage">220V / 380V</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-plug"></i> الاستهلاك الكهربائي</td>
+                                            <td id="electricalConsumption">15 كيلوواط/ساعة</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-tachometer-alt"></i> السعة الإنتاجية</td>
+                                            <td id="productionCapacity">8 ساعات عمل مستمر</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-cube"></i> المواد الأساسية</td>
+                                            <td id="mainMaterial">فولاذ مصنع، نحاس، مواد عازلة</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-award"></i> معايير الجودة</td>
+                                            <td id="qualityStandards">ISO 9001:2015, CE</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-shield-alt"></i> الضمان</td>
+                                            <td id="warranty">سنتان</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-cogs"></i> المكونات الأساسية</td>
+                                            <td id="basicComponents">
+                                                <ul class="disc-list pr18 m0">
+                                                    <li>وحدة تحكم ZNC</li>
+                                                    <li>مولد الشرارة الكهربائية</li>
+                                                    <li>نظام التبريد</li>
+                                                    <li>خزان السوائل</li>
+                                                    <li>منصة العمل</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-palette"></i> الألوان المتاحة</td>
+                                            <td id="productColors">
+                                                <span class="value-badge">أزرق صناعي</span>
+                                                <span class="value-badge">رمادي</span>
+                                                <span class="value-badge">أبيض</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="proscons">
+                            
+                            
+                            <div class="sub-section">
+                                <h4><i class="fas fa-thumbs-up"></i> ميزات المنتج</h4>
+                                <ul class="disc-list pr20 my10-20" id="features">
+                                    <li>دقة قطع تصل إلى 0.001 مم</li>
+                                    <li>ثبات عالي في الأداء لفترات طويلة</li>
+                                    <li>نظام تبريد فعال يضمن استمرارية العمل</li>
+                                    <li>واجهة تحكم سهلة الاستخدام</li>
+                                    <li>تصميم متين وموثوق</li>
+                                    <li>استهلاك طاقة منخفض مقارنة بالإنتاجية</li>
+                                </ul>
+                            </div>
+                            <div class="sub-section">
+                                <h4><i class="fas fa-thumbs-down"></i> ملاحظات المنتج</h4>
+                                <ul class="disc-list pr20 my10-20" id="negativePoints">
+                                    <li>سعر مرتفع نسبياً</li>
+                                    <li>تحتاج إلى فني متخصص للصيانة</li>
+                                    <li>استهلاك مواد مساعدة (سوائل التبريد)</li>
+                                    <li>الضجيج الناتج عن العمل قد يكون مرتفعاً</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="files">
+                            
+                            
+                            <div id="productFilesSection">
+                                <div class="sub-section">
+                                    <h4><i class="fas fa-file-download"></i> ملفات المنتج</h4>
+                                    <div id="productFilesContainer" class="files-container">
+                                        <div class="file-item">
+                                            <div class="file-icon"><i class="fas fa-file-pdf"></i></div>
+                                            <div class="file-name">كتالوج المنتج PDF</div>
+                                            <button class="file-btn"><i class="fa-solid fa-download"></i></button>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon"><i class="fas fa-file-alt"></i></div>
+                                            <div class="file-name">دليل التشغيل والصيانة</div>
+                                            <button class="file-btn"><i class="fa-solid fa-download"></i></button>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon"><i class="fas fa-file-image"></i></div>
+                                            <div class="file-name">صور المنتج عالية الجودة</div>
+                                            <button class="file-btn"><i class="fa-solid fa-download"></i></button>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon"><i class="fas fa-file-certificate"></i></div>
+                                            <div class="file-name">شهادات الجودة والضمان</div>
+                                            <button class="file-btn"><i class="fa-solid fa-download"></i></button>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon"><i class="fas fa-drafting-compass"></i></div>
+                                            <div class="file-name">رسومات المنتج (CAD)</div>
+                                            <button class="file-btn"><i class="fa-solid fa-download"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="sub-section">
+                                    <h4><i class="fas fa-link"></i> روابط المنتج</h4>
+                                    <div id="productLinksContainer" class="links-container">
+                                        <div class="link-item">
+                                            <div class="site-name"><i class="fas fa-store"></i> رابط المنتج </div>
+                                            <a class="product-link2" href="https://www.znc-industry.com" target="_blank" id="productLink">https://www.znc-industry.com</a>
+                                        </div>
+                                        <div class="link-item">
+                                            <div class="site-name"><i class="fas fa-shopping-cart"></i> رابط المنتج بالمتجر</div>
+                                            <a class="product-link2" href="https://store.znc.com/edm-machines" target="_blank">https://store.znc.com/edm-machines</a>
+                                        </div>
+                                        <div class="link-item">
+                                            <div class="site-name"><i class="fas fa-video"></i> فيديو المنتج</div>
+                                            <a class="product-link2" href="https://youtube.com/watch?znc-edm-demo" target="_blank" id="productVideo">https://youtube.com/watch?znc-edm-demo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="suppliers">
+                           
+                            
+                            <div class="suppliers-tab-list" id="suppliersTabList">
+                                <div class="supplier-card-tab">
+                                    <div class="supplier-card-header" id="mainSupplierSelect">شركة ZNC الصناعية العالمية</div>
+                       <div class="supplier-actions">
+                                        <a href="#">تفاصيل المورد </a>
+                                        <button href="https://www.alibaba.com/" target="_blank" id="supplierSiteLink">رابط موقع المورد</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="supplier-card-tab">
+                                    <div class="supplier-card-header">شركة المعدات الصناعية المتطورة</div>
+                        <div class="supplier-actions">
+                                        <a href="#">تفاصيل المورد </a>
+                                        <button href="https://www.alibaba.com/" target="_blank" id="supplierSiteLink">رابط موقع المورد</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="supplier-card-tab">
+                                    <div class="supplier-card-header" id="mainSupplierCustom">مؤسسة التقنيات الصناعية</div>
+                                    <div class="supplier-actions">
+                                        <a href="#">تفاصيل المورد </a>
+                                        <button href="https://www.alibaba.com/" target="_blank" id="supplierSiteLink">رابط موقع المورد</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+<script>
+	// Product Functions - وظائف صفحة المنتج
+
+	// وظيفة التبويبات
+	document.addEventListener('DOMContentLoaded', function () {
+		// معالج التبويبات
+		const tabButtons = document.querySelectorAll('.tab-btn');
+		tabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				// إزالة الكلاس النشط من جميع الأزرار والمحتوى
+				document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+				document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+				// إضافة الكلاس النشط للزر والمحتوى المطابق
+				button.classList.add('active');
+				const tabId = button.dataset.tab;
+				const tabContent = document.getElementById(tabId);
+				if (tabContent) {
+					tabContent.classList.add('active');
+				}
+			});
+		});
+
+		// معالج الصور المصغرة
+		const thumbnails = document.querySelectorAll('.thumbnail');
+		thumbnails.forEach(thumb => {
+			thumb.addEventListener('click', () => {
+				document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+				thumb.classList.add('active');
+				const mainImage = document.getElementById('mainImage');
+				if (mainImage) {
+					mainImage.src = thumb.querySelector('img').src;
+				}
+			});
+		});
+
+		// معالج زر الاقتباس
+		const quoteBtn = document.getElementById('quoteBtn');
+		if (quoteBtn) {
+			quoteBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				alert('هذه الخاصية قيد التطوير - عرض سعر PDF');
+			});
+		}
+
+		// معالج زر الكاتالوج
+		const catalogBtn = document.getElementById('catalogBtn');
+		if (catalogBtn) {
+			catalogBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				alert('جاري <i class="fa-solid fa-download"></i> الكاتالوج...');
+			});
+		}
+
+		// معالج أزرار <i class="fa-solid fa-download"></i> الملفات
+		const fileBtns = document.querySelectorAll('.file-btn');
+		fileBtns.forEach(btn => {
+			btn.addEventListener('click', function () {
+				const fileName = this.parentElement.querySelector('.file-name').textContent;
+				alert(`جاري <i class="fa-solid fa-download"></i> الملف: ${fileName}`);
+			});
+		});
+
+		// معالج زر <i class="fa-solid fa-download"></i> الصورة
+		const downloadImageBtn = document.getElementById('downloadImageBtn');
+		if (downloadImageBtn) {
+			downloadImageBtn.addEventListener('click', function () {
+				alert('جاري <i class="fa-solid fa-download"></i> صورة المنتج...');
+			});
+		}
+
+		// معالج أزرار التواصل مع الموردين
+		const supplierContactBtns = document.querySelectorAll('.supplier-actions button');
+		supplierContactBtns.forEach(btn => {
+			btn.addEventListener('click', function () {
+				const supplierName = this.closest('.supplier-card-tab').querySelector('.supplier-card-header').textContent;
+				alert(`سيتم فتح نموذج التواصل مع: ${supplierName}`);
+			});
+		});
+	});
+
+	// وظيفة المشاركة
+	function handleShare() {
+		const productTitle = document.querySelector('.product-title')?.textContent || 'منتج - أرشيف الثقة التجارية';
+		const productDesc = document.querySelector('.product-description')?.textContent || 'اكتشف هذا المنتج المتميز';
+
+		if (navigator.share) {
+			navigator.share({
+				title: productTitle,
+				text: productDesc,
+				url: window.location.href
+			})
+				.then(() => console.log('تم المشاركة بنجاح'))
+				.catch(error => console.log('Error sharing:', error));
+		} else {
+			alert('ميزة المشاركة غير مدعومة في متصفحك. يمكنك نسخ الرابط من شريط العنوان.');
+		}
+	}
+	</script>
+	 <script src="js/nav.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
+ <!-- 
+# أسماء الخانات والمعرفات في صفحة  المنتج
+ 
+
+|------------|---------|--------|--------|
+| اسم المنتج | `productName`   | اسم المنتج الأساسي |
+| الفئة الرئيسية | `productCategory`   | الفئة الرئيسية للمنتج |
+| الفئة الفرعية | `productSubCategory`   | الفئة الفرعية |
+| العلامة التجارية | `productBrand`   | اسم العلامة التجارية |
+| الموديل | `productModel`   | موديل المنتج |
+| نوع المنتج | `productType`   | نوع المنتج (صناعي، بناء، إلخ) |
+| الرقم التسلسلي | `productSKU`   | SKU التلقائي |
+| بلد المنشأ | `countryOfOrigin`   | بلد تصنيع المنتج |
+| وصف المنتج | `productDescription`  | الوصف التفصيلي للمنتج |
+| تاريخ الاضافة | `Addition Time`  
+| المسجل | `editor`  
+| الاستخدامات | `usages` |
+| الميزات | `features` |
+| المعرف | النوع | الوصف |
+| الملاحظات | `negativePoints` |
+| الكلمات المفتاحية | `keywords`
+
+| الوزن الصافي | `productWeight`   | وزن المنتج |
+| وحدة الوزن | - |   كجم أو طن |
+| الجهد الكهربائي | `electricalVoltage`   | متطلبات الجهد |
+| الاستهلاك الكهربائي | `electricalConsumption`   | استهلاك الطاقة |
+| السعة الإنتاجية | `productionCapacity`   | كفاءة الإنتاج |
+| المواد الأساسية | `mainMaterial`   | مواد التصنيع |
+| معايير الجودة | `qualityStandards`   | شهادات الجودة |
+| الضمان | `warranty`   | مدة الضمان |
+| المكونات الأساسية | `basicComponents`   | مكونات المنتج |
+| الألوان | `productColors`   | ألوان المنتج |
+| حالة الشحن | `shippingStatus` | | متوفر/غير متوفر |
+
+
+| الطول | `productLength`   | الطول بالمتر |
+| العرض | `productWidth`   | العرض بالمتر |
+| الارتفاع | `productHeight`   | الارتفاع بالمتر |
+
+
+| سعر التكلفة | `productCost`   | السعر الداخلي |
+| سعر البيع (من) | `priceFrom`  | أدنى سعر |
+| سعر البيع (إلى) | `priceTo`   | أعلى سعر |
+| وحدة التسعير | `pricingUnit`  | وحدة القياس |
+| أقل كمية طلب | `minimumOrderQuantity`   | MOQ |
+| الخصم | `productDiscount`   | نسبة الخصم |
+| الضريبة | `productTax`   | نسبة الضريبة |
+| شروط الدفع | `paymentTerms`  | طرق الدفع |
+
+| صور المنتج | `productImages`   | رفع متعدد للصور |
+| صور إضافية | `additionalImages`  | صور إضافية |
+| رابط المنتج | `productlink`   | رابط خارجي |
+| رابط فيديو | `productVideo`   | رابط YouTube |
+| كاتلوج PDF | `productCatalogPdf`   | ملف PDF |
+| دليل التشغيل | `operationManual`   | دليل المستخدم |
+| شهادات الجودة | `qualityCertificates`  | ملفات شهادات |
+| رسومات المنتج | `productDrawings` |   ملفات CAD |
+
+| اسم المورد | `mainSupplierSelect`   | اختيار من الموردين |
+| اسم مخصص | `mainSupplierCustom`   | إدخال مورد جديد |
+| سعر الشراء | `supplierPrice`  | سعر الشراء من المورد |
+| الكمية بالمخزون | `inventoryQuantity`   | المخزون المتاح |
+| وحدة المخزون | `inventoryUnit`   | وحدة قياس المخزون |
+
+
+| الوصف القصير | `shortDescription`| وصف مختصر للعملاء |
+| الكلمات المفتاحية | `seoKeywords`  | كلمات SEO |
+| الجملة التسويقية | `marketingPhrase`  | عبارة تسويقية |
+| الشارة | `badge`   | شارة المنتج |
+
+
+---
+
+
+ -->

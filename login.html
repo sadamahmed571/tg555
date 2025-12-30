@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - ارشيف الثقة التجارية</title>
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+        
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <!-- css Stylesheet -->
+    <link rel="stylesheet" href="archive.css">
+   
+</head>
+ <style>
+
+@charset "utf-8";
+/* CSS Document - TrustGroupArchives */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Naskh Arabic", serif;
+    overflow-x: hidden;
+    position: relative;
+    background: var(--archive-background-color);
+    direction: rtl;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 18px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.big-logo {
+    width: 298px;
+    height: auto;
+}	
+	
+.site-title {
+    font-size: 33px;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, var(--archive-primary-color) 0%, var(--archive-secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.p1 {
+   font-size: 17px;
+   color: var(--archive-text-color);
+   font-family: "Noto Naskh Arabic", serif;
+   width: 448px;
+   margin: 0 auto;
+   line-height: 1.6;
+}
+
+.login-form {
+    background:var(--archive-background-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--archive-border-color) ;
+    border-radius: 18px;
+    padding: 28px;
+    width: 100%;
+    max-width: 398px;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;   
+    margin-bottom: 6px;
+}
+.form-title {
+    font-size: 16px;
+   color: var(--archive-primary-color);
+   font-family: "Noto Naskh Arabic", serif;
+   width: 748px;
+   margin: 0 auto;
+   line-height: 1.4;
+   font-weight: 600;
+}
+
+.form-title i {  
+   margin-left: 4px;
+   color: var(--archive-primary-color);
+   font-size: 17px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    background: var(--archive-container-bg-color) ;
+	color: var(--archive-primary-color);
+    border: 1px solid  var(--archive-border-color) ;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+	margin-bottom: 17px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--archive-primary-color);
+    background: var(--archive-container-focus-color);   
+}
+
+.form-group input::placeholder {
+    color: var(--archive-border-color)	;
+}
+
+.button1 {
+    width: 100%;
+    background: var(--archive-button-color)	;
+    color:var(--archive-light-color);
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 13px;	
+	border: 1px solid var(--archive-border-color) ;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.button1:hover {
+    transform: translateY(-2px);
+    border: 1px solid  var(--archive-light-color);
+}
+
+.button1 i{   
+    padding-right: 18px;
+	font-size: 13px;
+	vertical-align: middle;
+}
+
+.button2 {
+    width: 58%;
+    background: transparent;
+    color: var(--archive-text2-color) ;
+    border: 1px solid var(--archive-border-color) ;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+	font-family: "Noto Naskh Arabic", serif;
+	margin-top: 14px;
+}
+
+.button2:hover {
+    background: var(--archive-container-bg-color) ;
+    border-color:var(--archive-primary-color);
+    color: var(--archive-text3-color) ;
+	transform: translateY(-2px);
+}
+
+.button2 i{   
+    padding-left: 7px;   
+}
+
+/* Modal   */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--archive-background-color);
+    direction: rtl; 
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.modal-content {
+    background-color: var(--archive-container-bg-color) ;  
+    margin: 5% auto;
+    padding: 28px;
+    border-radius: 13px;
+    width: 90%;
+    max-width: 548px;
+    border: 1px solid var(--archive-border-color) ;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* زر الإغلاق */
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 13px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--archive-extra4-color)	;
+    cursor: pointer;
+    z-index: 1001;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* العنوان */
+.modal-title {
+    margin: 8px 8px 0;
+    text-align: center;
+    font-size: 21px;
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+/* النموذج العام */
+.modal-add-form {
+    padding: 18px;
+    direction: rtl;
+}
+
+.modal-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+	 margin-top: 8px;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-group label {
+    color: var(--archive-primary-color);
+    margin-bottom: 6px;
+    font-size: 14px;
+	font-weight: 500;
+	font-family: "Noto Naskh Arabic", serif;
+	margin-right: 13px;
+}
+
+.modal-form-group input,
+.modal-form-group textarea,
+.modal-phone-input {
+    padding: 4px;
+    border: 1px solid var(--archive-border-color) ;
+    border-radius: 6px;
+    background-color: var(--archive-container-focus-color);
+    color: var(--archive-text3-color);
+    font-size: 12px;
+    transition: border-color 0.3s;
+	 margin-bottom: 3px;
+	 width: 100%;
+	 font-weight: 300;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.modal-form-group input:focus,
+.modal-form-group textarea:focus,
+.modal-phone-input:focus {
+    outline: none;
+    border-color: var(--archive-text-color);
+}
+
+.modal-form-group input::placeholder,
+.modal-form-group textarea::placeholder,
+.modal-phone-input::placeholder {
+    color: var(--archive-border-color);
+	font-size: 12px;
+	padding-right: 3px;
+}
+
+.modal-image-group {
+    display: flex;
+    flex-direction: column;	 
+}
+
+.modal-image-group label {
+    color: var(--archive-primary-color);
+    margin-bottom: 6px;
+    font-size: 14px;
+	font-weight: 500;
+	font-family: "Noto Naskh Arabic", serif;
+	margin-right: 13px;
+	text-align: center;
+}
+
+.modal-image-group input  {
+    padding: 3px;
+    border: 1px solid var(--archive-border-color) ;
+    border-radius: 6px;
+    background-color: var(--archive-container-focus-color);
+    color:var(--archive-text2-color);
+    font-size: 11px;
+    transition: border-color 0.3s;
+	 margin-bottom: 3px;
+	 width: 100%;
+	 font-weight: 300;
+	font-family: "Noto Naskh Arabic", serif;
+	padding-right: 28%;
+}
+/* قسم الاتصال */
+.contact-section {
+    margin: 18px 0;
+    padding: 13px;    
+    border-radius: 6px;
+	background-color: var(--archive-container-bg-color) ;
+	border: none;
+	
+}
+
+.section-title {
+    color: var(--archive-primary-color);
+    margin-bottom: 13px;
+    text-align: center;
+    font-size: 16px;
+	font-weight: 500;
+	font-family: "Noto Naskh Arabic", serif;
+	border-top: 1px  dashed var(--archive-border-color) ;
+	border-bottom: 1px  dashed var(--archive-border-color) ;
+	padding: 3px;
+}
+
+.dynamic-fields {
+    margin-bottom: 13px;
+}
+
+.dynamic-fields label {
+    display: block;
+    color: var(--archive-text-color);
+    font-weight: bold;
+    margin-bottom: 8px;
+	font-size: 13px;
+	 font-weight: 400;
+	font-family: "Noto Naskh Arabic", serif;
+}
+.dynamic-fields input,
+.dynamic-fields textarea {
+    padding: 4px;
+    border: 1px solid var(--archive-border-color) ;
+    border-radius: 6px;
+    background-color: var(--archive-container-focus-color);
+    color: var(--archive-text3-color);
+    font-size: 12px;
+    transition: border-color 0.3s;
+	 margin-bottom: 3px;
+	 width: 100%;
+	 font-weight: 300;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.dynamic-fields input:focus,
+.dynamic-fields textarea:focus {
+    outline: none;
+    border-color: var(--archive-text-color);
+}
+
+.dynamic-fields input::placeholder,
+.dynamic-fields textarea::placeholder {
+    color:var(--archive-border-color);
+	font-size: 12px;
+	padding-right: 3px;
+}
+
+.field-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.add-field-btn {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 3px;
+    width: 33px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+	 font-weight: 500;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.add-field-btn:hover {
+    background: var(--archive-title-color);
+}
+
+/* أزرار الإجراءات */
+.modal-form-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.login-btn,
+.cancel-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+    min-width: 118px;
+	 font-weight: 500;
+	font-family: "Noto Naskh Arabic", serif;
+}
+
+.login-btn {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+	
+}
+
+.login-btn:hover {
+    background: var(--archive-title-color);
+}
+
+.cancel-btn {
+    background:var(--archive-container-bg-color);
+    color: var(--archive-light-color);
+	 border: 1px  solid var(--archive-border-color) ;
+}
+
+.cancel-btn:hover {
+    background:var(--archive-container-focus-color);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .login-container {   
+    padding: 13px;
+}
+
+.login-header {
+    margin-bottom: 28px;
+	margin-top: 38px;
+}
+	
+	.big-logo {
+        width: 248px;
+        height: auto;
+    }
+
+    .site-title {
+        font-size: 26px;
+    }
+    
+    .p1 {
+        font-size: 16px;
+    }
+	
+.login-form {   
+    padding: 23px;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    margin-bottom:18px;
+}
+
+.form-group label {
+    margin-bottom: 13px;
+}
+.form-title {
+    font-size: 15px;  
+   width: 100%;
+   line-height: 1.4;
+    margin-top: 13px;
+}
+
+.form-title i {  
+   margin-left: 4px;
+   font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px;   
+    font-size: 15px; 
+}
+
+.button1 {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 13px;	
+}
+
+.button1 i{   
+    padding-right: 18px;
+	font-size: 12px;
+}
+
+.button2 {
+    width: 48%;    
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;    
+	margin-top: 14px;
+}
+
+.button2:hover {
+    background: var(--archive-container-bg-color) ;
+    border-color:var(--archive-primary-color);
+    color: var(--archive-light-color) ;
+	transform: translateY(-2px);
+}
+
+.button2 i{   
+    padding-left: 7px;   
+}
+
+ .modal-content {
+        padding: 23px;
+        margin: 10% auto;
+    }
+
+    .modal-title {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-logo {
+        width: 208px;
+    }
+
+  .site-title {
+        font-size: 24px;
+    }
+    
+    .p1 {
+        font-size: 14px;
+		width: 93%;
+    }
+	
+.login-form {   
+    padding: 18px;
+    width: 90%;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    margin-bottom:13px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+}
+.form-title {
+    font-size: 13px;  
+   width: 100%;
+   line-height: 1.4;
+    margin-top: 8px;
+}
+
+.form-title i {  
+   margin-left: 4px;
+   font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;   
+    font-size: 14px; 
+}
+
+.form-group input::placeholder {
+   font-size: 12px; 
+}
+
+.button1 {
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+    margin-bottom: 12px;	
+}
+
+.button1 i{   
+    padding-right: 8px;
+	font-size: 10px;
+}
+
+.button2 {
+    width: 48%;    
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 500;    
+	margin-top: 24px;
+}
+ 
+.button2 i{   
+    padding-left: 7px;   
+}
+ .modal-content {
+        padding: 18px;
+        width: 95%;
+    }
+
+    .modal-form-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+    
+    .modal-form-group label {
+        font-size: 13px;
+        margin-right: 0;
+    }
+    
+    .contact-section {
+        padding: 8px;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+      .big-logo {
+        width: 188px;
+    }
+
+  .site-title {
+        font-size: 21px;
+    }
+    
+    .p1 {
+        font-size: 12px;
+		width: 93%;
+    }
+	
+.login-form {   
+    padding: 15px;
+    width: 90%;
+    margin-bottom: 14px;
+}
+
+.form-group {
+    margin-bottom:10px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+}
+.form-title {
+    font-size: 11px;  
+   width: 100%;
+   line-height: 1.4;
+    margin-top: 8px;
+}
+
+.form-title i {  
+   margin-left: 4px;
+   font-size: 12px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;   
+    font-size: 12px; 
+}
+
+.form-group input::placeholder {
+   font-size: 11px; 
+}
+
+.button1 {
+    width: 100%;
+    padding: 6px;
+    font-size: 11px;
+    margin-bottom: 8px;	
+}
+
+.button1 i{   
+    padding-right: 6px;
+	font-size: 9px;
+}
+
+.button2 {
+    width: 48%;    
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 400;    
+	margin-top: 18px;
+}
+ 
+.button2 i{   
+    padding-left: 5px;   
+}
+    .modal-content {
+        padding: 13px;
+    }
+
+    .modal-title {
+        font-size: 16px;
+    }
+    
+    .modal-form-group label {
+        font-size: 12px;
+    }
+    
+    .login-btn,
+    .guest-btn {
+        min-width: 98px;
+        font-size: 13px;
+    }
+}
+
+/* ===== Remember Me Checkbox ===== */
+.remember-me-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: -8px 0 13px 0;
+    font-size: 11px;
+    color: var(--archive-text-color);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.remember-me-container:hover {
+    opacity: 1;
+}
+
+.remember-me-container input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: var(--archive-primary-color);
+}
+
+.remember-me-container label {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* ===== Auth Messages (Success/Error) ===== */
+.auth-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-top: 13px;
+    font-size: 12px;
+    animation: slideIn 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.auth-message i {
+    font-size: 16px;
+}
+
+.auth-message-success {
+    background: rgba(72, 187, 120, 0.15);
+    border: 1px solid rgba(72, 187, 120, 0.3);
+    color: #48bb78;
+}
+
+.theme1 .auth-message-success {
+    background: rgba(72, 187, 120, 0.15);
+    border-color: rgba(72, 187, 120, 0.3);
+    color: #48bb78;
+}
+
+.theme2 .auth-message-success {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    color: #667eea;
+}
+
+.theme3 .auth-message-success {
+    background: rgba(236, 72, 153, 0.15);
+    border-color: rgba(236, 72, 153, 0.3);
+    color: #ec4899;
+}
+
+.theme4 .auth-message-success {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #f59e0b;
+}
+
+.auth-message-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.theme1 .auth-message-error,
+.theme2 .auth-message-error,
+.theme3 .auth-message-error,
+.theme4 .auth-message-error {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.auth-message.fade-out {
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ </style>
+<body class="theme1"> 
+  <!-- زر تغيير الثيم -->
+  <button class="change-theme" id="theme-toggle">
+    <i class="fa-solid fa-palette"></i>
+  </button>
+
+  <div class="section" id="home">
+    <div class="login-container">
+      <div class="login-header">
+        <img src="img/tg-logo.png" class="big-logo" alt="شعار"> 
+        <h1 class="site-title">أرشيف الثقة التجارية</h1>                
+        <p class="p1">
+         منصة أرشيفية متخصصة للباعة لحفظ وإدارة بيانات المنتجات  و الموردين
+        </p>
+      </div>
+      
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="username" class="form-title"><i class="fa-solid fa-user-tie"></i> اسم المستخدم</label>
+          <input type="text" id="username" name="username" placeholder="أدخل اسم المستخدم" required>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-title"><i class="fa-solid fa-unlock-keyhole"></i> كلمة المرور</label>
+          <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+        </div>
+        <div class="remember-me-container">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          <label for="rememberMe">
+            <i class="fas fa-bookmark"></i>
+            تذكرني المرة القادمة
+          </label>
+        </div>
+        <button class="button1" type="submit">
+          <span class="btn-text">دخول <i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+          <span class="loading hidden"></span>
+        </button>
+      </form>
+
+      <button onclick="showRegisterModal()" class="button2">
+        <i class="fa fa-user-o" aria-hidden="true"></i> تسجيل كعضو جديد
+      </button>
+                                
+      
+    </div>
+  </div>
+
+  <!-- Registration Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content add-modal-content">
+      <button class="modal-close" onclick="closeRegisterModal()">&times;</button>
+      <h3 class="modal-title">📝 تسجيل عضوية جديدة</h3>
+      
+      <form id="registerForm" class="modal-add-form">
+        <div class="modal-form-grid">
+          <div class="modal-form-group">
+            <label for="registerName">الاسم الكامل *</label>
+            <input type="text" id="registerName" required placeholder="أدخل اسمك الكامل">
+          </div>
+          
+          <div class="modal-form-group">
+            <label for="registerCountry">البلد *</label>
+            <input type="text" id="registerCountry" required>
+          </div>
+        </div>
+        
+        <div class="modal-form-grid">
+          <div class="modal-form-group">
+            <label for="registerAge">العمر *</label>
+            <input type="number" id="registerAge" required placeholder="25" min="16" max="100">
+          </div>
+          
+          <div class="modal-form-group">
+            <label for="registerResidence">السكن *</label>
+            <input type="text" id="registerResidence" required>
+          </div>
+        </div>
+                    
+        <div class="modal-form-grid">
+          <div class="modal-form-group">
+            <label for="registerUsername">اسم المستخدم *</label>
+            <input type="text" id="registerUsername" placeholder="بالاحرف الانجليزية , و يبدأ بـرمز @ " required>
+          </div>
+          <div class="modal-form-group">
+            <label for="registerPassword">كلمة السر *</label>
+            <input type="password" id="registerPassword" required placeholder="ارقام انجليزية">
+          </div>
+        </div>
+                    
+        <div class="modal-image-group">
+          <label for="registerPhoto">الصورة الشخصية</label>
+          <input type="file" id="registerPhoto" accept="image/*">
+        </div>
+        
+        <div class="contact-section">
+          <h4 class="section-title">معلومات التواصل</h4>
+          
+          <div class="dynamic-fields" id="registerPhoneFields">
+            <label>أرقام الهواتف *</label>
+            <div class="field-group">
+              <input type="tel" placeholder="+966 50 123 4567" class="phone-input" required>
+              <button type="button" onclick="addRegisterPhoneField()" class="add-field-btn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          
+          <div class="dynamic-fields">
+            <label for="registerWhatsapp">رقم الواتساب *</label>
+            <input type="tel" id="registerWhatsapp" required placeholder="+966 50 123 4567">
+          </div>
+          
+          <div class="dynamic-fields">
+            <label for="registerEmail">البريد الإلكتروني *</label>
+            <input type="email" id="registerEmail" required placeholder="example@email.com">
+          </div>
+          
+          <div class="dynamic-fields">
+            <label for="registerOtherContact">ملاحظات</label>
+            <textarea id="registerOtherContact" placeholder="دون اذا كانت  لديك ملاحظات تتعلق بالعمل " rows="2"></textarea>
+          </div>
+        </div>
+        
+        <div class="modal-form-actions">
+          <button type="submit" class="login-btn">📤 إرسال طلب العضوية</button>
+          <button type="button" onclick="closeRegisterModal()" class="cancel-btn">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+  <script src="js/onclick-handlers.js"></script>
+  
+  <script src="js/theme.js"></script>
+</body>
+</html>

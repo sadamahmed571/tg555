@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافة مورد جديد</title>
+        
+         <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+        
+        
+         <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- css Stylesheet -->
+           <link rel="stylesheet" href="archive.css">
+         
+</head>
+<style>
+
+/* ===== Layout Components ===== */
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+/* ===== Add Supplier Section ===== */
+.add-supplier-section {
+    padding: 100px 15px 50px;
+    min-height: 100vh;
+    background: var(--archive-background-color);
+}
+
+.add-supplier-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.add-supplier-card {
+    background: var(--archive-container-bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--archive-border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.add-supplier-title {
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-supplier-section-title {
+    color: var(--archive-primary-color);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--archive-border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-supplier-section-title-sub {
+    color: var(--archive-secondary-color);
+    font-size: 1rem;
+    margin: 1.2rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===== Form Styles ===== */
+.add-supplier-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.add-supplier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.add-supplier-contact-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.add-supplier-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.add-supplier-group label {
+    color: var(--archive-text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.add-supplier-group input,
+.add-supplier-group select,
+.add-supplier-group textarea {
+    background: var(--archive-container-focus-color);
+    border: 1px solid var(--archive-border-color);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    color: var(--archive-text2-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom:15px;
+}
+
+.add-supplier-group input:focus,
+.add-supplier-group select:focus,
+.add-supplier-group textarea:focus {
+    outline: none;
+    border-color: var(--archive-primary-color);
+    background: var(--archive-container-bg-color);
+}
+
+.add-supplier-group input::placeholder,
+.add-supplier-group textarea::placeholder {
+    color: var(--archive-placeholder-color);
+}
+
+/* ===== File Upload Styles ===== */
+.add-supplier-file-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+	color: #fff;
+}
+.add-supplier-file-container label {
+    display: block;
+    background: var(--archive-button-color);
+    color: #fff;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--archive-border-color);
+    font-size: 0.95rem;
+}
+.add-supplier-file-input {
+    position: absolute;
+    left: -9999px;
+	 color: #fff;
+}
+
+
+.add-supplier-file-label:hover {
+    background: var(--archive-button-hover-color, var(--archive-title-color));
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--archive-secondary-color);
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+}
+
+/* ===== Checkbox and Radio Styles (horizontal chips) ===== */
+.checkbox-list,
+.add-supplier-checkbox-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    align-items: flex-start;
+}
+
+.checkbox-list label,
+.add-supplier-checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;   
+    font-size: 0.95rem;
+}
+
+
+
+.checkbox-list input[type="checkbox"],
+.add-supplier-checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--archive-primary-color);
+}
+
+/* ===== Todo List Styles ===== */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.todo-input-group {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.todo-input-group input {
+    flex: 1;
+}
+
+.add-supplier-add-field-btn {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    border-radius: 8px;
+    width: 45px;
+    height:45px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-supplier-add-field-btn:hover {
+    background: var(--archive-primary-color);
+    color: var(--archive-light-color);
+}
+
+.todo-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* ===== Form Actions ===== */
+.add-supplier-form-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.add-supplier-submit-btn {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-supplier-submit-btn:hover {
+    background: var(--archive-button-hover-color, var(--archive-title-color));
+    transform: translateY(-2px);
+}
+
+.add-supplier-cancel-btn,
+.back2-btn {
+    background: var(--archive-extra-color, var(--archive-third-color));
+    color: var(--archive-light-color);
+    padding: 0.9rem 1.3rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.add-supplier-cancel-btn:hover,
+.back2-btn:hover {
+    background: var(--archive-extra3-color, var(--archive-extra6-color));
+    transform: translateY(-2px);
+}
+
+/* ===== Icons ===== */
+.icon-primary {
+    color: var(--archive-primary-color);
+}
+
+.icon-secondary {
+    color: var(--archive-secondary-color);
+}
+
+/* ===== Other Industry Input ===== */
+.other-industry-input {
+    margin-top: 0.4rem;
+}
+
+.other-industry-input input {
+    width: 100%;
+}
+
+
+/* ===== Responsive Design ===== */
+
+/* 992px and below */
+@media (max-width: 992px) {
+    .add-supplier-container {
+        max-width: 99%;
+    }
+    
+    .add-supplier-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .add-supplier-section {
+        padding: 90px 15px 45px;
+    }
+}
+
+/* 768px and below */
+@media (max-width: 768px) {
+    .add-supplier-card {
+        padding: 1.2rem;
+    }
+    
+    .add-supplier-title {
+        font-size: 1.4rem;
+    }
+    
+    .add-supplier-section-title {
+        font-size: 1.1rem;
+    }
+    
+    .add-supplier-group label {
+        font-size: 0.9rem;
+    }
+    
+    .add-supplier-group input,
+    .add-supplier-group select,
+    .add-supplier-group textarea {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .checkbox-list label,
+    .add-supplier-checkbox-group label {
+        font-size: 0.9rem;
+    }
+    
+    .add-supplier-submit-btn,
+    .add-supplier-cancel-btn,
+    .back2-btn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* 480px and below */
+@media (max-width: 480px) {
+    .add-supplier-section {
+        padding: 80px 10px 40px;
+    }
+    
+    .add-supplier-card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .add-supplier-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .add-supplier-form-actions {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    
+    .add-supplier-submit-btn,
+    .add-supplier-cancel-btn,
+    .back2-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+    }
+    
+    .add-supplier-group {
+        gap: 0.3rem;
+    }
+    
+    .add-supplier-form {
+        gap: 1rem;
+    }
+}
+
+/* 380px and below */
+@media (max-width: 380px) {
+    .add-supplier-section {
+        padding: 70px 8px 30px;
+    }
+    
+    .add-supplier-container {
+        max-width: 100%;
+    }
+    
+    .add-supplier-card {
+        padding: 0.8rem;
+    }
+    
+    .add-supplier-title {
+        font-size: 1.1rem;
+    }
+    
+    .add-supplier-group input,
+    .add-supplier-group select,
+    .add-supplier-group textarea {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    .checkbox-list label,
+    .add-supplier-checkbox-group label {
+        font-size: 0.85rem;
+    }
+
+}
+
+/* ===== Utility Classes ===== */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--archive-container-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--archive-border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--archive-border-hover-color);
+}
+ 
+ 
+ 
+ 
+</style>
+<body class="theme1">  
+ 
+ <!-- زر تغيير الثيم -->
+    <button class="change-theme" id="theme-toggle">
+     <i class="fa-solid fa-palette"></i>
+    </button>
+ 
+      <section id="add-supplier" class="add-supplier-section">
+        <div class="add-supplier-container" >
+            <div class="add-supplier-card">
+                <h2 class="add-supplier-title">
+                    <i class="fas fa-truck-loading icon-primary"></i> إضافة مورد جديد
+                </h2>
+                
+              <form id="supplierForm" class="add-supplier-form">
+    <h4 class="add-supplier-section-title"><i class="fas fa-id-card icon-primary"></i> معلومات الاتصال والتعريف الأساسية</h4>
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="add-supplier-name-ar">
+                <i class="fas fa-signature icon-primary"></i> اسم الشركة الموردة (عربي) *
+            </label>
+            <input type="text" id="add-supplier-name-ar" name="supplier_name_ar" placeholder="اسم الشركة أو المورد" required>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="add-supplier-name-en">
+                <i class="fas fa-signature icon-primary"></i> اسم الشركة الموردة (إنجليزي) *
+            </label>
+            <input type="text" id="add-supplier-name-en" name="supplier_name_en" placeholder="Company Name" required>
+        </div>
+    </div>
+
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="add-supplier-country">
+                <i class="fas fa-globe-asia icon-primary"></i> بلد المنشأ *
+            </label>
+            <input type="text" id="add-supplier-country" name="supplier_country" placeholder="اسم البلد" required>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="add-supplier-foundation-year">
+                <i class="fas fa-calendar-alt icon-primary"></i> سنة التأسيس
+            </label>
+            <input type="number" id="add-supplier-foundation-year" name="foundation_year" placeholder="مثال: 2005" min="1900" max="2099">
+        </div>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-website">
+            <i class="fas fa-globe icon-primary"></i> الموقع الإلكتروني الرسمي
+        </label>
+        <input type="url" id="add-supplier-website" name="supplier_website" placeholder="https://www.supplier.com">
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-logo">
+            <i class="fas fa-image icon-primary"></i> شعار الشركة (للملف التعريفي)
+        </label>
+        <div class="add-supplier-file-container">
+            <input type="file" id="add-supplier-logo" name="supplier_logo" accept="image/*" class="add-supplier-file-input">
+            <label for="add-supplier-logo" class="add-supplier-file-label">
+                <i class="fas fa-upload"></i> رفع صورة الشعار
+            </label>
+        </div>
+        <div id="file-info" class="file-info hidden">
+            <i class="fas fa-check-circle"></i>
+            <span id="file-name"></span>
+        </div>
+    </div>
+
+    <div class="add-supplier-contact-section">
+        <h5 class="add-supplier-section-title-sub"><i class="fas fa-user-tie icon-secondary"></i> جهة الاتصال الرئيسية</h5>
+        
+        <div class="add-supplier-grid">
+            <div class="add-supplier-group">
+                <label for="contact-name"><i class="fas fa-user icon-primary"></i> الاسم</label>
+                <input type="text" id="contact-name" name="contact_name" placeholder="اسم جهة الاتصال">
+            </div>
+            <div class="add-supplier-group">
+                <label for="contact-title"><i class="fas fa-briefcase icon-primary"></i> الوظيفة</label>
+                <input type="text" id="contact-title" name="contact_title" placeholder="مثال: مدير المبيعات">
+            </div>
+        </div>
+
+        <div class="add-supplier-grid">
+            <div class="add-supplier-group">
+                <label for="contact-email"><i class="fas fa-envelope icon-primary"></i> البريد الإلكتروني</label>
+                <input type="email" id="contact-email" name="contact_email" placeholder="contact@company.com">
+            </div>
+            <div class="add-supplier-group">
+                <label for="contact-phone"><i class="fas fa-phone icon-primary"></i> رقم الهاتف</label>
+                <input type="tel" id="contact-phone" name="contact_phone" placeholder="+86 138 0000 0000">
+            </div>
+        </div>
+        
+        <div class="add-supplier-grid add-supplier-contact-grid">
+            <div class="add-supplier-group">
+                <label for="add-supplier-whatsapp"><i class="fab fa-whatsapp icon-primary"></i> واتساب</label>
+                <input type="tel" id="add-supplier-whatsapp" name="supplier_whatsapp" placeholder="+86 138 0013 8000">
+            </div>
+            <div class="add-supplier-group">
+                <label for="add-supplier-wechat"><i class="fab fa-weixin icon-primary"></i> ويتشات</label>
+                <input type="text" id="add-supplier-wechat" name="supplier_wechat" placeholder="wechat_id">
+            </div>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="preferred-language">
+                <i class="fas fa-language icon-primary"></i> لغة التواصل المفضلة
+            </label>
+            <select id="preferred-language" name="preferred_language">
+                <option value="">اختر اللغة</option>
+                <option value="arabic">العربية</option>
+                <option value="english" selected>الإنجليزية</option>
+                <option value="chinese">الصينية (Mandarin)</option>
+                <option value="other">أخرى</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-address">
+            <i class="fas fa-map-marker-alt icon-primary"></i> عنوان المصنع / المكتب الرئيسي
+        </label>
+        <textarea id="add-supplier-address" name="supplier_address" placeholder="العنوان التفصيلي للمورد" rows="2"></textarea>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-map">
+            <i class="fas fa-map-marked-alt icon-primary"></i> رابط الخريطة (Google Maps)
+        </label>
+        <input type="url" id="add-supplier-map" name="supplier_map_link" placeholder="https://goo.gl/maps/...">
+    </div>
+
+    <h4 class="add-supplier-section-title"><i class="fas fa-cogs icon-primary"></i> التخصص الفني والقدرات</h4>
+    
+    <div class="add-supplier-group">
+        <label>
+            <i class="fas fa-industry icon-primary"></i> التخصص الرئيسي للمورد (المجال) *
+        </label>
+        <div class="checkbox-list">
+            <label><input type="checkbox" name="industry" value="البريكاست"> <i class="fas fa-building icon-secondary"></i> البريكاست</label>
+            <label><input type="checkbox" name="industry" value="الماكينات"> <i class="fas fa-cogs icon-secondary"></i> ماكينات البناء</label>
+            <label><input type="checkbox" name="industry" value="خطوط الإنتاج"> <i class="fas fa-industry icon-secondary"></i> خطوط الإنتاج</label>
+            <label><input type="checkbox" name="industry" value="المعدات الصناعية"> <i class="fas fa-tools icon-secondary"></i> المعدات الصناعية</label>
+            <label><input type="checkbox" id="other-industry-checkbox" name="industry" value="other"> <i class="fas fa-ellipsis-h icon-secondary"></i> تخصص آخر</label>
+        </div>
+        <div id="other-industry-input" class="other-industry-input">
+            <input type="text" placeholder="حدد التخصص الآخر">
+        </div>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-description">
+            <i class="fas fa-file-alt icon-primary"></i> وصف مختصر للقدرات الفنية
+        </label>
+        <textarea id="add-supplier-description" name="supplier_description" placeholder="وصف مختصر عن المورد ومنتجاته الرئيسية" rows="3"></textarea>
+    </div>
+
+    <div class="add-supplier-group">
+        <label for="add-supplier-products">
+            <i class="fas fa-boxes icon-primary"></i> المنتجات الرئيسية
+        </label>
+        <div class="todo-list">
+            <div class="todo-input-group">
+                <input type="text" id="product-input" placeholder="أدخل منتجًا رئيسيًا">
+                <button type="button" id="add-product-btn" class="add-supplier-add-field-btn">+</button>
+            </div>
+            <div id="products-list" class="todo-list-items"></div>
+        </div>
+    </div>
+
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="company-size">
+                <i class="fas fa-users icon-primary"></i> حجم الشركة (عدد الموظفين)
+            </label>
+            <input type="number" id="company-size" name="company_size" placeholder="مثال: 50" min="1">
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="production-capacity">
+                <i class="fas fa-tachometer-alt icon-primary"></i> الطاقة الإنتاجية السنوية
+            </label>
+            <input type="text" id="production-capacity" name="production_capacity" placeholder="مثال: 1000 طن/سنة">
+        </div>
+    </div>
+    
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="customization-ability">
+                <i class="fas fa-magic icon-primary"></i> القدرة على التخصيص
+            </label>
+            <select id="customization-ability" name="customization_ability">
+                <option value="yes">نعم، متوفرة</option>
+                <option value="no">لا</option>
+            </select>
+        </div>
+        
+        <div class="add-supplier-group">
+            <label for="engineers-count">
+                <i class="fas fa-hard-hat icon-primary"></i> عدد المهندسين والفنيين
+            </label>
+            <input type="number" id="engineers-count" name="engineers_count" placeholder="مثال: 15" min="0">
+        </div>
+    </div>
+
+    <div class="add-supplier-group">
+        <label for="main-markets">
+            <i class="fas fa-chart-area icon-primary"></i> الأسواق الرئيسية الحالية
+        </label>
+        <input type="text" id="main-markets" name="main_markets" placeholder="مثال: السعودية، مصر، ألمانيا">
+    </div>
+
+
+    <h4 class="add-supplier-section-title"><i class="fas fa-award icon-primary"></i> معايير الجودة والتوثيق</h4>
+    
+    <div class="add-supplier-group">
+        <label for="add-supplier-certificates">
+            <i class="fas fa-certificate icon-primary"></i> شهادات الجودة المعتمدة
+        </label>
+        <div class="add-supplier-checkbox-group">
+            <label><input type="checkbox" name="certificates" value="iso9001"> <i class="fas fa-certificate icon-secondary"></i> ISO 9001</label>
+            <label><input type="checkbox" name="certificates" value="iso14001"> <i class="fas fa-certificate icon-secondary"></i> ISO 14001</label>
+            <label><input type="checkbox" name="certificates" value="ce"> <i class="fas fa-certificate icon-secondary"></i> CE</label>
+            <label><input type="checkbox" name="certificates" value="tuv"> <i class="fas fa-certificate icon-secondary"></i> TUV</label>
+            <label><input type="checkbox" name="certificates" value="asme"> <i class="fas fa-certificate icon-secondary"></i> ASME</label>
+            <label><input type="checkbox" name="certificates" value="rohs"> <i class="fas fa-certificate icon-secondary"></i> RoHS</label>
+            <label><input type="checkbox" name="certificates" value="other"> <i class="fas fa-ellipsis-h icon-secondary"></i> أخرى</label>
+        </div>
+    </div>
+
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="test-reports-available">
+                <i class="fas fa-clipboard-list icon-primary"></i> تقارير اختبار المنتجات (Test Reports)
+            </label>
+            <select id="test-reports-available" name="test_reports_available">
+                <option value="available">متوفرة</option>
+                <option value="not_available">غير متوفرة</option>
+            </select>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="audit-possibility">
+                <i class="fas fa-eye icon-primary"></i> إمكانية زيارة/تدقيق المصنع
+            </label>
+            <select id="audit-possibility" name="audit_possibility">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
+            </select>
+        </div>
+    </div>
+
+
+    <h4 class="add-supplier-section-title"><i class="fas fa-handshake icon-primary"></i> الشروط التجارية واللوجستية (B2B)</h4>
+    
+    <div class="add-supplier-group">
+        <label>
+            <i class="fas fa-credit-card icon-primary"></i> شروط الدفع المعتمدة
+        </label>
+        <div class="checkbox-list">
+            <label><input type="checkbox" name="payment_terms" value="cash_advanced"> <i class="fas fa-percent icon-secondary"></i> دفع مقدم (نسبة)</label>
+            <label><input type="checkbox" name="payment_terms" value="transfer"> <i class="fas fa-exchange-alt icon-secondary"></i> حوالة بنكية (T/T)</label>
+            <label><input type="checkbox" name="payment_terms" value="lc"> <i class="fas fa-file-invoice-dollar icon-secondary"></i> اعتماد مستندي (L/C)</label>
+            <label><input type="checkbox" name="payment_terms" value="deferred"> <i class="fas fa-clock icon-secondary"></i> دفع مؤجل (After Shipment)</label>
+            <label><input type="checkbox" name="payment_terms" value="other"> <i class="fas fa-ellipsis-h icon-secondary"></i> أخرى</label>
+        </div>
+    </div>
+
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="base-currency">
+                <i class="fas fa-dollar-sign icon-primary"></i> العملة الأساسية للتسعير
+            </label>
+            <select id="base-currency" name="base_currency">
+                <option value="usd" selected>USD (دولار أمريكي)</option>
+                <option value="eur">EUR (يورو)</option>
+                <option value="cny">CNY (اليوان الصيني)</option>
+                <option value="other">عملة أخرى</option>
+            </select>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="incoterms">
+                <i class="fas fa-file-contract icon-primary"></i> شروط التجارة الدولية (Incoterms) المفضلة
+            </label>
+            <select id="incoterms" name="incoterms">
+                <option value="fob" selected>FOB</option>
+                <option value="cif">CIF</option>
+                <option value="exw">EXW</option>
+                <option value="cfr">CFR</option>
+                <option value="other">أخرى</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="moq">
+                <i class="fas fa-boxes icon-primary"></i> الحد الأدنى لكمية الطلب (MOQ)
+            </label>
+            <input type="text" id="moq" name="moq" placeholder="مثال: 10 وحدات أو 5 أطنان">
+        </div>
+        
+        <div class="add-supplier-group">
+            <label for="warranty-period">
+                <i class="fas fa-shield-alt icon-primary"></i> فترة الضمان القياسية
+            </label>
+            <input type="text" id="warranty-period" name="warranty_period" placeholder="مثال: 12 شهرًا أو سنة">
+        </div>
+    </div>
+
+    <div class="add-supplier-group">
+        <label>
+            <i class="fas fa-shipping-fast icon-primary"></i> طرق الشحن المتاحة
+        </label>
+        <div class="checkbox-list">
+            <label><input type="checkbox" name="shipping" value="sea"> <i class="fas fa-ship icon-secondary"></i> شحن بحري</label>
+            <label><input type="checkbox" name="shipping" value="air"> <i class="fas fa-plane icon-secondary"></i> شحن جوي</label>
+            <label><input type="checkbox" name="shipping" value="land"> <i class="fas fa-truck icon-secondary"></i> شحن بري</label>
+        </div>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="average-shipping-time">
+            <i class="fas fa-clock icon-primary"></i> متوسط زمن الشحن (لأقرب ميناء)
+        </label>
+        <input type="text" id="average-shipping-time" name="average_shipping_time" placeholder="مثال: 25-35 يومًا">
+    </div>
+
+    <h4 class="add-supplier-section-title"><i class="fas fa-folder-open icon-primary"></i> المرفقات والتوثيق الداخلي</h4>
+    
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="supplier-status">
+                <i class="fas fa-tasks icon-primary"></i> حالة المورد في النظام
+            </label>
+            <select id="supplier-status" name="supplier_status">
+                <option value="new" selected>جديد</option>
+                <option value="under_review">قيد المراجعة</option>
+                <option value="approved">معتمد</option>
+                <option value="suspended">موقوف</option>
+            </select>
+        </div>
+        <div></div>
+    </div>
+    
+    <div class="add-supplier-grid">
+        <div class="add-supplier-group">
+            <label for="company-profile-file"><i class="fas fa-file-pdf icon-primary"></i> ملف تعريفي بالشركة (PDF)</label>
+            <div class="add-supplier-file-container">
+                <input type="file" id="company-profile-file" name="company_profile_file" accept=".pdf" class="add-supplier-file-input">
+                <label for="company-profile-file" class="add-supplier-file-label"><i class="fas fa-upload"></i> رفع الملف التعريفي</label>
+            </div>
+        </div>
+
+        <div class="add-supplier-group">
+            <label for="catalogue-file"><i class="fas fa-book-open icon-primary"></i> كاتلوج المنتجات العام (PDF)</label>
+            <div class="add-supplier-file-container">
+                <input type="file" id="catalogue-file" name="catalogue_file" accept=".pdf" class="add-supplier-file-input">
+                <label for="catalogue-file" class="add-supplier-file-label"><i class="fas fa-upload"></i> رفع الكاتلوج</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="add-supplier-group">
+        <label for="quality-certificates-file"><i class="fas fa-scroll icon-primary"></i> نسخة من شهادات الجودة المذكورة</label>
+        <div class="add-supplier-file-container">
+            <input type="file" id="quality-certificates-file" name="quality_certificates_file" accept=".pdf,.zip" class="add-supplier-file-input" multiple>
+            <label for="quality-certificates-file" class="add-supplier-file-label"><i class="fas fa-upload"></i> رفع الشهادات (يمكن اختيار أكثر من ملف)</label>
+        </div>
+    </div>
+
+    <div class="add-supplier-group">
+        <label for="internal-notes">
+            <i class="fas fa-comment-dots icon-primary"></i> ملاحظات داخلية حول المورد (للاستخدام الخاص)
+        </label>
+        <textarea id="internal-notes" name="internal_notes" placeholder="ملاحظات وتقييمات داخلية خاصة بفريق العمل" rows="3"></textarea>
+    </div>
+
+    <div class="add-supplier-form-actions">
+        <button type="submit" class="add-supplier-submit-btn">
+            <i class="fas fa-save"></i> حفظ المورد
+        </button>
+        <a href="suppliers.html" class="add-supplier-cancel-btn">
+            <i class="fas fa-times"></i> إلغاء
+        </a>
+        <a href="dashboard.html" class="back2-btn">
+            <i class='fas fa-angle-double-right'></i> العودة الى الصفحة الرئيسية
+        </a>
+    </div>
+</form>
+            </div>
+        </div>
+    </section>
+        
+
+
+        
+        <!-- Include Supabase and services -->
+    <script src="js/theme-init.js"></script>
+    <script src="js/onclick-handlers.js"></script>
+    <script src="js/form-autosave.js"></script>
+    
+    <!--  Javascript -->
+    <script src="js/nav.js"></script>
+    <script src="js/chat.js"></script>     
+    <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة المنتجات - أرشيف الثقة التجارية</title>
+        
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/archive.css">
+</head>
+<style> 
+
+@charset "utf-8";
+/* CSS Document - TrustGroupArchives */
+
+body {
+    font-family: "Noto Naskh Arabic", serif;
+    overflow-x: hidden;
+    position: relative;
+    background: var(--archive-background-color);
+    direction: rtl;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 18px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 5px;
+    background: var(--archive-title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    padding-top: 5px;
+    border-top: 0px solid var(--archive-border-color);
+}
+
+.slider-title i {
+    padding-left: 3px;
+    font-size: 31px;
+}
+
+/* Filters */
+.filters-container {
+    margin-bottom: 38px;
+    padding-top: 10px;
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.sreach {
+    min-width: 298px;
+    padding: 8px;
+    background: var(--archive-container-bg-color);
+    border: 1px solid var(--archive-border-color);
+    border-radius: 6px;
+    color: var(--archive-text3-color);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.sreach:hover {
+    background: var(--archive-container-focus-color);
+}
+
+.sreach::placeholder {
+    color: var(--archive-text-color);
+    font-size: 14px;
+    padding-right: 13px;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 4px;
+    background: none;
+    border: 1px solid var(--archive-border-color);
+    border-radius: 6px;
+    color: var(--archive-text-color);
+    font-size: 14px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: var(--archive-text-color);
+    outline: none;
+    color: var(--archive-text3-color);
+    background: var(--archive-container-focus-color);
+}
+
+.filter-group select option {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text2-color);
+}
+
+.clear-filters-btn {
+    width: 100%;
+    background: none;
+    color: var(--archive-text2-color);
+    border: 1px solid var(--archive-border-color);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-family: "Noto Naskh Arabic", serif;
+    font-weight: 300;
+}
+
+.clear-filters-btn:hover {
+    background: var(--archive-container-focus-color);
+    color: var(--archive-text3-color);
+}
+
+.clear-filters-btn:active {
+    background-color: var(--archive-container-bg-color);
+    transform: scale(0.98);
+}
+
+/* Products Grid - Compact Grid View */
+.products-grid {
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( 80px, 1fr));
+    gap: 50px;
+	padding-bottom: 90px;
+}
+
+.product-card {
+    background: var(--archive-container-bg-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--archive-border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    border: 1px solid var(--archive-border-hover-color);
+}
+
+.product-image-container {
+    position: relative;
+}
+
+.product-meta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, var(--archive-meta-overlay-color), transparent);
+    padding: 6px 10px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.product-meta-overlay .product-category {
+    background: var(--archive-extra-color);
+    color: var(--archive-light-color);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-top: 1px;
+}
+
+.product-meta-overlay .product-supplier {
+    background: var(--archive-light-color);
+    color: var(--archive-extra3-color);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 11px;
+    margin-top: 1px;
+}
+
+.product-meta-overlay .product-serial {
+    background: var(--archive-extra2-color);
+    color: var(--archive-light-color);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-top: 1px;
+    font-family: monospace;
+}
+
+.product-image {
+    width: 100%;
+    height: 118px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.9;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-info {
+    padding: 8px;
+}
+
+.product-user {
+    font-size: 10px;
+    color: var(--archive-placeholder-color);
+    margin-top: -7px;
+    text-align: right;
+    display: none;
+}
+
+.product-category {
+    font-size: 7px;
+    color: var(--archive-primary-color);
+    margin-bottom: 0px;
+    font-weight: 500;
+    display: block;
+}
+
+.product-supplier {
+    font-size: 7px;
+    color: var(--archive-light-color);
+    margin-bottom: 0px;
+    display: block;
+}
+
+.product-serial {
+    font-size: 10px;
+    color: var(--archive-secondary-color);
+    margin-bottom: 3px;
+    font-family: monospace;
+    display: none;
+}
+
+.product-title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 800;
+    padding-right: 0;
+    border-right: none;
+    text-align: center;
+    margin: 8px;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--archive-text-color);
+}
+
+.product-title span {
+    display: none;
+}
+
+.product-description {
+    display: none;
+}
+
+.product-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    background: var(--archive-container-focus-color);
+    padding: 3px;
+    border-radius: 6px;
+    gap: 3px;
+    margin-top: 18px;
+}
+
+.price-item {
+    text-align: center;
+    flex: 1;
+}
+
+.price-amount {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--archive-text3-color);
+    display: block;
+}
+
+.price-P {
+    font-size: 9px;
+    color: var(--archive-text2-color);
+}
+
+.product-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.product-button {
+    flex: 1;
+    width: 90%;
+    background: none;
+    color: var(--archive-text-color);
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--archive-border-color);
+    cursor: pointer;
+    font-size: 10px;
+    font-family: "Noto Naskh Arabic", serif;
+    margin: 0 auto;
+}
+
+.product-button i {
+    padding-left: 6px;
+    vertical-align: middle;
+}
+
+.product-button:hover {
+    background: var(--archive-button-color);
+    color: var(--archive-light-color);
+}
+
+.share-buttons {
+    display: flex;
+    gap: 3px;
+    margin-top: 8px;
+    justify-content: space-around;
+}
+
+.share-btn {
+    padding: 3px;
+    width: 50%;
+    border-radius: 6px;
+    border: none;
+    background: var(--archive-button-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Noto Naskh Arabic", serif;
+}
+
+.share-btn i {
+    padding-left: 8px;
+}
+
+.share-btn.whatsapp {
+    background: #3b544d;
+    color: var(--archive-light-color);
+}
+
+.share-btn.twitter {
+    background: #1da1f2;
+    color: var(--archive-light-color);
+}
+
+.share-btn.copy {
+    background: none;
+    color: var(--archive-primary-color);
+}
+
+.share-btn:hover {
+    color: var(--archive-light-color);
+}
+
+/* إخفاء العناصر غير المستخدمة */
+.product-price2,
+.product-category2,
+.product-supplier2,
+.product-serial2,
+.product-meta-overlay2 {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-results {
+    text-align: center;
+    padding: 58px 18px;
+    color: var(--archive-text3-color);
+    background: var(--archive-container-bg-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--archive-border-color);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 58%;
+    margin: 0 auto;
+    top: 38%;
+    position: fixed;
+}
+
+.no-results-icon {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.no-results-title {
+    margin-bottom: 8px;
+    color: var(--archive-light-color);
+}
+
+/* Responsive Design */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .filters-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .sreach {
+        padding: 8px;
+        font-size: 14px;
+        min-width: auto;
+    }
+
+    .sreach::placeholder {
+        font-size: 14px;
+        padding-right: 2px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .clear-filters-btn {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, minmax(188px, 1fr));
+        gap: 23px;
+    }
+
+    .no-results {
+        padding: 33px 13px;
+        width: 53%;
+    }
+
+    .no-results-icon {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+    .filters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .sreach {
+        padding: 8px;
+        font-size: 14px;
+        min-width: auto;
+    }
+
+    .sreach::placeholder {
+        font-size: 14px;
+        padding-right: 2px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .clear-filters-btn {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(218px, 1fr));
+        gap: 23px;
+    }
+
+    .no-results {
+        padding: 33px 13px;
+        width: 53%;
+    }
+
+    .no-results-icon {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: -1px;
+    }
+
+    .sreach {
+        padding: 6px;
+        font-size: 14px;
+        min-width: auto;
+    }
+
+    .sreach::placeholder {
+        font-size: 13px;
+        padding-right: 0px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        padding: 4px;
+        font-size: 13px;
+    }
+
+    .clear-filters-btn {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(178px, 1fr));
+        gap: 18px;
+    }
+
+    .product-meta-overlay {
+        padding: 8px 12px;
+    }
+
+    .product-meta-overlay .product-category,
+    .product-meta-overlay .product-supplier,
+    .product-meta-overlay .product-serial {
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .product-category {
+        font-size: 8px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+
+    .product-supplier {
+        font-size: 8px;
+        margin-bottom: 0px;
+    }
+
+    .product-title {
+        font-size: 16px;
+        padding-right: 3px;
+        border-right: 0px solid var(--archive-text-color);
+        margin-top: 13px;
+        text-align: right;
+    }
+
+    .product-prices {
+        padding: 6px;
+        margin-top: 21px;
+    }
+
+    .price-amount {
+        font-size: 14px;
+    }
+
+    .price-P {
+        font-size: 10px;
+    }
+
+    .product-actions {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .product-button {
+        flex: 1;
+        width: 90%;
+        padding: 6px;
+        font-size: 11px;
+        margin: 0 auto;
+        font-weight: 400;
+    }
+
+    .product-button i {
+        padding-left: 8px;
+        vertical-align: middle;
+        font-size: 13px;
+    }
+
+    .no-results {
+        padding: 28px 8px;
+        width: 58%;
+    }
+
+    .no-results-icon {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+	.container {
+
+    width: 100%;
+    padding: 0 5px;
+}
+    .filters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: -1px;
+    }
+
+    .sreach {
+        padding: 6px;
+        font-size: 12px;
+        min-width: auto;
+    }
+
+    .sreach::placeholder {
+        font-size: 12px;
+        padding-right: 0px;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .clear-filters-btn {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 13px;
+    }
+
+    .product-card {
+        width: 99%;
+        margin: 0 auto;
+    }
+
+    .product-meta-overlay .product-category,
+    .product-meta-overlay .product-supplier,
+    .product-meta-overlay .product-serial {
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+    }
+
+    .product-category {
+        font-size: 8px;
+    }
+
+    .product-supplier {
+        font-size: 8px;
+    }
+
+    .product-title {
+        font-size: 14px;
+        padding-right: 0;
+        border-right: none;
+        margin-top: 13px;
+        text-align: center;
+    }
+
+    .product-prices {
+        padding: 6px;
+        margin-top: 11px;
+    }
+
+    .price-amount {
+        font-size: 13px;
+    }
+
+    .price-P {
+        font-size: 10px;
+    }
+
+    .product-button {
+        flex: 1;
+        width: 90%;
+        padding: 3px;
+        font-size: 10px;
+        margin: 0 auto;
+        font-weight: 400;
+    }
+
+    .product-button i {
+        padding-left: 4px;
+        vertical-align: middle;
+        font-size: 10px;
+    }
+
+    .no-results {
+        padding: 28px 8px;
+        width: 58%;
+    }
+
+    .no-results-icon {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+}
+ 
+</style> 
+
+
+<body class="theme1">  
+ 
+<!-- زر تغيير الثيم -->
+<button class="change-theme" id="theme-toggle">
+    <i class="fa-solid fa-palette"></i>
+</button>
+
+<!-- products-board Section -->
+<section id="products-board" class="section">     
+    <div class="container">
+	
+	
+	   
+        <!-- filters -->
+        <div class="filters-container">
+            <h2 class="section-title"><i class="fa-solid fa-cart-plus"></i>المنتجات</h2>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <input class="sreach" type="text" id="searchInput" placeholder="&#128269;   ابحث عن منتج " >
+                </div>
+                <div class="filter-group">
+                    <select id="categoryFilter">
+                        <option value="">جميع الفئات</option>
+                        <optgroup label="البريكاست">
+                            <option value="بريكاست إنشائي">بريكاست إنشائي</option>
+                            <option value="بريكاست للبنية التحتية">بريكاست للبنية التحتية</option>
+                            <option value="بريكاست معماري/ديكوري">بريكاست معماري/ديكوري</option>
+                        </optgroup>
+                        <optgroup label="الماكينات">
+                            <option value="ماكينات البناء والإنشاءات">ماكينات البناء والإنشاءات</option>
+                            <option value="ماكينات الورشة">ماكينات الورشة</option>
+                            <option value="ماكينات التشغيل والصيانة">ماكينات التشغيل والصيانة</option>
+                        </optgroup>
+                        <optgroup label="خطوط الإنتاج">
+                            <option value="خطوط إنتاج مواد غذائية">خطوط إنتاج مواد غذائية</option>
+                            <option value="خطوط إنتاج مواد بناء">خطوط إنتاج مواد بناء</option>
+                            <option value="خطوط تجميع وتصنيع بسيطة">خطوط تجميع وتصنيع بسيطة</option>
+                        </optgroup>
+                        <optgroup label="المعدات الصناعية">
+                            <option value="معدات رفع ومناولة">معدات رفع ومناولة</option>
+                            <option value="أدوات كهربائية صناعية">أدوات كهربائية صناعية</option>
+                            <option value="معدات السلامة والأمان">معدات السلامة والأمان</option>
+                            <option value="مولدات الطاقة">مولدات الطاقة</option>
+                        </optgroup>
+						<optgroup label="قطع غيار">
+                        </optgroup>
+						<optgroup label="مستلزمات تشغيل">
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="supplierFilter">
+                        <option value="">جميع الموردين</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="userFilter">
+                        <option value="">جميع المستخدمين</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="sortFilter">
+                        <option value="date">الأحدث أولاً</option>
+                        <option value="price-high">السعر: عالي إلى منخفض</option>
+                        <option value="price-low">السعر: منخفض إلى عالي</option>                            
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button class="clear-filters-btn" onclick="clearFilters()">مسح الفلاتر</button>
+                </div>
+            </div>
+        </div>
+        
+     
+        
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-id="1">
+                <div class="product-image-container">
+                   
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="ساعة ذكية متطورة" onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/ffffff?text=صورة+المنتج'">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">ساعة ذكية متطورة<span><i class="fa fa-address-book-o" aria-hidden="true"></i> admin</span></h3>
+                    <p class="product-description">ساعة ذكية بميزات متقدمة لتتبع اللياقة البدنية واتصالات ذكية مع هاتفك الذكي</p>
+                    <div class="product-prices">
+                        <div class="price-item">
+                            <span class="price-amount">$210</span>
+                             
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="product-demo.html" id="OpenProductDetails" class="product-button"><i class="fa-solid fa-info"></i> عرض التفاصيل</a>
+                        <a href="product.html" id="ChatWithProductUser" class="product-button"><i class="fab fa-whatsapp"></i>تواصل بالمسجل</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-id="2">
+                <div class="product-image-container">
+                    
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="هاتف ذكي عالي الجودة" onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/ffffff?text=صورة+المنتج'">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">هاتف ذكي عالي الجودة<span><i class="fa fa-address-book-o" aria-hidden="true"></i> ahmed</span></h3>
+                    <p class="product-description">هاتف ذكي بكاميرا عالية الدقة وبطارية طويلة المدى مع معالج قوي للألعاب والتطبيقات</p>
+                    <div class="product-prices">
+                        <div class="price-item">
+                            <span class="price-amount">$210</span>
+                          
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="product.html" id="OpenProductDetails" class="product-button"><i class="fa-solid fa-info"></i> عرض التفاصيل</a>
+                        <a href="product.html" id="ChatWithProductUser"class="product-button"><i class="fab fa-whatsapp"></i>تواصل بالمسجل</a>
+                    </div>
+                </div>
+            </div>
+			<!-- Product 2 -->
+            <div class="product-card" data-id="2">
+                <div class="product-image-container">
+                    
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="هاتف ذكي عالي الجودة" onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/ffffff?text=صورة+المنتج'">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">هاتف ذكي عالي الجودة<span><i class="fa fa-address-book-o" aria-hidden="true"></i> ahmed</span></h3>
+                    <p class="product-description">هاتف ذكي بكاميرا عالية الدقة وبطارية طويلة المدى مع معالج قوي للألعاب والتطبيقات</p>
+                    <div class="product-prices">
+                        <div class="price-item">
+                            <span class="price-amount">$210</span>
+                          
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="product.html" id="OpenProductDetails" class="product-button"><i class="fa-solid fa-info"></i> عرض التفاصيل</a>
+                        <a href="product.html" id="ChatWithProductUser"class="product-button"><i class="fab fa-whatsapp"></i>تواصل بالمسجل</a>
+                    </div>
+                </div>
+            </div>
+			<!-- Product 2 -->
+            <div class="product-card" data-id="2">
+                <div class="product-image-container">
+                    
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="هاتف ذكي عالي الجودة" onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/ffffff?text=صورة+المنتج'">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">هاتف ذكي عالي الجودة<span><i class="fa fa-address-book-o" aria-hidden="true"></i> ahmed</span></h3>
+                    <p class="product-description">هاتف ذكي بكاميرا عالية الدقة وبطارية طويلة المدى مع معالج قوي للألعاب والتطبيقات</p>
+                    <div class="product-prices">
+                        <div class="price-item">
+                            <span class="price-amount">$210</span>
+                          
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="product.html" id="OpenProductDetails" class="product-button"><i class="fa-solid fa-info"></i> عرض التفاصيل</a>
+                        <a href="product.html" id="ChatWithProductUser"class="product-button"><i class="fab fa-whatsapp"></i>تواصل بالمسجل</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-id="3">
+                <div class="product-image-container">
+                    <div class="product-meta-overlay">
+                        <span class="product-category">إلكترونيات</span>
+                       
+                        <span class="product-serial">SN: 003</span>
+                    </div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="سماعات لاسلكية" onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/ffffff?text=صورة+المنتج'">
+                    </div>
+                </div>
+                <div class="product-info"> 
+                    <h3 class="product-title">سماعات لاسلكية <span><i class="fa fa-address-book-o" aria-hidden="true"></i> sadeq</span></h3>
+                    <p class="product-description">سماعات بلوتوث عالية الجودة مع إلغاء الضوضاء وعمر بطارية يصل إلى 30 ساعة</p>
+                    <div class="product-prices">
+                        <div class="price-item">
+                            <span class="price-amount">$210</span>
+                             
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="product.html" id="OpenProductDetails" class="product-button"><i class="fa-solid fa-info"></i> عرض التفاصيل</a>
+                        <a href="product.html" id="ChatWithProductUser"class="product-button"><i class="fab fa-whatsapp"></i>تواصل بالمسجل</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
+
+ 
+ 
+
+<script>
+    
+</script>
+ 
+</body>
+</html>
